@@ -17,6 +17,15 @@ import {
   ShakeOutlined,
   SendOutlined,
 } from "@ant-design/icons";
+import heroImg from "../assets/hero.png";
+import editsImg from "../assets/edits.png";
+
+import img1 from "../assets/Products-1.png";
+import img2 from "../assets/Products-2.png";
+import img3 from "../assets/Products-3.png";
+import img4 from "../assets/Products-4.png";
+import img5 from "../assets/Products-5.png";
+import img6 from "../assets/Products-6.png";
 
 const { Content } = Layout;
 const { Title, Paragraph, Text } = Typography;
@@ -55,49 +64,56 @@ const StatItem = ({ value, label }) => (
 
 const SolutionCard = ({ title, image }) => (
   <Col xs={24} sm={12} md={8}>
-    <Card
-      hoverable
-      bordered={false}
-      style={{ background: "transparent" }}
-      cover={
-        <div
-          style={{
-            position: "relative",
-            height: 350,
-            overflow: "hidden",
-            borderRadius: "15px",
-          }}
-        >
-          <img
-            alt={title}
-            src={image}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              top: 20,
-              left: 0,
-              right: 0,
-              textAlign: "center",
-              background: "rgba(0,0,0,0.2)",
-              padding: "10px",
-            }}
-          >
-            <Title
-              level={4}
-              style={{
-                color: "#fff",
-                margin: 0,
-                textShadow: "2px 2px 4px rgba(0,0,0,0.8)",
-              }}
-            >
-              {title}
-            </Title>
-          </div>
-        </div>
-      }
-    />
+    <div
+      style={{
+        position: "relative",
+        height: 520,
+        width: 450,
+        borderRadius: "25px",
+        overflow: "hidden",
+        cursor: "pointer",
+      }}
+    >
+      {/* الصورة */}
+      <img
+        src={image}
+        alt={title}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      />
+
+      {/* overlay خفيف (اختياري عشان وضوح النص) */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1))",
+        }}
+      />
+
+      {/* العنوان */}
+      <Title
+        level={4}
+        style={{
+          position: "absolute",
+          top: 35,
+          left: 0,
+          right: 0,
+          textAlign: "center",
+          color: "#fff",
+          margin: 0,
+          fontWeight: 700,
+          fontSize: "20px",
+          textShadow: "0 2px 6px rgba(0,0,0,0.7)",
+        }}
+      >
+        {title}
+      </Title>
+    </div>
   </Col>
 );
 
@@ -247,38 +263,32 @@ const Home = () => {
           {
             id: 1,
             title: "Processed Biomass Fuel",
-            image:
-              "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800",
+            image: img1,
           },
           {
             id: 2,
             title: "Reliable Year-Round Supply",
-            image:
-              "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800",
+            image: img2,
           },
           {
             id: 3,
             title: "Industrial Fuel Integration",
-            image:
-              "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=800",
+            image: img3,
           },
           {
             id: 4,
             title: "Agricultural Waste Conversion",
-            image:
-              "https://images.unsplash.com/photo-1595113316349-9fa4eb24f884?q=80&w=800",
+            image: img4,
           },
           {
             id: 5,
             title: "Sustainable Energy Logistics",
-            image:
-              "https://images.unsplash.com/photo-1519003722824-194d4455a60c?q=80&w=800",
+            image: img5,
           },
           {
             id: 6,
             title: "Alternative Fuel Consulting",
-            image:
-              "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800",
+            image: img6,
           },
         ],
       };
@@ -351,23 +361,39 @@ const Home = () => {
       {/* SECTION 1: HERO */}
       <div
         style={{
-          height: "calc(100vh - 70px)",
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000')`,
+          //   minHeight: "100vh",
+          //   width: "100%",
+          //   backgroundImage: `url(${heroImg})`,
+          //   backgroundSize: "contain",
+          //   backgroundPosition: "center",
+          //   backgroundRepeat: "no-repeat",
+
+          minHeight: "100vh",
+          width: "100%",
+          backgroundImage: `url(${heroImg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center 100%",
+          backgroundRepeat: "no-repeat",
+
           display: "flex",
-          alignItems: "center",
           justifyContent: "center",
+          alignItems: "center",
           textAlign: "center",
-          padding: "0 20px",
-          fontFamily: "'Alexandria', sans-serif", // تطبيق الخط المطلوب
+          padding: "0 20px 90px",
+          fontFamily: "'Alexandria', sans-serif",
         }}
       >
-        <div style={{ maxWidth: 1100 }}>
+        <div
+          style={{
+            maxWidth: 1050,
+            width: "100%",
+            transform: "translateY(160px)",
+          }}
+        >
           <Title
             style={{
               color: "#fff",
-              fontSize: "70px",
+              fontSize: "clamp(42px, 6vw, 70px)",
               margin: 0,
               fontWeight: 700,
               lineHeight: 1.1,
@@ -382,9 +408,10 @@ const Home = () => {
             level={1}
             style={{
               color: "#fff",
-              fontSize: "70px",
-              marginTop: 10,
+              fontSize: "clamp(42px, 6vw, 70px)",
+              margin: "8px 0 0",
               fontWeight: 700,
+              lineHeight: 1.1,
             }}
           >
             {pageData.hero.subTitle}
@@ -392,12 +419,11 @@ const Home = () => {
           <Paragraph
             style={{
               color: "#fff",
-              fontSize: "24px",
+              fontSize: "clamp(18px, 2vw, 24px)",
               fontWeight: 500,
-              marginTop: 40,
-              lineHeight: 1.4,
-              maxWidth: "850px",
-              margin: "40px auto 0",
+              lineHeight: 1.5,
+              maxWidth: "1150px",
+              margin: "28px auto 0",
             }}
           >
             {pageData.hero.description}
@@ -408,25 +434,33 @@ const Home = () => {
       {/* SECTION 2: STATS */}
       <div
         style={{
-          padding: "100px 10%",
-          backgroundImage: `linear-gradient(rgba(45, 74, 34, 0.9), rgba(45, 74, 34, 0.9)), url('https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?q=80&w=2000')`,
+          padding: "80px 10%",
+          height: "480px",
+          backgroundImage: `linear-gradient(rgba(45, 74, 34, 0.9), rgba(45, 74, 34, 0.9)), url(${editsImg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center 70%",
         }}
       >
-        <div style={{ textAlign: "center", marginBottom: 60 }}>
+        <div style={{ textAlign: "center", marginBottom: 80 }}>
           <Title
             level={2}
-            style={{ color: "#fff", fontSize: 36, marginBottom: 5 }}
+            style={{
+              color: "#fff",
+              fontSize: 40,
+              marginBottom: 5,
+              fontWeight: 600,
+            }}
           >
             Renew By The Numbers
           </Title>
           <div
             style={{
-              width: 120,
+              width: 300,
               height: 3,
               background: "#fff",
-              margin: "0 auto",
+              margin: "15px auto",
+              borderRadius: 3,
             }}
           />
         </div>
@@ -452,7 +486,7 @@ const Home = () => {
             color: "#22381C",
             fontWeight: 600,
             fontSize: "40px",
-            marginBottom: 10,
+            marginBottom: 30,
           }}
         >
           Key Products & Solutions
@@ -460,6 +494,7 @@ const Home = () => {
         <Paragraph
           style={{
             color: "#07090E80",
+            opacity: 0.8,
             marginBottom: 50,
             fontWeight: 500,
             fontSize: "24px",
@@ -477,22 +512,100 @@ const Home = () => {
       </div>
 
       {/* SECTION 4: WHY CHOOSE US */}
-      <div style={{ padding: "60px 10%", background: "#fdfdfd" }}>
-        <div style={{ textAlign: "center", marginBottom: 40 }}>
-          <Divider style={{ borderColor: "#ddd" }}>
-            <Title level={2} style={{ color: "#2d4a22", margin: 0 }}>
+      <div
+        style={{
+          padding: "70px 4% 40px",
+          background: "#ffffff",
+        }}
+      >
+        <div style={{ textAlign: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "28px",
+              marginBottom: "28px",
+            }}
+          >
+            <div
+              style={{
+                flex: 1,
+                maxWidth: "330px",
+                height: "1px",
+                background: "#7f9278",
+                position: "relative",
+              }}
+            >
+              <span
+                style={{
+                  position: "absolute",
+                  right: 0,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  width: "4px",
+                  height: "4px",
+                  borderRadius: "50%",
+                  background: "#2d4a22",
+                }}
+              />
+            </div>
+
+            <Title
+              level={2}
+              style={{
+                margin: 0,
+                color: "#243d1f",
+                fontSize: "clamp(28px, 3vw, 40px)",
+                fontWeight: 600,
+                fontFamily: "'Alexandria', sans-serif",
+              }}
+            >
               Why Choose Us
             </Title>
-          </Divider>
+
+            <div
+              style={{
+                flex: 1,
+                maxWidth: "330px",
+                height: "1px",
+                background: "#7f9278",
+                position: "relative",
+              }}
+            >
+              <span
+                style={{
+                  position: "absolute",
+                  left: 0, // 👈 مهم (عكس اليسار)
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  width: "5px",
+                  height: "5px",
+                  borderRadius: "50%",
+                  background: "#2d4a22",
+                }}
+              />
+            </div>
+          </div>
+
           <Paragraph
-            style={{ maxWidth: 800, margin: "20px auto", color: "#666" }}
+            style={{
+              maxWidth: "1150px",
+              margin: "0 auto",
+              color: "#8a8a8a",
+              fontSize: "clamp(16px, 1.5vw, 24px)",
+              lineHeight: 1.6,
+              fontWeight: 500,
+              opacity: 0.8,
+              fontFamily: "'Alexandria', sans-serif",
+            }}
           >
             At RENEW, We Are Committed To Creating A Sustainable Future By
             Transforming Agricultural Waste Into Valuable Energy Solutions.
+            Here's Why You Can Trust Us To Lead The Way:
           </Paragraph>
         </div>
       </div>
-
       <div style={{ width: "100%", overflow: "hidden" }}>
         {features.map((item) => (
           <FeatureRow key={item.id} {...item} />
