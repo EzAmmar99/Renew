@@ -666,7 +666,7 @@ body,
 @media (max-width: 576px) {
   .core-values-banner {
     position: relative;
-    height: 170px;
+    /* height: 170px; */
     min-height: unset;
     overflow: hidden;
   }
@@ -708,5 +708,654 @@ body,
     width: 20px;
     height: 20px;
     flex-shrink: 0;
+  }
+}
+
+/* =========================
+   Values Slider Section
+========================= */
+.values-slider-section {
+  width: 100%;
+  background: #efc14b;
+  padding: 28px 32px 36px;
+  overflow: hidden;
+}
+
+.values-slider {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.values-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.value-slide {
+  flex: 0 0 calc(25% - 14px);
+  min-width: calc(25% - 14px);
+  scroll-snap-align: start;
+}
+
+.value-card {
+  height: 260px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 24px;
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(92, 72, 18, 0.12);
+}
+
+.value-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.value-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.value-title {
+  margin: 0;
+  color: #5d8f2f;
+  font-family: Alexandria, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.value-text {
+  margin: 0;
+  color: #5d8f2f;
+  font-family: Alexandria, sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
+  text-transform: lowercase;
+}
+
+/* =========================
+   Large Tablet
+========================= */
+@media (max-width: 1200px) {
+  .value-slide {
+    flex: 0 0 calc(33.333% - 12px);
+    min-width: calc(33.333% - 12px);
+  }
+
+  .value-card {
+    height: 240px;
+  }
+
+  .value-title {
+    font-size: 25px;
+  }
+}
+
+/* =========================
+   Tablet
+========================= */
+@media (max-width: 992px) {
+  .values-slider-section {
+    padding: 24px 20px 30px;
+  }
+
+  .value-slide {
+    flex: 0 0 calc(50% - 10px);
+    min-width: calc(50% - 10px);
+  }
+
+  .value-card {
+    height: 220px;
+    padding: 24px 20px 20px;
+  }
+
+  .value-card-header {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .value-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .value-title {
+    font-size: 24px;
+  }
+
+  .value-text {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+@media (max-width: 576px) {
+  .values-slider-section {
+    padding: 18px 16px 24px;
+  }
+
+  .values-slider {
+    gap: 12px;
+  }
+
+  .value-slide {
+    flex: 0 0 88%;
+    min-width: 88%;
+  }
+
+  .value-card {
+    height: 205px;
+    padding: 20px 16px 18px;
+    border-radius: 18px;
+  }
+
+  .value-card-header {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .value-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .value-title {
+    font-size: 22px;
+  }
+
+  .value-text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+/* =========================
+   What We Do + Commitment
+========================= */
+.what-we-do-section {
+  width: 100%;
+  background: #f3f3f3;
+  padding: 42px 18px 0;
+}
+
+.what-we-do-container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Top Block
+========================= */
+.what-we-do-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
+  align-items: start;
+  /* column-gap: 70px; */
+  margin-bottom: 56px;
+}
+
+.what-we-do-image-wrap {
+  width: 100%;
+  max-width: 860px;
+  border-radius: 26px;
+  overflow: hidden;
+}
+
+.what-we-do-image {
+  /* width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  display: block; */
+
+  width: 711;
+  height: 441;
+  top: 3344px;
+  left: 60px;
+  opacity: 1;
+  border-radius: 40px;
+}
+
+.what-we-do-content {
+  width: 100%;
+  max-width: 650px;
+  /* justify-self: center; */
+  text-align: start !important;
+}
+
+.what-we-do-title {
+  color: #294326 !important;
+  font-family: Alexandria, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 42px !important;
+  line-height: 1.12 !important;
+  /* margin: 0 0 18px !important; */
+}
+
+.what-we-do-text {
+  color: #6f7072 !important;
+  font-family: Alexandria, sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 22px !important;
+  line-height: 1.9 !important;
+  text-align: center !important;
+  text-transform: none !important;
+  margin: 0 auto !important;
+  max-width: 640px !important;
+}
+
+/* =========================
+   Core Focus
+========================= */
+.core-focus-block {
+  margin-bottom: 64px;
+}
+
+.core-focus-title {
+  text-align: center;
+  color: #294326 !important;
+  font-family: Alexandria, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 34px !important;
+  line-height: 1.2 !important;
+  margin: 0 0 10px !important;
+}
+
+.core-focus-subtitle-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  margin-bottom: 34px;
+}
+
+.core-focus-line {
+  flex: 1;
+  max-width: 1000px;
+  height: 1px;
+  background: #83907f;
+  border-radius: 0; /* مهم */
+  position: relative;
+}
+.core-focus-line::before,
+.core-focus-line::after {
+  display: none !important;
+  content: none !important;
+}
+
+.core-focus-subtitle {
+  margin: 0;
+  color: #efb640;
+  font-family: Alexandria, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.core-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 6fr));
+  gap: 26px;
+  align-items: center;
+}
+
+.focus-card {
+  min-height: 100%;
+  text-align: left;
+}
+
+.focus-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.focus-card-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.focus-card-title {
+  margin: 0;
+  color: #294326;
+  font-family: Alexandria, sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.focus-card-text {
+  margin: 0;
+  color: #7b7d7f;
+  font-family: Alexandria, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.8;
+  text-transform: none;
+}
+
+/* =========================
+   Why Biomass
+========================= */
+.why-biomass-block {
+  text-align: center;
+  padding-bottom: 56px;
+  /* margin-bottom: 56px; */
+}
+
+.why-biomass-title {
+  color: #294326 !important;
+  font-family: Alexandria, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 34px !important;
+  line-height: 1.2 !important;
+  margin: 0 0 22px !important;
+}
+
+.why-biomass-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 24px;
+}
+
+.why-biomass-icon-circle {
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-biomass-icon-circle.green {
+  background: #5a8f3b;
+}
+
+.why-biomass-icon-circle.gold {
+  background: #efb640;
+}
+
+.why-biomass-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.why-biomass-text {
+  max-width: 1000px;
+  margin: 0 auto !important;
+  color: #6f7072 !important;
+  font-family: Alexandria, sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  text-transform: none !important;
+}
+
+/* =========================
+   Commitment Section
+========================= */
+.commitment-section {
+  width: 100%;
+  background: #4f8f3c;
+  padding: 56px 24px 58px;
+}
+
+.commitment-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.commitment-title {
+  color: #efb640 !important;
+  font-family: Alexandria, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 30px !important;
+  line-height: 1.2 !important;
+  margin: 0 0 18px !important;
+}
+
+.commitment-text {
+  max-width: 980px;
+  margin: 0 auto !important;
+  color: #ffffff !important;
+  font-family: Alexandria, sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+  line-height: 1.75 !important;
+  text-transform: capitalize !important;
+}
+
+/* =========================
+   Laptop
+========================= */
+@media (max-width: 1400px) {
+  .what-we-do-top {
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 0.9fr);
+    column-gap: 42px;
+  }
+
+  .what-we-do-image {
+    height: 320px;
+  }
+
+  .what-we-do-title {
+    font-size: 38px !important;
+  }
+
+  .what-we-do-text {
+    font-size: 20px !important;
+    line-height: 1.8 !important;
+  }
+}
+
+/* =========================
+   Tablet
+========================= */
+@media (max-width: 992px) {
+  .what-we-do-section {
+    padding: 34px 20px 0;
+  }
+
+  .what-we-do-top {
+    grid-template-columns: 1fr;
+    row-gap: 22px;
+    margin-bottom: 40px;
+  }
+
+  .what-we-do-image-wrap {
+    max-width: 100%;
+  }
+
+  .what-we-do-image {
+    height: 260px;
+  }
+
+  .what-we-do-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .what-we-do-title {
+    font-size: 34px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .what-we-do-text {
+    max-width: 100% !important;
+    font-size: 18px !important;
+    line-height: 1.75 !important;
+  }
+
+  .core-focus-block {
+    margin-bottom: 44px;
+  }
+
+  .core-focus-title,
+  .why-biomass-title {
+    font-size: 30px !important;
+  }
+
+  .core-focus-line {
+    max-width: 180px;
+  }
+
+  .core-focus-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .focus-card {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .why-biomass-block {
+    margin-bottom: 44px;
+  }
+
+  .commitment-section {
+    padding: 46px 20px 48px;
+  }
+}
+
+/* =========================
+   Mobile
+========================= */
+@media (max-width: 576px) {
+  .what-we-do-section {
+    padding: 24px 16px 0;
+  }
+
+  .what-we-do-top {
+    row-gap: 16px;
+    margin-bottom: 34px;
+  }
+
+  .what-we-do-image-wrap {
+    border-radius: 18px;
+  }
+
+  .what-we-do-image {
+    height: 180px;
+  }
+
+  .what-we-do-title {
+    font-size: 24px !important;
+    line-height: 1.15 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .what-we-do-text {
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+  }
+
+  .core-focus-title,
+  .why-biomass-title {
+    font-size: 24px !important;
+  }
+
+  .core-focus-subtitle-row {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .core-focus-line {
+    max-width: 70px;
+  }
+
+  .core-focus-subtitle {
+    font-size: 16px;
+  }
+
+  .focus-card-header {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .focus-card-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .focus-card-title {
+    font-size: 14px;
+  }
+
+  .focus-card-text {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .why-biomass-icons {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .why-biomass-icon-circle {
+    width: 54px;
+    height: 54px;
+  }
+
+  .why-biomass-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .why-biomass-text {
+    font-size: 13px !important;
+    line-height: 1.75 !important;
+  }
+
+  .why-biomass-block {
+    margin-bottom: 36px;
+  }
+
+  .commitment-section {
+    padding: 36px 16px 38px;
+  }
+
+  .commitment-title {
+    font-size: 24px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .commitment-text {
+    font-size: 13px !important;
+    line-height: 1.75 !important;
+    max-width: 100%;
   }
 }
