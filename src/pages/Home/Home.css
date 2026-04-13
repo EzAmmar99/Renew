@@ -20,11 +20,18 @@
 
 .solution-card {
   position: relative;
-  height: 520px;
-  width: 450px;
-  border-radius: 25px;
+  width: 100%; /* اجعل الكرت يأخذ عرض العمود بالكامل */
+  aspect-ratio: 450 / 520; /* يحافظ على نفس النسبة الأصلية لتصميمك */
+  max-width: 450px; /* لضمان عدم تضخم الكرت في الشاشات الكبيرة جداً */
+  margin: 0 auto; /* توسيط الكرت داخل الـ Col */
+  border-radius: 40px; /* زيادة الانحناء ليتطابق مع الصورة المرفقة */
   overflow: hidden;
   cursor: pointer;
+  transition: transform 0.3s ease; /* إضافة لمسة تفاعلية */
+}
+
+.solution-card:hover {
+  transform: translateY(-10px); /* حركة خفيفة عند تمرير الماوس */
 }
 
 .solution-card-image {
@@ -36,24 +43,33 @@
 .solution-card-overlay {
   position: absolute;
   inset: 0;
+  /* تغيير التدرج ليكون التعتيم من الأعلى كما في التصميم لإبراز العنوان */
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.1)
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0) 40%
   );
 }
 
 .solution-card-title {
   position: absolute !important;
   top: 35px;
-  left: 0;
-  right: 0;
+  left: 20px;
+  right: 20px;
   text-align: center;
   color: #fff !important;
   margin: 0 !important;
   font-weight: 700 !important;
-  font-size: 20px !important;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+  font-size: clamp(16px, 2vw, 22px) !important; /* خط مرن */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+/* في الموبايل الصغير جداً، نقلل الانحناء قليلاً */
+@media (max-width: 480px) {
+  .solution-card {
+    border-radius: 25px;
+  }
 }
 
 .feature-row {
@@ -62,78 +78,73 @@
 }
 
 .feature-col {
-  height: 450px;
+  /* height: 450px; */
   min-height: 450px;
 }
 
 .feature-text {
   position: relative;
-  height: 450px;
+  z-index: 1; /* يضمن بقاء النص فوق الخلفية */
+  height: 100%;
+  display: flex;
+  align-items: center; /* توسيط عمودي */
+  justify-content: flex-start; /* توسيط أفقي */
+  padding: 60px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
+  color: white;
 }
 
-.feature-watermark {
+.feature-text::before {
+  content: "";
   position: absolute;
-  inset: 0;
-  opacity: 0.08;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background-image: url("../../assets/watermark.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: red;
+  opacity: 0.8; /* شفافية عالية جداً ليكون مجرد وترمارك */
+  z-index: -1; /* أهم خطوة: تجعل العلامة خلف النص */
   pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* font-size: 220px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1;
-  transform: translateY(10px); */
-}
-
-.feature-watermark span {
-  font-size: 340px;
-  line-height: 1;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.07);
-  transform: translateY(14px) scaleX(1.2);
-  font-family: "Arial Black", sans-serif;
 }
 
 .feature-text-inner {
   position: relative;
-  z-index: 2;
-  padding: 0 40px;
+  z-index: 1;
+  text-align: left; /* أو حسب الرغبة، يفضل اليسار كما في الصور */
   width: 100%;
 }
 
 .feature-top-row {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 22px;
+  gap: 20px;
+  margin-bottom: 25px;
 }
 
 .feature-id {
-  font-size: 60px;
-  font-weight: 700;
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.9);
-  opacity: 0.95;
-  letter-spacing: -1px;
   font-family: "Alexandria", sans-serif;
+  font-size: 50px;
+  font-weight: 200; /* خفيف جداً ليظهر بشكل Outline */
+  line-height: 1;
+  opacity: 0.5;
+  -webkit-text-stroke: 1px white; /* إذا كنت تريده مفرغاً كما في الصورة */
+  color: transparent;
 }
 
 .feature-icon-wrapper {
-  width: 88px;
-  height: 88px;
-  min-width: 88px;
+  background: white;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  background: #f4f4f4;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
-  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .feature-icon-wrapper svg,
@@ -143,27 +154,21 @@
 }
 
 .feature-title {
-  color: #ffffff !important;
-  margin: 0 0 14px 0 !important;
-  font-weight: 700 !important;
-  font-size: 28px !important;
-  line-height: 1.22 !important;
-  letter-spacing: -0.3px;
+  color: white !important;
   font-family: "Alexandria", sans-serif !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  margin-bottom: 15px !important;
 }
 
 .feature-description {
-  color: rgba(255, 255, 255, 0.96) !important;
-  margin: 0 !important;
-  font-weight: 400 !important;
-  font-size: 20px !important;
-  line-height: 1.55 !important;
+  color: white !important;
   font-family: "Alexandria", sans-serif !important;
-}
-
-.feature-description br {
-  display: block;
-  content: "";
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  opacity: 0.9;
+  max-width: 400px; /* للتحكم في عرض الأسطر كما فعلنا سابقاً */
 }
 
 .feature-image-wrapper {
@@ -180,7 +185,68 @@
   display: block;
 }
 
-.home-hero {
+@media (max-width: 768px) {
+  .feature-row {
+    /* تحويل الصف إلى عمود في الشاشات الصغيرة */
+    flex-direction: column !important;
+  }
+
+  .feature-col {
+    /* إلغاء الطول الثابت لتجنب قص النصوص أو تداخلها */
+    height: auto !important;
+    min-height: unset !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .feature-text {
+    padding: 40px 20px; /* تقليل الحشو في الموبايل */
+    justify-content: center;
+  }
+
+  .feature-text-inner {
+    text-align: center; /* اختيارياً: توسيط النص للموبايل */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-top-row {
+    justify-content: center;
+  }
+
+  .feature-description {
+    max-width: 100%; /* السماح للنص بأخذ العرض الكامل */
+  }
+
+  .feature-image-wrapper {
+    height: 300px; /* طول أصغر للصورة في الموبايل */
+  }
+
+  /* لضمان أن الصورة تظهر دائماً فوق أو تحت النص بترتيب منطقي */
+  /* إذا كنت تريد الصورة دائماً فوق النص في الموبايل: */
+  .feature-row {
+    display: flex;
+    flex-direction: column-reverse !important;
+  }
+
+  /* إذا كان isReversed يعكس الترتيب، هذا الكود يضمن التناسق */
+  .ant-row {
+    display: flex !important;
+  }
+}
+
+/* للشاشات الكبيرة، نحافظ على الطول الثابت */
+@media (min-width: 769px) {
+  .feature-col {
+    height: 450px;
+  }
+  .feature-image-wrapper {
+    height: 100%;
+  }
+}
+
+/* .home-hero {
   min-height: 100vh;
   width: 100%;
   background-size: cover;
@@ -192,12 +258,31 @@
   text-align: center;
   padding: 0 20px 90px;
   font-family: "Alexandria", sans-serif;
+  position: relative;
+} */
+
+.home-hero {
+  width: 100%;
+  position: relative;
+  /* أهم تعديل: استخدام نفس النسبة التقريبية للصورة الأصلية 16:9 لضمان عدم القص */
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  background-position: center bottom; /* لتثبيت أسفل الجرافة */
+  background-repeat: no-repeat;
+  font-family: "Alexandria", sans-serif;
+  overflow: hidden;
 }
 
 .home-hero-content {
-  max-width: 1050px;
-  width: 100%;
-  transform: translateY(160px);
+  position: absolute;
+  /* وضع النص في الثلث السفلي */
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* مساحة كافية على الجوانب */
+  max-width: 1100px;
+  z-index: 2;
+  text-align: center;
 }
 
 .home-hero-title {
@@ -221,21 +306,75 @@
   font-size: clamp(18px, 2vw, 24px) !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
-  max-width: 1150px;
+  max-width: 850px;
   margin: 28px auto 0 !important;
 }
 
+@media (max-width: 992px) {
+  .home-hero {
+    aspect-ratio: 16 / 10; /* جعل الصورة أطول قليلاً */
+  }
+  .home-hero-content {
+    bottom: 15%;
+  }
+  .home-hero-title,
+  .home-hero-subtitle {
+    font-size: 50px !important;
+  }
+  .home-hero-description {
+    font-size: 20px !important;
+    max-width: 750px;
+    margin-top: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    /* تغيير النسبة في الموبايل لتناسب الشاشات الطولية */
+    aspect-ratio: auto;
+    min-height: 60vh;
+    padding: 100px 20px; /* تباعد للسماح للناف بار بالظهور */
+    display: flex;
+    align-items: flex-end; /* وضع النص في الأسفل */
+    justify-content: center;
+  }
+  .home-hero::before {
+    background: rgba(0, 0, 0, 0.5); /* تعتيم أكثر للموبايل */
+  }
+  .home-hero-content {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    margin-top: 50px;
+  }
+  .home-hero-title,
+  .home-hero-subtitle {
+    font-size: 36px !important;
+  }
+  .home-hero-description {
+    font-size: 16px !important;
+    max-width: 100%;
+    margin-top: 15px !important;
+    text-transform: lowercase; /* لإعادة التنسيق المطلوب في الأصل */
+  }
+}
+
 .home-stats-section {
-  padding: 80px 10%;
-  height: 480px;
+  padding: 80px 5%;
+  min-height: 480px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .home-stats-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .home-stats-title {
@@ -246,15 +385,33 @@
 }
 
 .home-stats-line {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: 3px;
   background: #fff;
-  margin: 15px auto;
+  margin: 10px auto;
   border-radius: 3px;
 }
 
+@media (max-width: 768px) {
+  .home-stats-section {
+    padding: 60px 20px;
+    background-position: center center;
+  }
+
+  .home-stats-header {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-stats-line {
+    max-width: 150px; /* تقصير الخط في الشاشات الصغيرة جداً */
+  }
+}
+
 .home-solutions-section {
-  padding: 80px 10%;
+  padding: 80px 5%;
   text-align: center;
   background: #fff;
 }
@@ -262,8 +419,8 @@
 .home-solutions-title {
   color: #22381c !important;
   font-weight: 600 !important;
-  font-size: 40px !important;
-  margin-bottom: 30px !important;
+  font-size: clamp(28px, 5vw, 40px) !important;
+  margin-bottom: 20px !important;
 }
 
 .home-solutions-description {
@@ -271,11 +428,28 @@
   opacity: 0.8;
   margin-bottom: 50px !important;
   font-weight: 500 !important;
-  font-size: 24px !important;
+  font-size: clamp(16px, 2.5vw, 24px) !important;
+  /* max-width: 800px; */
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.home-solutions-row {
+  margin: 0 auto !important;
+  max-width: 1200px;
+}
+
+@media (max-width: 768px) {
+  .home-solutions-section {
+    padding: 60px 20px;
+  }
+  .home-solutions-description {
+    margin-bottom: 40px !important;
+  }
 }
 
 .home-why-section {
-  padding: 70px 4% 40px;
+  padding: 0px 4% 80px;
   background: #ffffff;
 }
 
@@ -348,7 +522,7 @@
 }
 
 .home-contact-section {
-  padding: 100px 10% 60px;
+  padding: 50px 10% 60px;
   background: #fff;
 }
 
@@ -373,6 +547,10 @@
   line-height: 1.6 !important;
   opacity: 0.8;
   margin-bottom: 4% !important;
+
+
+
+  
 }
 
 .home-contact-text {
@@ -380,7 +558,7 @@
   line-height: 1.5 !important;
   margin-bottom: 40px !important;
   max-width: 500px !important;
-  font-size: 36px !important;
+  font-size: 34px !important;
   font-weight: 500 !important;
 
   /* margin: 0 auto !important; */
@@ -419,4 +597,81 @@
   position: relative;
   z-index: 1;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1200px) {
+  .home-contact-title {
+    font-size: 32px !important;
+  }
+  .home-contact-description {
+    font-size: 20px !important;
+  }
+  .home-contact-text {
+    font-size: 28px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-contact-section {
+    padding: 60px 5% 40px; /* تقليل الحشو الجانبي */
+  }
+
+  .home-contact-header {
+    margin-bottom: 40px;
+  }
+
+  .home-contact-title {
+    font-size: 24px !important;
+    margin-bottom: 15px !important;
+  }
+
+  .home-contact-description {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+
+  .home-contact-text {
+    font-size: 22px !important;
+    text-align: center; /* توسيط النص في الموبايل */
+    max-width: 100% !important;
+    margin-bottom: 30px !important;
+  }
+
+  .home-contact-button {
+    height: 60px !important; /* تصغير الزر قليلاً */
+    font-size: 24px !important;
+    width: 100%; /* الزر يأخذ العرض كامل في الموبايل لسهولة الضغط */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-contact-image-wrapper {
+    margin-top: 40px;
+    padding: 10px; /* تقليل الحشو حول الصورة */
+  }
+
+  .home-contact-image-frame {
+    /* تعديل البرواز الأصفر ليتناسب مع الموبايل */
+    bottom: 20px;
+    left: 20px;
+    border-radius: 20px;
+  }
+
+  .home-contact-image {
+    border-radius: 20px;
+  }
+}
+
+/* تعديلات للشاشات الصغيرة جداً (مثل iPhone SE) */
+@media (max-width: 480px) {
+  .home-contact-title {
+    font-size: 28px !important;
+    margin-bottom: 9% !important;
+  }
+
+  .home-contact-button {
+    font-size: 20px !important;
+    height: 55px !important;
+  }
 }

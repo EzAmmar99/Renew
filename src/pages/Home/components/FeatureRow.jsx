@@ -1,4 +1,5 @@
 import { Row, Col, Typography } from "antd";
+import React from "react";
 
 const { Title, Paragraph } = Typography;
 
@@ -15,29 +16,24 @@ const FeatureRow = ({
 }) => {
   const TextContent = (
     <div className="feature-text" style={{ background: bgColor }}>
-      <div className="feature-watermark">
-        <span>m</span>
-      </div>
+      {/* الوتر مارك مضاف عبر CSS ::before */}
 
-      <div
-        className="feature-text-inner"
-        style={{ maxWidth: `${contentWidth}px` }}
-      >
+      <div className="feature-text-inner">
         <div className="feature-top-row">
           <div className="feature-id">{id}</div>
-          <div className="feature-icon-wrapper">{icon}</div>
+          <div className="feature-icon-wrapper">
+            {/* هنا نتأكد أن لون الأيقونة يتبع لون الخلفية ليكون متناسقاً */}
+            {React.cloneElement(icon, {
+              style: { fontSize: "30px", color: bgColor },
+            })}
+          </div>
         </div>
 
         <Title level={2} className="feature-title">
           {title}
         </Title>
 
-        <Paragraph
-          className="feature-description"
-          style={{ maxWidth: `${descWidth}px` }}
-        >
-          {description}
-        </Paragraph>
+        <Paragraph className="feature-description">{description}</Paragraph>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Typography, Row } from "antd";
+import { Typography, Row, Col } from "antd";
 import { pageData } from "../homeData";
 import SolutionCard from "./SolutionCard";
 
@@ -17,9 +17,11 @@ const HomeSolutionsSection = () => {
           Waste
         </Paragraph>
 
-        <Row gutter={[24, 24]}>
+        <Row gutter={[24, 32]} className="home-solutions-row" justify="center">
           {pageData.solutions.map((sol) => (
-            <SolutionCard key={sol.id} title={sol.title} image={sol.image} />
+            <Col xs={24} sm={12} md={8} key={sol.id}>
+              <SolutionCard title={sol.title} image={sol.image} />
+            </Col>
           ))}
         </Row>
       </div>
