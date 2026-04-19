@@ -1,0 +1,339 @@
+.solutions-section {
+  width: 100%;
+  height: 93vh;
+  overflow: hidden;
+}
+
+.solutions-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.solutions-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.solutions-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.28) 0%,
+    rgba(0, 0, 0, 0.12) 35%,
+    rgba(0, 0, 0, 0.04) 100%
+  );
+  pointer-events: none;
+}
+
+.solutions-content {
+  position: absolute;
+  left: 32px;
+  bottom: 24px;
+  z-index: 2;
+  max-width: 520px;
+}
+
+.solutions-title {
+  margin: 0 0 12px;
+  color: #f2bc4b;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.solutions-text {
+  margin: 0;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+  .solutions-image-wrapper,
+  .solutions-image {
+    min-height: 620px;
+  }
+
+  .solutions-content {
+    left: 40px;
+    bottom: 30px;
+  }
+
+  .solutions-title {
+    font-size: 34px;
+  }
+
+  .solutions-text {
+    font-size: 28px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .solutions-image-wrapper,
+  .solutions-image {
+    min-height: 420px;
+  }
+
+  .solutions-content {
+    left: 24px;
+    bottom: 22px;
+    max-width: 420px;
+  }
+
+  .solutions-title {
+    font-size: 24px;
+  }
+
+  .solutions-text {
+    font-size: 19px;
+    line-height: 1.35;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .solutions-image-wrapper,
+  .solutions-image {
+    min-height: 340px;
+  }
+
+  .solutions-content {
+    left: 16px;
+    right: 16px;
+    bottom: 18px;
+    max-width: unset;
+  }
+
+  .solutions-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .solutions-text {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+/* Biomass Section */
+.biomass-section {
+  background: #f5f5f5; /* نفس الخلفية بالصورة */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.biomass-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.biomass-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2e3d2f; /* أخضر غامق */
+  margin-bottom: 20px;
+}
+
+.biomass-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #6f6f6f; /* رمادي */
+}
+
+.highlight {
+  color: #f2bc4b; /* نفس لون Solutions */
+  font-weight: 600;
+}
+
+.solutions-container {
+  width: 100%;
+}
+
+/* —— What Sets Our Biomass Apart —— */
+.biomass-apart-section {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  padding: clamp(48px, 7vw, 88px) clamp(16px, 4vw, 40px);
+}
+
+.biomass-apart-section-watermark {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.biomass-apart-section-watermark-img {
+  width: min(96vw, 920px);
+  height: auto;
+  max-height: min(88vh, 920px);
+  object-fit: contain;
+  opacity: 0.09;
+}
+
+.biomass-apart-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.biomass-apart-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto clamp(36px, 5vw, 56px);
+  padding: 0 8px;
+}
+
+.biomass-apart-heading-line {
+  flex: 1 1 0;
+  min-width: 32px;
+  height: 2px;
+  background: #f2bc4b;
+  border-radius: 1px;
+}
+
+.biomass-apart-heading-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f2bc4b;
+  flex-shrink: 0;
+}
+
+.biomass-apart-title {
+  margin: 0;
+  flex-shrink: 0;
+  max-width: min(100%, 420px);
+  text-align: center;
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1a331a;
+  letter-spacing: 0.02em;
+}
+
+.biomass-apart-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(22px, 3.5vw, 30px);
+}
+
+@media (min-width: 768px) {
+  .biomass-apart-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.biomass-apart-card {
+  position: relative;
+  background: #d9e6a8;
+  border-radius: 24px;
+  padding: clamp(32px, 5vw, 52px) clamp(22px, 4vw, 40px)
+    clamp(36px, 5vw, 56px);
+  box-shadow: 0 8px 28px rgba(26, 51, 26, 0.07);
+  text-align: center;
+}
+
+.biomass-apart-card-watermark {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.biomass-apart-watermark-img {
+  width: min(92%, 300px);
+  height: auto;
+  max-height: 88%;
+  object-fit: contain;
+  opacity: 0.18;
+}
+
+.biomass-apart-icon-badge {
+  position: absolute;
+  top: clamp(-14px, -2.5vw, -20px);
+  right: clamp(-14px, -2.5vw, -20px);
+  width: clamp(52px, 14vw, 72px);
+  height: clamp(52px, 14vw, 72px);
+  border-radius: 50%;
+  background: #ffcc4d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+.biomass-apart-icon-img {
+  width: 58%;
+  height: 58%;
+  object-fit: contain;
+  display: block;
+}
+
+.biomass-apart-card-title {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 clamp(12px, 2vw, 18px);
+  padding-top: 4px;
+  padding-inline: clamp(36px, 8vw, 56px) clamp(12px, 3vw, 20px);
+  font-size: clamp(13px, 1.65vw, 16px);
+  font-weight: 800;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  color: #1a331a;
+  line-height: 1.35;
+}
+
+.biomass-apart-card-body {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: clamp(13px, 1.35vw, 15px);
+  line-height: 1.65;
+  color: #666666;
+}
+
+.biomass-apart-card-body strong {
+  color: #1a331a;
+  font-weight: 700;
+}
+
+@media (max-width: 380px) {
+  .biomass-apart-heading {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .biomass-apart-title {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+
+  .biomass-apart-heading-line {
+    max-width: 100px;
+  }
+}

@@ -4,7 +4,7 @@ import MainLayout from "./Layouts/MainLayout";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Projects from "./pages/Projects";
-import Solutions from "./pages/Solutions";
+import Solutions from "./pages/Solutions/Solutions";
 import Home from "./pages/Home/Home";
 import "./App.css";
 
