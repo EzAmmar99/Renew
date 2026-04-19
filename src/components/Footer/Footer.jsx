@@ -65,8 +65,26 @@ export default function Footer() {
       <div className="renew-footer__surface">
         <div className="renew-footer__surface-inner">
           <div className="renew-footer__primary">
-            <div className="renew-footer__logo">
-              <img src={Logo} alt="Renew" />
+            <div className="renew-footer__primary-top">
+              <div className="renew-footer__logo">
+                <img src={Logo} alt="Renew" />
+              </div>
+
+              <aside
+                className="renew-footer__social"
+                aria-labelledby="renew-footer-follow"
+              >
+                <div className="renew-footer__social-inner">
+                  <h3 id="renew-footer-follow">Follow US</h3>
+                  <div className="renew-footer__social-icons">
+                    {socialLinks.map((item, index) => (
+                      <a key={index} href={item.href} aria-label={item.label}>
+                        {item.icon}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </aside>
             </div>
 
             <nav className="renew-footer__nav" aria-label="Footer navigation">
@@ -78,20 +96,6 @@ export default function Footer() {
                 ))}
               </ul>
             </nav>
-
-            <div
-              className="renew-footer__social"
-              aria-labelledby="renew-footer-follow"
-            >
-              <h3 id="renew-footer-follow">Follow US</h3>
-              <div className="renew-footer__social-icons">
-                {socialLinks.map((item, index) => (
-                  <a key={index} href={item.href} aria-label={item.label}>
-                    {item.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
 
           <div className="renew-footer__ground">
