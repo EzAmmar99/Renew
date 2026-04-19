@@ -1,0 +1,53 @@
+.impact-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: ظcenter;
+  gap: 30px; /* مسافة أكبر قليلاً للعنوان الرئيسي */
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.impact-line-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.impact-line {
+  height: 1px;
+  background-color: #FEC858; /* اللون الأصفر كما في الصور */
+  flex: 1;
+  position: relative;
+}
+
+/* رسم النقطة (The Dot) */
+.impact-line::after {
+  content: "";
+  position: absolute;
+  width: 8px; /* نقطة أكبر قليلاً لتناسب حجم الخط 40px */
+  height: 8px;
+  background-color: #fec858;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* النقطة للخط الأيسر (بجانب كلمة Our) */
+.line-left::after {
+  right: 0;
+}
+
+/* النقطة للخط الأيمن (بجانب كلمة Impact) */
+.line-right::after {
+  left: 0;
+}
+
+/* للموبايل: تقليل المسافات وحجم الخط */
+@media (max-width: 768px) {
+  .impact-header-row {
+    gap: 15px;
+  }
+  .impact-line-container {
+    max-width: 50px; /* خطوط أقصر في الموبايل */
+  }
+}

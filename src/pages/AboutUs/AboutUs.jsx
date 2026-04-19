@@ -288,11 +288,16 @@ const AboutSection = () => {
         </Title>
 
         <div className="core-focus-subtitle-row">
-          <span className="core-focus-line line-left" />
-          <h3 className="core-focus-subtitle">Biomass Energy</h3>
-          <span className="core-focus-line line-right" />{" "}
-        </div>
+          <div className="core-focus-line-container">
+            <span className="core-focus-line line-left" />
+          </div>
 
+          <h3 className="core-focus-subtitle">Biomass Energy</h3>
+
+          <div className="core-focus-line-container">
+            <span className="core-focus-line line-right" />
+          </div>
+        </div>
         <div className="core-focus-grid">
           <div className="focus-card">
             <div className="focus-card-header">

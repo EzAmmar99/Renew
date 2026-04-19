@@ -9,7 +9,7 @@ const MemberCard = ({ member }) => {
       paddingTop: '120px', // مساحة تسمح للصورة بالبروز للأعلى
       width: '100%',
       maxWidth: '496px',
-      margin: '0 auto'
+      margin: '0 auto',
     }}>
       <Card
         bordered={false}

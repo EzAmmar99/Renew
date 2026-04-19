@@ -11,6 +11,9 @@ import {
 
 const { Title, Paragraph, Text } = Typography;
 
+import "./impactSection.css";
+
+
 const ImpactSection = () => {
   const environmentalData = [
     {
@@ -55,15 +58,33 @@ const ImpactSection = () => {
   ];
 
   const renderCards = (data) => (
-    <Row gutter={[32, 32]} justify="center">
+    <Row
+      gutter={[24, 32]}
+      justify="center"
+      style={{ display: "flex", flexWrap: "wrap" }}
+    >
       {data.map((item, index) => (
-        <Col key={index}>
+        <Col
+          key={index}
+          xs={24}
+          md={12}
+          lg={8}
+          style={{
+            display: "flex",
+            justifyContent: "center", // يضمن توسيط الكارد داخل العمود نفسه
+            paddingBottom: "32px",
+          }}
+        >
           <Card
             hoverable
             style={{
               width: "100%", // نغير العرض ليكون مرناً
-              maxWidth: "470px", // ونضع العرض الأصلي كحد أقصى
-              minHeight: "351px", // نغير height إلى minHeight
+
+              maxWidth: "1400px", // يضمن عدم تمدد الصف بشكل مبالغ فيه في الشاشات العريضة
+              margin: "0 auto", // يضمن توسيط الصف بالكامل
+
+              //   maxWidth: "470px", // ونضع العرض الأصلي كحد أقصى
+              minHeight: "451px", // نغير height إلى minHeight
               height: "auto", // نسمح للارتفاع بالتمدد التلقائي
 
               opacity: 1,
@@ -76,6 +97,7 @@ const ImpactSection = () => {
 
               // محاذاة المحتوى داخلياً
               display: "flex",
+              flex: 1,
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
@@ -134,7 +156,11 @@ const ImpactSection = () => {
       }}
     >
       {/* Header Section */}
-      <Divider style={{ borderColor: "#fadb14" }}>
+      <div className="impact-header-row">
+        <div className="impact-line-container">
+          <span className="impact-line line-left" />
+        </div>
+
         <Title
           level={2}
           style={{
@@ -142,11 +168,17 @@ const ImpactSection = () => {
             color: "#22381C",
             fontWeight: 700,
             fontSize: "40px",
+            fontFamily: "'Alexandria', sans-serif",
+            whiteSpace: "nowrap",
           }}
         >
           Our Impact
         </Title>
-      </Divider>
+
+        <div className="impact-line-container">
+          <span className="impact-line line-right" />
+        </div>
+      </div>
 
       <Paragraph
         style={{

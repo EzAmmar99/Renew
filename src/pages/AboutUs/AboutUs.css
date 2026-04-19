@@ -35,15 +35,18 @@ body,
   display: block;
   object-fit: cover;
   object-position: center center;
+  /* object-position: top;  */
 }
 
 .about-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg,
-      rgba(0, 0, 0, 0.35) 0%,
-      rgba(0, 0, 0, 0.18) 35%,
-      rgba(0, 0, 0, 0.05) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.18) 35%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
   display: flex;
   align-items: flex-end;
   padding: 0 0 80px 90px;
@@ -368,7 +371,6 @@ body,
    Tablet
 ========================= */
 @media (max-width: 1200px) {
-
   .mission-card,
   .vision-card,
   .mission-image-block,
@@ -475,11 +477,15 @@ body,
   .vision-card,
   .mission-image-block,
   .vision-image-block {
-    min-height: 340px;
+    /* min-height: 340px; */
+  }
+
+  .vision-card {
+    min-width: 300px;
   }
 
   .mission-content {
-    padding: 36px 28px;
+    padding: 30px 28px;
   }
 
   .mission-header {
@@ -495,6 +501,10 @@ body,
     font-size: 18px !important;
     line-height: 1.7 !important;
   }
+
+  /* .mission-vision-image{
+    margin-top: 20px;
+  } */
 
   .mission-icon {
     width: 42px;
@@ -750,11 +760,14 @@ body,
   width: 340px;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.32);
-  border-radius: 60px 20px 60px 20px;
+  /* border-radius: 60px 20px 60px 20px; */
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
   padding: 45px 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
 
   transition: all 0.35s ease;
   backdrop-filter: blur(5px);
@@ -779,16 +792,13 @@ body,
   gap: 12px;
   width: 100%;
   margin: 35px 0;
-
 }
-
 
 .value-icon-header {
   width: 45px;
   height: 45px;
   object-fit: contain;
 }
-
 
 .value-title {
   font-weight: 700;
@@ -807,7 +817,6 @@ body,
   gap: 12px;
   width: 100%;
 }
-
 
 .value-text {
   margin: 0;
@@ -828,10 +837,7 @@ body,
   .value-slide {
     flex: 0 0 calc(33.333% - 12px);
     min-width: calc(33.333% - 12px);
-  }
-
-  .value-card {
-    height: 240px;
+    margin: 24px 20px 20px;
   }
 
   .value-title {
@@ -845,6 +851,7 @@ body,
 @media (max-width: 992px) {
   .values-slider-section {
     padding: 24px 20px 30px;
+    min-height: 300px;
   }
 
   .value-slide {
@@ -853,7 +860,6 @@ body,
   }
 
   .value-card {
-    height: 220px;
     padding: 24px 20px 20px;
   }
 
@@ -895,7 +901,6 @@ body,
   }
 
   .value-card {
-    height: 205px;
     padding: 20px 16px 18px;
     border-radius: 18px;
   }
@@ -932,7 +937,6 @@ body,
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-
 }
 
 /* =========================
@@ -969,7 +973,7 @@ body,
 }
 
 .what-we-do-title {
-  color: #22381C !important;
+  color: #22381c !important;
   font-family: Alexandria, sans-serif !important;
   font-weight: 800 !important;
   font-size: 40px !important;
@@ -986,7 +990,6 @@ body,
   text-transform: capitalize !important;
   max-width: 540px !important;
   text-align: start !important;
-
 }
 
 /* =========================
@@ -998,7 +1001,7 @@ body,
 
 .core-focus-title {
   text-align: center;
-  color: #22381C !important;
+  color: #22381c !important;
   font-family: Alexandria, sans-serif !important;
   font-weight: 700 !important;
   font-size: 40px !important;
@@ -1010,17 +1013,53 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 26px;
-  margin-bottom: 34px;
+  gap: 40px; /* المسافة بين الخط والنص */
+  width: 100%;
+  margin: 20px 0;
+}
+
+.core-focus-line-container {
+  flex: 1; /* لجعل الخطوط تأخذ المساحة المتاحة */
+  display: flex;
+  align-items: center;
+  max-width: 650px; /* يمكنك التحكم في طول الخط من هنا */
 }
 
 .core-focus-line {
+  height: 1px;
+  background-color: #22381c;
+  flex: 1;
+  position: relative;
+}
+
+/* رسم النقطة (الـ Dot) */
+.core-focus-line::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #22381c; /* لون النقطة */
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* النقطة للخط الأيسر تكون على اليمين (بجانب النص) */
+.line-left::after {
+  right: 0;
+}
+
+/* النقطة للخط الأيمن تكون على اليسار (بجانب النص) */
+.line-right::after {
+  left: 0;
+}
+
+/* .core-focus-line {
   flex: 1;
   max-width: 650px;
   height: 1px;
   background: #83907f;
   border-radius: 0;
-  /* مهم */
   position: relative;
 }
 
@@ -1028,23 +1067,24 @@ body,
 .core-focus-line::after {
   display: none !important;
   content: none !important;
-}
+} */
 
 .core-focus-subtitle {
   margin: 0;
-  color: #FEC858;
+  color: #fec858;
   font-family: Alexandria, sans-serif;
   font-weight: 700;
   font-size: 40px !important;
   line-height: 1.2;
   text-align: center;
+  /* margin: auto; */
 }
 
 .core-focus-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding: 0 100px;
+  padding: 35px 100px;
   place-items: center;
 }
 
@@ -1332,7 +1372,6 @@ body,
     margin-right: auto;
   }
 
-
   .line-left::before {
     content: "";
     position: absolute;
@@ -1355,7 +1394,6 @@ body,
     border-radius: 50%;
   }
 
-
   .core-focus-line {
     flex: 1;
     height: 1px;
@@ -1366,7 +1404,7 @@ body,
   .core-focus-subtitle {
     margin: 0;
     color: #efb640;
-    font-family: 'Alexandria', sans-serif;
+    font-family: "Alexandria", sans-serif;
     font-weight: 700;
     font-size: 38px;
     /* تكبير الخط حسب التصميم */

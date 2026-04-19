@@ -5,3 +5,60 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* الحاوية الرئيسية للعنوان والخطوط */
+.leadership-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px; /* المسافة بين النص وبداية الخط */
+  width: 100%;
+  margin: 40px 0;
+}
+
+/* حاوية الخطوط الجانبية */
+.leadership-line-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  /* max-width: 400px;  */
+}
+
+/* تصميم الخط نفسه */
+.leadership-line {
+  height: 1px; /* سمك الخط */
+  background-color: #FEC858;
+  flex: 1;
+  position: relative;
+}
+
+/* تصميم النقطة (Dot) في طرف الخط */
+.leadership-line::after {
+  content: "";
+  position: absolute;
+  width: 8px; /* حجم النقطة */
+  height: 8px;
+  background-color: #FEC858;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* وضع النقطة في الطرف الملاصق للنص */
+.line-left::after {
+  right: -2px; 
+}
+
+.line-right::after {
+  left: -2px;
+}
+
+/* الاستجابة لشاشات الموبايل */
+@media (max-width: 768px) {
+  .leadership-header-row {
+    gap: 15px;
+  }
+  .leadership-line-container {
+    max-width: 60px; /* تقصير الخطوط في الموبايل لفسح مجال للنص */
+  }
+}

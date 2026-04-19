@@ -49,7 +49,6 @@ const LeadershipSection = () => {
   ];
   return (
     <>
-      {/* سكشن العنوان والوصف العام */}
       <div
         style={{
           padding: "50px 5% 0",
@@ -57,22 +56,30 @@ const LeadershipSection = () => {
           textAlign: "center",
         }}
       >
-        <Divider style={{ borderColor: "#FEC858" }}>
+        <div className="leadership-header-row">
+          <div className="leadership-line-container">
+            <span className="leadership-line line-left" />
+          </div>
+
           <Title
             level={2}
             style={{
               fontFamily: "'Alexandria', sans-serif",
               margin: 0,
-              color: "#FEC858",
+              color: "#FEC858", // حافظنا على اللون الأصفر حسب طلبك
               fontWeight: 700,
               fontSize: "40px",
               lineHeight: "150%",
+              whiteSpace: "nowrap",
             }}
           >
             Leadership Team
           </Title>
-        </Divider>
 
+          <div className="leadership-line-container">
+            <span className="leadership-line line-right" />
+          </div>
+        </div>
         <Paragraph
           style={{
             fontFamily: "'Alexandria', sans-serif",
@@ -92,10 +99,11 @@ const LeadershipSection = () => {
 
       <div
         style={{
-          padding: "100px 50px",
+          margin: "50px",
           backgroundColor: "#fff",
           width: "100%",
-          overflow: "hidden", // لمنع السكرول الخارجي للصفحة
+          //   overflow: "hidden", // لمنع السكرول الخارجي للصفحة
+          height: "800px",
         }}
       >
         {/* الحاوية التي تسمح بالسكرول الأفقي */}
@@ -105,7 +113,9 @@ const LeadershipSection = () => {
             display: "flex",
             flexDirection: "row",
             overflowX: "auto", // تفعيل السكرول الأفقي
-            padding: "30px 20px 180px", // بادينج علوي لمساحة الصور
+            height: "100%",
+            overflowY: "hidden",
+            margin: "100px 20px 180px",
             gap: "30px", // المسافة بين البطاقات
             scrollbarWidth: "none", // إخفاء الشريط في فايرفوكس
             msOverflowStyle: "none", // إخفاء الشريط في IE/Edge
@@ -117,7 +127,7 @@ const LeadershipSection = () => {
               style={{
                 flexShrink: 0, // يمنع انكماش البطاقة ويجبرها تحافظ على عرضها
                 width: "490px", // نفس العرض اللي اتفقنا عليه للكارد
-                maxHeight: "490px", // ارتفاع مناسب للبطاقة
+                height: "100px", // ارتفاع مناسب للبطاقة
               }}
             >
               <MemberCard member={member} />
