@@ -9,7 +9,7 @@ import { BsTwitterX } from "react-icons/bs";
 
 import Logo from "../../assets/Logo.svg";
 import TopIllustration from "../../assets/footer-art.svg";
-import LeafStripSrc from "../../assets/Group (1).svg";
+import footerGroop from "../../assets/footer-groop.png";
 
 const menuItems = ["Home", "About US", "Solutions", "Projects", "Contact US"];
 
@@ -77,7 +77,7 @@ export default function Footer() {
               className="renew-footer__leaf-strip"
               aria-hidden="true"
               style={{
-                "--leaf-strip-src": `url(${LeafStripSrc})`,
+                "--footer-leaf-strip": `url(${footerGroop})`,
               }}
             />
           </div>

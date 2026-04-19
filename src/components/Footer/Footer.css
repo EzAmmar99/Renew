@@ -59,8 +59,8 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: inherit;
-  padding: clamp(150px, 20vw, 255px) clamp(22px, 3.5vw, 56px)
-    clamp(56px, 7.5vw, 88px);
+  padding: clamp(150px, 20vw, 255px) clamp(22px, 3.5vw, 0px)
+    clamp(56px, 7.5vw, 0px);
   box-sizing: border-box;
 }
 
@@ -156,29 +156,33 @@
 .renew-footer__bottom {
   position: relative;
   width: 100%;
-  margin-top: clamp(28px, 4vw, 48px);
-  padding-bottom: 2px;
+  margin-top: auto;
+  padding-top: clamp(20px, 3vw, 40px);
+  /* padding-bottom: clamp(6px, 1vw, 12px); */
 }
 
 .renew-footer__bottom p {
   margin: 0 0 10px;
   color: var(--footer-white);
-  font-size: clamp(10px, 0.78vw, 13px);
+  font-size: clamp(10px, 0.78vw, 14px);
   font-weight: 400;
   line-height: 1;
 }
 
-/* Repeating faint leaf outlines — Group (1).svg stroke art, tiled full width */
+/*
+  Bottom leaf band — white foliage on footer green; seamless repeat-x.
+  Asset: footer-groop.png
+*/
 .renew-footer__leaf-strip {
-  --leaf-strip-src: none;
-  width: calc(100% + 64px);
-  margin-left: -32px;
-  height: clamp(28px, 3.8vw, 44px);
-  background-image: var(--leaf-strip-src);
+  --footer-leaf-strip: none;
+  width: 100%;
+  margin-top: 6px;
+  /* Strip height: matches template proportions (narrow horizontal band) */
+  height: clamp(36px, 5.5vw, 52px);
+  background-image: var(--footer-leaf-strip);
   background-repeat: repeat-x;
   background-size: auto 100%;
-  background-position: left bottom;
-  opacity: 0.45;
+  background-position: center bottom;
   pointer-events: none;
 }
 
@@ -223,8 +227,7 @@
   }
 
   .renew-footer__leaf-strip {
-    margin-left: 0;
-    width: 100%;
+    height: clamp(34px, 6vw, 48px);
   }
 }
 
