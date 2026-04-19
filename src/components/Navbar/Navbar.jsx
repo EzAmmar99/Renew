@@ -3,11 +3,16 @@ import { MoreOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
+import { useLocation, Link } from "react-router-dom";
 
 const { Header } = Layout;
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+
+  console.log('location.pathname :>> ', location.pathname);
 
   return (
     <>
@@ -17,18 +22,31 @@ const Navbar = () => {
         </div>
 
         <nav className="navbar-links">
-          <a href="/" className="nav-link active">
+          <Link
+            to="/"
+            className={`nav-link ${location.pathname === "/" ? "active" : ""}`}
+          >
             Home
-          </a>
-          <a href="/about-us" className="nav-link">
+          </Link>
+
+          <Link
+            to="/about-us"
+            className={`nav-link ${location.pathname === "/about-us" ? "active" : ""}`}
+          >
             About US
-          </a>
-          <a href="/solutions" className="nav-link">
+          </Link>
+          <Link
+            to="/solutions"
+            className={`nav-link ${location.pathname === "/solutions" ? "active" : ""}`}
+          >
             Solutions
-          </a>
-          <a href="/projects" className="nav-link">
+          </Link>
+          <Link
+            to="/projects"
+            className={`nav-link ${location.pathname === "/projects" ? "active" : ""}`}
+          >
             Projects
-          </a>
+          </Link>
         </nav>
 
         <Button className="contact-btn">CONTACT US</Button>
@@ -44,18 +62,30 @@ const Navbar = () => {
 
       {menuOpen && (
         <div className="mobile-menu">
-          <a href="#" className="mobile-nav-link active">
+          <Link
+            to="/"
+            className={`mobile-nav-link ${location.pathname === "/" ? "active" : ""}`}
+          >
             Home
-          </a>
-          <a href="#" className="mobile-nav-link">
+          </Link>
+          <Link
+            to="/about-us"
+            className={`mobile-nav-link ${location.pathname === "/about-us" ? "active" : ""}`}
+          >
             About US
-          </a>
-          <a href="#" className="mobile-nav-link">
+          </Link>
+          <Link
+            to="/solutions"
+            className={`mobile-nav-link ${location.pathname === "/solutions" ? "active" : ""}`}
+          >
             Solutions
-          </a>
-          <a href="#" className="mobile-nav-link">
+          </Link>
+          <Link
+            to="/projects"
+            className={`mobile-nav-link ${location.pathname === "/projects" ? "active" : ""}`}
+          >
             Projects
-          </a>
+          </Link>
           <Button className="mobile-contact-btn">CONTACT US</Button>
         </div>
       )}
