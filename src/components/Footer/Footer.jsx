@@ -8,9 +8,8 @@ import {
 import { BsTwitterX } from "react-icons/bs";
 
 import Logo from "../../assets/Logo.svg";
-import TopIllustration from "../../assets/Group (2).svg";
-import LeafA from "../../assets/Group.svg";
-import LeafB from "../../assets/Group (1).svg";
+import TopIllustration from "../../assets/footer-art.svg";
+import footerGroop from "../../assets/footer-groop.png";
 
 const menuItems = ["Home", "About US", "Solutions", "Projects", "Contact US"];
 
@@ -22,19 +21,6 @@ const socialLinks = [
   { icon: <FaYoutube />, label: "YouTube", href: "#" },
 ];
 
-const leafItems = [
-  LeafA,
-  LeafB,
-  LeafA,
-  LeafB,
-  LeafA,
-  LeafB,
-  LeafA,
-  LeafB,
-  LeafA,
-  LeafB,
-];
-
 export default function Footer() {
   return (
     <footer className="renew-footer">
@@ -42,32 +28,31 @@ export default function Footer() {
         <svg viewBox="0 0 1440 720" preserveAspectRatio="none">
           <path
             d="
-              M 0 220
-              C 85 330, 220 410, 470 430
-              C 640 444, 820 410, 980 378
-              C 1125 350, 1260 320, 1440 320
+              M0 188
+              C 220 298, 420 348, 620 318
+              C 820 288, 1040 228, 1440 248
               L 1440 720
               L 0 720
               Z
             "
-            fill="#4F8E3B"
+            fill="#4D813F"
           />
         </svg>
       </div>
 
       <div className="renew-footer__inner">
         <div className="renew-footer__illustration">
-          <img src={TopIllustration} alt="Eco Illustration" />
+          <img src={TopIllustration} alt="" aria-hidden="true" />
         </div>
 
         <div className="renew-footer__content">
-          <div className="renew-footer__top-row">
+          <div className="renew-footer__main">
             <div className="renew-footer__logo">
-              <img src={Logo} alt="Renew Logo" />
+              <img src={Logo} alt="Renew" />
             </div>
 
-            <div className="renew-footer__social">
-              <h3>Follow US</h3>
+            <div className="renew-footer__social" aria-labelledby="renew-footer-follow">
+              <h3 id="renew-footer-follow">Follow US</h3>
               <div className="renew-footer__social-icons">
                 {socialLinks.map((item, index) => (
                   <a key={index} href={item.href} aria-label={item.label}>
@@ -76,24 +61,25 @@ export default function Footer() {
                 ))}
               </div>
             </div>
-          </div>
 
-          <ul className="renew-footer__menu">
-            {menuItems.map((item, index) => (
-              <li key={index}>
-                <a href="#">{item}</a>
-              </li>
-            ))}
-          </ul>
+            <ul className="renew-footer__menu">
+              {menuItems.map((item, index) => (
+                <li key={index}>
+                  <a href="#">{item}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div className="renew-footer__bottom">
             <p>Copyright 2026</p>
-
-            <div className="renew-footer__leaf-strip" aria-hidden="true">
-              {leafItems.map((leaf, index) => (
-                <img key={index} src={leaf} alt="" />
-              ))}
-            </div>
+            <div
+              className="renew-footer__leaf-strip"
+              aria-hidden="true"
+              style={{
+                "--footer-leaf-strip": `url(${footerGroop})`,
+              }}
+            />
           </div>
         </div>
       </div>
