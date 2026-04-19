@@ -11,7 +11,7 @@ import {
 
 const { Title, Paragraph, Text } = Typography;
 
-import "./impactSection.css";
+import "./ImpactSection.css";
 
 
 const ImpactSection = () => {
