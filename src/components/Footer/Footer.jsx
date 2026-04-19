@@ -35,7 +35,7 @@ export default function Footer() {
               L 0 720
               Z
             "
-            fill="#4D813F"
+            fill="#437831"
           />
         </svg>
       </div>
