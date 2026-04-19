@@ -21,37 +21,68 @@ const socialLinks = [
   { icon: <FaYoutube />, label: "YouTube", href: "#" },
 ];
 
+/**
+ * Wave top boundary (viewBox 0 0 1440 260). Green fill is below this path.
+ * Landscape valley silhouette (unchanged — approved curve).
+ */
+const FOOTER_WAVE_PATH =
+  "M0 95 " +
+  "C 120 210 320 255 560 240 " +
+  "C 760 228 980 185 1180 150 " +
+  "C 1300 128 1380 118 1440 132 " +
+  "L 1440 260 L 0 260 Z";
 export default function Footer() {
   return (
-    <footer className="renew-footer">
-      <div className="renew-footer__shape" aria-hidden="true">
-        <svg viewBox="0 0 1440 720" preserveAspectRatio="none">
-          <path
-            d="
-              M0 188
-              C 220 298, 420 348, 620 318
-              C 820 288, 1040 228, 1440 248
-              L 1440 720
-              L 0 720
-              Z
-            "
-            fill="#437831"
-          />
+    <footer className="renew-footer" role="contentinfo">
+      {/* 1) Large light (cream) band — illustration lives here only */}
+      <div className="renew-footer__sky">
+        <div className="renew-footer__art" aria-hidden="true">
+          <img src={TopIllustration} alt="" />
+        </div>
+      </div>
+
+      {/* 2) Green wave slab — tall enough to read as curved mass, not a hairline */}
+      <div className="renew-footer__wave-shell" aria-hidden="true">
+        {/* <svg
+          className="renew-footer__wave-svg"
+          viewBox="0 0 1440 260"
+          preserveAspectRatio="none"
+          focusable="false"
+        >
+          <path className="renew-footer__wave-fill" d={FOOTER_WAVE_PATH} />
+        </svg> */}
+        <svg
+          className="renew-footer__wave-svg"
+          viewBox="0 0 1440 200"
+          preserveAspectRatio="none"
+          focusable="false"
+        >
+          <path className="renew-footer__wave-fill" d="M767.5 173.5C1114.68 81.189 1382.33 51.5 1489.5 77.5V576H-2V0C122.333 137.833 468.5 253 767.5 173.5Z" />
         </svg>
       </div>
 
-      <div className="renew-footer__inner">
-        <div className="renew-footer__illustration">
-          <img src={TopIllustration} alt="" aria-hidden="true" />
-        </div>
-
-        <div className="renew-footer__content">
-          <div className="renew-footer__main">
+      {/* 3) Solid green footer surface — logo / nav / social sit lower in this band */}
+      <div className="renew-footer__surface">
+        <div className="renew-footer__surface-inner">
+          <div className="renew-footer__primary">
             <div className="renew-footer__logo">
               <img src={Logo} alt="Renew" />
             </div>
 
-            <div className="renew-footer__social" aria-labelledby="renew-footer-follow">
+            <nav className="renew-footer__nav" aria-label="Footer navigation">
+              <ul className="renew-footer__menu">
+                {menuItems.map((item, index) => (
+                  <li key={index}>
+                    <a href="#">{item}</a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <div
+              className="renew-footer__social"
+              aria-labelledby="renew-footer-follow"
+            >
               <h3 id="renew-footer-follow">Follow US</h3>
               <div className="renew-footer__social-icons">
                 {socialLinks.map((item, index) => (
@@ -61,18 +92,10 @@ export default function Footer() {
                 ))}
               </div>
             </div>
-
-            <ul className="renew-footer__menu">
-              {menuItems.map((item, index) => (
-                <li key={index}>
-                  <a href="#">{item}</a>
-                </li>
-              ))}
-            </ul>
           </div>
 
-          <div className="renew-footer__bottom">
-            <p>Copyright 2026</p>
+          <div className="renew-footer__ground">
+            <p className="renew-footer__copyright">Copyright 2026</p>
             <div
               className="renew-footer__leaf-strip"
               aria-hidden="true"
