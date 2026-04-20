@@ -3,7 +3,7 @@ import MainLayout from "./Layouts/MainLayout";
 // import Home from "./pages/Home";
 import ContactUs from "./pages/ContactUs";
 import AboutUs from "./pages/AboutUs/AboutUs";
-import Projects from "./pages/Projects";
+import Projects from "./pages/Projects/Projects";
 import Solutions from "./pages/Solutions/Solutions";
 import Home from "./pages/Home/Home";
 import "./App.css";
