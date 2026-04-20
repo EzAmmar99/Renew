@@ -124,7 +124,7 @@
 
 /* Biomass Section */
 .biomass-section {
-  padding: 30px 0px;
+  padding: clamp(40px, 8vw, 80px) 20px;
   text-align: center;
 }
 
@@ -134,18 +134,20 @@
 }
 
 .biomass-title {
-  font-size: 28px;
+  font-size: clamp(28px, 4.5vw, 48px) !important;
   font-weight: 700 !important;
   font-size: 40px !important;
   color: #22381c; /* أخضر غامق */
-  margin-bottom: 5%;
+  margin-bottom: clamp(20px, 4vw, 40px);
 }
 
 .biomass-text {
-  font-size: 25px !important;
-  line-height: 1.5;
+  font-size: clamp(18px, 2.2vw, 25px) !important;
+  line-height: 1.6;
   color: #838486; /* رمادي */
   text-transform: capitalize;
+  opacity: 0.9;
+  margin: 0 auto;
 }
 
 .highlight {
@@ -157,6 +159,14 @@
   width: 100%;
 }
 
+@media (max-width: 480px) {
+  .biomass-text {
+    /* السماح للنص بالانكماش أكثر مع الحفاظ على مقروئيته */
+    line-height: 1.5;
+    text-align: justify; /* اختياري: لجعل الحواف متساوية في الفقرات الطويلة */
+    text-align-last: center;
+  }
+}
 /* —— What Sets Our Biomass Apart —— */
 .biomass-apart-section {
   position: relative;
@@ -194,10 +204,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px; /* المسافة بين النقطة والنص */
+  gap: clamp(15px, 4vw, 40px);
   width: 100%;
-  margin: 2% 0 7% 0;
-  /* margin: 40px 0; */
+  margin: clamp(20px, 4vw, 40px) 0 clamp(40px, 8vw, 80px) 0;
+  padding: 0 15px; /* حماية للأطراف في الشاشات الصغيرة */
 }
 
 .biomass-line-container {
@@ -205,6 +215,7 @@
   display: flex;
   align-items: center;
   max-width: 350px; /* تحكم بطول الخط من هنا */
+  min-width: 30px;
 }
 
 .biomass-line {
@@ -237,10 +248,25 @@
 }
 
 .biomass-apart-title {
-  font-size: 40px !important; /* كونه h2 */
+  font-size: clamp(22px, 4vw, 40px) !important;
   color: #22381c;
   white-space: nowrap; /* عشان العنوان ما ينزل سطر ويخرب الشكل */
   margin: 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 550px) {
+  .biomass-apart-title {
+    /* السماح للعنوان بالانقسام لسطرين إذا كانت الشاشة ضيقة جداً */
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  .biomass-line-container {
+    /* إخفاء الخطوط في الموبايل الصغير جداً لتوفير مساحة للعنوان */
+    display: none;
+  }
 }
 
 .biomass-apart-grid {
@@ -260,14 +286,44 @@
 
 .biomass-apart-card {
   position: relative;
-  height: 270px;
+  min-height: clamp(200px, 20vw, 270px);
   z-index: 1;
   background: rgba(160, 186, 61, 0.5); /* شفافية بنسبة 70% */
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  padding: clamp(32px, 5vw, 52px) clamp(22px, 4vw, 40px) clamp(36px, 5vw, 56px);
+  padding: clamp(25px, 4vw, 45px) clamp(20px, 3vw, 35px);
   box-shadow: 0 8px 28px rgba(26, 51, 26, 0.07);
   text-align: center;
+}
+
+@media (max-width: 767px) {
+  .biomass-apart-card {
+    /* تحديد ارتفاع أصغر للموبايل */
+    min-height: 180px;
+    /* تقليل المسافات الداخلية لتقليل الطول البصري */
+    padding: 35px 20px 25px 20px;
+    margin: 0 7px;
+  }
+
+  .biomass-apart-card-title {
+    /* تقليل المسافة تحت العنوان في الموبايل */
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  .biomass-apart-card-body {
+    /* تصغير الخط قليلاً ليناسب المساحة الجديدة */
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ضبط مكان الأيقونة لتناسب الحجم الأصغر */
+  .biomass-apart-icon-badge {
+    top: -15px;
+    right: -10px;
+    width: 65px;
+    height: 65px;
+  }
 }
 
 .biomass-apart-card-watermark {
@@ -372,9 +428,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px; /* المسافة بين النقطة والنص */
+  gap: clamp(15px, 4vw, 60px);
   width: 100%;
-  margin: 40px 0;
+  margin: clamp(20px, 5vw, 40px) 0;
+  padding: 0 10px; /* حماية الأطراف */
 }
 
 .customer-value-line {
@@ -383,6 +440,7 @@
   background-color: #22381c; /* لون الخط */
   position: relative;
   max-width: 500px; /* تحكم بطول الخط الإجمالي من هنا */
+  min-width: 20px;
 }
 
 /* تنسيق النقطة */
@@ -407,11 +465,12 @@
 }
 
 .customer-value-title {
-  font-size: 48px !important;
+  font-size: clamp(24px, 4.5vw, 48px) !important;
   color: #fec858;
   white-space: nowrap;
   margin: 0;
   font-weight: 700;
+  text-align: center;
 }
 
 .customer-value-grid {
@@ -427,7 +486,6 @@
 }
 .customer-value-item {
   min-width: 0;
-  
 }
 
 .customer-value-item-head {
@@ -463,6 +521,25 @@
   font-size: clamp(14px, 1.3vw, 18px);
   line-height: 1.4;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .customer-value-heading {
+    /* تقليل الفجوة أكثر في الموبايل */
+    gap: 10px;
+  }
+
+  /* إذا كان النص لا يزال كبيراً، يمكننا السماح له بالانكسار لسطرين فقط في الموبايل الصغير جداً */
+  @media (max-width: 400px) {
+    .customer-value-title {
+      white-space: normal;
+      line-height: 1.2;
+    }
+    /* إخفاء الخطوط في الشاشات الصغيرة جداً لتوفير مساحة للنص */
+    .customer-value-line {
+      display: none;
+    }
+  }
 }
 
 @media (max-width: 991px) {
@@ -639,12 +716,12 @@
 
 /* ===== Value Impact Section ===== */
 .value-impact-section {
-  background: #f3f3f1;
-  padding: clamp(40px, 6vw, 84px) clamp(18px, 4vw, 40px) clamp(48px, 7vw, 96px);
+  padding: clamp(40px, 6vw, 84px) clamp(18px, 4vw, 5px) clamp(48px, 7vw, 96px);
 }
 
 .value-impact-container {
-  max-width: 1140px;
+  max-width: 1350px;
+  /* width: 100%; */
   margin: 0 auto;
 }
 
@@ -656,21 +733,35 @@
 
 .value-impact-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 480px);
+  grid-template-columns: 1fr 450px; /* النص مرن، والصورة ثابتة لعرض معين */
   align-items: center;
-  gap: clamp(24px, 5vw, 52px);
+  gap: 60px; /* المسافة الفاصلة بين جهة النص وجهة الصورة */
 }
 
 .value-impact-row--reverse {
-  grid-template-columns: minmax(300px, 480px) minmax(0, 1fr);
+  /* grid-template-columns: minmax(300px, 480px) minmax(0, 1fr); */
+  grid-template-columns: 450px 1fr;
 }
 
 .value-impact-row--reverse .value-impact-copy {
   order: 2;
 }
 
+.value-impact-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* لضمان البدء من اليسار في الـ row العادي */
+}
+
 .value-impact-row--reverse .value-impact-visual {
-  order: 1;
+  /* order: 1; */
+  align-items: flex-end;
+}
+
+.value-impact-row--reverse .value-impact-image-card {
+  margin-left: 0;
+  margin-right: -25px; /* يزحف لليمين فوق الكرت الأخضر */
 }
 
 .value-impact-copy {
@@ -679,9 +770,10 @@
 
 .value-impact-description {
   margin: 0 0 18px;
+  max-width: 700px;
   color: #7a7a7a;
   font-size: clamp(14px, 1.24vw, 18px);
-  line-height: 1.95;
+  line-height: 2.5;
   font-weight: 500;
 }
 
@@ -724,15 +816,27 @@
 .value-impact-badge {
   position: relative;
   z-index: 1;
-  width: min(100%, 430px);
-  min-height: 86px;
+
+  width: 100%;
+  max-width: 570px;
+  /* width: 570px; عرض ثابت ليتناسب مع الصورة */
+  /* height: 200px; ارتفاع كافي ليظهر خلف الصورة */
+
+  height: auto; /* ليتناسب مع المحتوى */
+  min-height: 200px;
+  /* width: min(100%, 430px); */
+  /* min-height: 86px; */
   background: #5a933b;
-  border-radius: 18px;
-  padding: 16px 18px 16px 18px;
+
+  border-radius: 25px; /* زوايا أنعم حسب الصورة */
+  padding: 15px 40px; /* مسافة داخلية للرقم والعنوان */
+
+  /* border-radius: 18px; */
+  /* padding: 16px 18px 16px 18px; */
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 15px;
   box-sizing: border-box;
 }
 
@@ -756,13 +860,18 @@
 .value-impact-image-card {
   position: relative;
   z-index: 2;
-  width: min(100%, 410px);
-  margin-top: -20px;
-  margin-left: 12px;
-  border-radius: 20px;
+  /* width: min(100%, 410px); */
+
+  /* width: 580px; */
+  width: 100%;
+  max-width: 580px;
+
+  margin-top: -130px;
+  margin-left: -25px; /* يزحف فوق الكرت الأخضر من جهة النص */
+  border-radius: 30px;
   overflow: hidden;
   background: #d9d9d9;
-  box-shadow: 0 10px 24px rgba(42, 61, 34, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* ظل أنعم */
 }
 
 .value-impact-image {
@@ -797,11 +906,21 @@
   }
 
   .value-impact-visual {
-    max-width: 460px;
+    /* max-width: 460px; */
+    max-width: 100%; /* اجعله يأخذ العرض الكامل */
+    align-items: center !important; /* توسيط العناصر في الموبايل */
+  }
+
+  .value-impact-badge {
+    height: auto;
+    min-height: 100px;
+    padding: 20px;
   }
 
   .value-impact-image-card {
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    margin: -40px 0 0 0 !important; /* تقليل التداخل وتوسيط الصورة فوق البادج */
+    width: 90%; /* أصغر قليلاً من البادج لتبدو متداخلة */
   }
 
   .value-impact-description {
@@ -824,9 +943,12 @@
 
   .value-impact-badge {
     width: 100%;
-    min-height: 74px;
+    min-height: 90px;
     border-radius: 16px;
-    padding: 14px 16px;
+    display: flex;
+    align-items: center; /* هذا سيجعل الرقم والعنوان على نفس الخط الأفقي */
+    padding: 15px 20px 55px 20px; /* زيادة البادينج السفلي ليعمل كـ Buffer */
+    gap: 15px;
   }
 
   .value-impact-badge-number {
@@ -834,13 +956,14 @@
   }
 
   .value-impact-badge-title {
-    font-size: 22px;
-    padding-top: 3px;
+    font-size: clamp(17px, 4vw, 20px);
+    line-height: 1.2;
+    padding-top: 4px;
   }
 
   .value-impact-image-card {
     width: calc(100% - 8px);
-    margin-top: -14px;
+    margin-top: -25px;
     margin-left: 8px;
     border-radius: 18px;
   }
