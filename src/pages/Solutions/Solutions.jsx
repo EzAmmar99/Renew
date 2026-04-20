@@ -7,6 +7,7 @@ import iconEconomical from "../../assets/Economical.png";
 import iconSustainable from "../../assets/Sustainable.png";
 import iconReduced from "../../assets/Reduced.png";
 import watermarkImg from "../../assets/watermark.png";
+import wasteReductionImage from "../../assets/waste-reduction-source.png";
 
 const biomassApartCards = [
   {
@@ -17,9 +18,9 @@ const biomassApartCards = [
     body: (
       <>
         With One Of The{" "}
-        <strong>Highest Heat Values Among Agricultural Waste Fuels</strong>,
-        Our Biomass Guarantees Consistent Performance, Helping Clients Optimize
-        Fuel Usage.
+        <strong>Highest Heat Values Among Agricultural Waste Fuels</strong>, Our
+        Biomass Guarantees Consistent Performance, Helping Clients Optimize Fuel
+        Usage.
       </>
     ),
   },
@@ -43,9 +44,8 @@ const biomassApartCards = [
     iconAlt: "Economical energy alternative",
     body: (
       <>
-        RENEW Biomass Is{" "}
-        <strong>Cost-Competitive With Fossil Fuels</strong>, Allowing
-        Industries To Reduce Their Energy Costs While Advancing Their
+        RENEW Biomass Is <strong>Cost-Competitive With Fossil Fuels</strong>,
+        Allowing Industries To Reduce Their Energy Costs While Advancing Their
         Environmental Commitments.
       </>
     ),
@@ -92,6 +92,40 @@ const biomassApartCards = [
   },
 ];
 
+const customerValueItems = [
+  {
+    id: "01",
+    title: "RESPONSIBLE",
+    description: "Reduces CO₂ Emissions And Environmental Footprint",
+  },
+  {
+    id: "02",
+    title: "ECONOMICAL",
+    description: "Reduces Fuel Costs Compared To Traditional Fossil Energy",
+  },
+  {
+    id: "03",
+    title: "REDUCED RISK",
+    description:
+      "Minimizes Exposure To Fuel Shortages And Supply Chain Volatility",
+  },
+  {
+    id: "04",
+    title: "SUSTAINABLE",
+    description: "Derived From Abundant, Renewable Local Resources",
+  },
+  {
+    id: "05",
+    title: "EFFICIENT",
+    description: "High Calorific Value With Consistent Quality Performance",
+  },
+  {
+    id: "06",
+    title: "CLEAN",
+    description: "Low Ash Content, Free From Contaminants, Safer Combustion",
+  },
+];
+
 const Solutions = () => {
   return (
     <div className="solutions-container">
@@ -129,7 +163,10 @@ const Solutions = () => {
         </div>
       </section>
 
-      <section className="biomass-apart-section" aria-labelledby="biomass-apart-heading">
+      <section
+        className="biomass-apart-section"
+        aria-labelledby="biomass-apart-heading"
+      >
         <div className="biomass-apart-section-watermark" aria-hidden>
           <img
             src={watermarkImg}
@@ -179,6 +216,70 @@ const Solutions = () => {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section
+        className="customer-value-section"
+        aria-labelledby="customer-value-heading"
+      >
+        <div className="customer-value-container">
+          <div className="customer-value-heading">
+            <span className="customer-value-line" aria-hidden>
+              <span className="customer-value-line-dot" />
+            </span>
+
+            <h2 className="customer-value-title" id="customer-value-heading">
+              Customer Value Summary
+            </h2>
+
+            <span className="customer-value-line" aria-hidden>
+              <span className="customer-value-line-dot" />
+            </span>
+          </div>
+
+          <ul className="customer-value-grid">
+            {customerValueItems.map(({ id, title, description }) => (
+              <li key={id} className="customer-value-item">
+                <div className="customer-value-item-head">
+                  <span className="customer-value-number">{id}</span>
+                  <h3 className="customer-value-item-title">{title}</h3>
+                </div>
+
+                <p className="customer-value-item-description">{description}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section
+        className="waste-reduction-section"
+        aria-labelledby="waste-reduction-heading"
+      >
+        <div className="waste-reduction-media">
+          <img
+            src={wasteReductionImage}
+            alt="Waste collection and biomass processing at source"
+            className="waste-reduction-image"
+          />
+
+          <div className="waste-reduction-overlay" />
+
+          <div className="waste-reduction-content">
+            <h2 id="waste-reduction-heading" className="waste-reduction-title">
+              Waste Reduction At Source
+            </h2>
+
+            <p className="waste-reduction-text">
+              At RENEW, We Don’t Just Repurposed Waste—We Help{" "}
+              <span>Eliminate It At The Source.</span>
+              <br />
+              By Integrating Our Biomass Solutions Into The Industrial Fuel
+              Supply Chain, We Empower Organizations To Reduce Waste Generation,
+              Optimize Operations, And Move Closer To A Zero-Waste Future.
+            </p>
+          </div>
         </div>
       </section>
     </div>
