@@ -1,3 +1,4 @@
+import { Typography } from "antd";
 import "./Solutions.css";
 import heroImage from "../../assets/Hero-Solutions.png";
 import iconFlame from "../../assets/IconFlame.png";
@@ -8,6 +9,8 @@ import iconSustainable from "../../assets/Sustainable.png";
 import iconReduced from "../../assets/Reduced.png";
 import watermarkImg from "../../assets/watermark.png";
 import wasteReductionImage from "../../assets/waste-reduction-source.png";
+
+const { Title, Paragraph } = Typography;
 
 const biomassApartCards = [
   {
@@ -177,21 +180,18 @@ const Solutions = () => {
         </div>
         <div className="biomass-apart-inner">
           <div className="biomass-apart-heading">
-            <span
-              className="biomass-apart-heading-line biomass-apart-heading-line--left"
-              aria-hidden
-            />
-            <span className="biomass-apart-heading-dot" aria-hidden />
+            <div className="biomass-line-container">
+              <span className="biomass-line line-left" />
+            </div>
+
             <h2 className="biomass-apart-title" id="biomass-apart-heading">
               What Sets Our Biomass Apart
             </h2>
-            <span className="biomass-apart-heading-dot" aria-hidden />
-            <span
-              className="biomass-apart-heading-line biomass-apart-heading-line--right"
-              aria-hidden
-            />
-          </div>
 
+            <div className="biomass-line-container">
+              <span className="biomass-line line-right" />
+            </div>
+          </div>
           <ul className="biomass-apart-grid">
             {biomassApartCards.map(({ id, title, iconSrc, iconAlt, body }) => (
               <li key={id} className="biomass-apart-card">
@@ -225,7 +225,7 @@ const Solutions = () => {
       >
         <div className="customer-value-container">
           <div className="customer-value-heading">
-            <span className="customer-value-line" aria-hidden>
+            <span className="customer-value-line line-left" aria-hidden>
               <span className="customer-value-line-dot" />
             </span>
 
@@ -233,11 +233,10 @@ const Solutions = () => {
               Customer Value Summary
             </h2>
 
-            <span className="customer-value-line" aria-hidden>
+            <span className="customer-value-line line-right" aria-hidden>
               <span className="customer-value-line-dot" />
             </span>
           </div>
-
           <ul className="customer-value-grid">
             {customerValueItems.map(({ id, title, description }) => (
               <li key={id} className="customer-value-item">

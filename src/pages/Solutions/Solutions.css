@@ -37,21 +37,20 @@
 }
 
 .solutions-title {
-  margin: 0 0 12px;
-  color: #f2bc4b;
-  font-size: 28px;
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: 0.2px;
+  margin: 0 0 15px;
+  color: #fec858;
+  font-size: 48px !important;
+  line-height: 1.5;
+  font-weight: 700 !important;
 }
 
 .solutions-text {
   margin: 0;
   color: #ffffff;
-  font-size: 22px;
-  line-height: 1.4;
-  font-weight: 800;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  font-size: 35px !important;
+  line-height: 1.5;
+  font-weight: 700 !important;
+  /* text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); */
 }
 
 /* Large screens */
@@ -125,31 +124,32 @@
 
 /* Biomass Section */
 .biomass-section {
-  background: #f5f5f5; /* نفس الخلفية بالصورة */
-  padding: 80px 20px;
+  padding: 30px 0px;
   text-align: center;
 }
 
 .biomass-container {
-  max-width: 1300px;
+  max-width: 1250px;
   margin: 0 auto;
 }
 
 .biomass-title {
   font-size: 28px;
-  font-weight: 700;
-  color: #2e3d2f; /* أخضر غامق */
-  margin-bottom: 20px;
+  font-weight: 700 !important;
+  font-size: 40px !important;
+  color: #22381c; /* أخضر غامق */
+  margin-bottom: 5%;
 }
 
 .biomass-text {
-  font-size: 15px;
-  line-height: 1.7;
-  color: #6f6f6f; /* رمادي */
+  font-size: 25px !important;
+  line-height: 1.5;
+  color: #838486; /* رمادي */
+  text-transform: capitalize;
 }
 
 .highlight {
-  color: #f2bc4b; /* نفس لون Solutions */
+  color: #fec858; /* نفس لون Solutions */
   font-weight: 600;
 }
 
@@ -162,7 +162,7 @@
   position: relative;
   overflow: hidden;
   background: #ffffff;
-  padding: clamp(48px, 7vw, 88px) clamp(16px, 4vw, 40px);
+  padding: clamp(10px, 7vw, 8px) clamp(16px, 4vw, 4px);
 }
 
 .biomass-apart-section-watermark {
@@ -186,7 +186,7 @@
 .biomass-apart-inner {
   position: relative;
   z-index: 1;
-  max-width: 1120px;
+  max-width: 1350px;
   margin: 0 auto;
 }
 
@@ -194,39 +194,53 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 40px; /* المسافة بين النقطة والنص */
   width: 100%;
-  max-width: 760px;
-  margin: 0 auto clamp(36px, 5vw, 56px);
-  padding: 0 8px;
+  margin: 2% 0 7% 0;
+  /* margin: 40px 0; */
 }
 
-.biomass-apart-heading-line {
-  flex: 1 1 0;
-  min-width: 32px;
-  height: 2px;
-  background: #f2bc4b;
-  border-radius: 1px;
+.biomass-line-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  max-width: 350px; /* تحكم بطول الخط من هنا */
 }
 
-.biomass-apart-heading-dot {
-  width: 7px;
-  height: 7px;
+.biomass-line {
+  height: 1px;
+  background-color: #fec858;
+  flex: 1;
+  position: relative;
+}
+
+/* رسم النقطة (الـ Dot) */
+.biomass-line::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #fec858;
   border-radius: 50%;
-  background: #f2bc4b;
-  flex-shrink: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* النقطة للخط الأيسر تكون على اليمين (بجانب النص) */
+.line-left::after {
+  right: 0;
+}
+
+/* النقطة للخط الأيمن تكون على اليسار (بجانب النص) */
+.line-right::after {
+  left: 0;
 }
 
 .biomass-apart-title {
+  font-size: 40px !important; /* كونه h2 */
+  color: #22381c;
+  white-space: nowrap; /* عشان العنوان ما ينزل سطر ويخرب الشكل */
   margin: 0;
-  flex-shrink: 0;
-  max-width: min(100%, 420px);
-  text-align: center;
-  font-size: clamp(20px, 2.4vw, 30px);
-  font-weight: 800;
-  line-height: 1.2;
-  color: #1a331a;
-  letter-spacing: 0.02em;
 }
 
 .biomass-apart-grid {
@@ -235,7 +249,7 @@
   padding: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(22px, 3.5vw, 30px);
+  gap: clamp(22px, 3.5vw, 45px);
 }
 
 @media (min-width: 768px) {
@@ -246,8 +260,11 @@
 
 .biomass-apart-card {
   position: relative;
-  background: #d9e6a8;
-  border-radius: 24px;
+  height: 270px;
+  z-index: 1;
+  background: rgba(160, 186, 61, 0.5); /* شفافية بنسبة 70% */
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
   padding: clamp(32px, 5vw, 52px) clamp(22px, 4vw, 40px) clamp(36px, 5vw, 56px);
   box-shadow: 0 8px 28px rgba(26, 51, 26, 0.07);
   text-align: center;
@@ -261,6 +278,7 @@
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  /* overflow: hidden; */
 }
 
 .biomass-apart-watermark-img {
@@ -268,15 +286,17 @@
   height: auto;
   max-height: 88%;
   object-fit: contain;
-  opacity: 0.18;
+  color: #575757 !important;
+
+  opacity: 1;
 }
 
 .biomass-apart-icon-badge {
   position: absolute;
-  top: clamp(-14px, -2.5vw, -20px);
-  right: clamp(-14px, -2.5vw, -20px);
-  width: clamp(52px, 14vw, 72px);
-  height: clamp(52px, 14vw, 72px);
+  top: clamp(-35px, -2.5vw, -20px);
+  right: clamp(-25px, -2.5vw, -20px);
+  width: clamp(52px, 14vw, 100px);
+  height: clamp(52px, 14vw, 100px);
   border-radius: 50%;
   background: #ffcc4d;
   display: flex;
@@ -295,16 +315,15 @@
 
 .biomass-apart-card-title {
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   margin: 0 0 clamp(12px, 2vw, 18px);
   padding-top: 4px;
-  padding-inline: clamp(36px, 8vw, 56px) clamp(12px, 3vw, 20px);
-  font-size: clamp(13px, 1.65vw, 16px);
-  font-weight: 800;
-  letter-spacing: 0.045em;
+  /* padding-inline: clamp(36px, 8vw, 56px) clamp(12px, 3vw, 20px); */
+  font-size: clamp(13px, 1.65vw, 20px);
+  font-weight: 780 !important;
   text-transform: uppercase;
-  color: #1a331a;
-  line-height: 1.35;
+  color: #22381c;
+  line-height: 1.5;
 }
 
 .biomass-apart-card-body {
@@ -317,7 +336,7 @@
 }
 
 .biomass-apart-card-body strong {
-  color: #1a331a;
+  color: #4b823c;
   font-weight: 700;
 }
 
@@ -341,112 +360,120 @@
 
 /* ===== Customer Value Summary ===== */
 .customer-value-section {
-  background: #f3f3f1;
-  padding: clamp(54px, 7vw, 88px) clamp(20px, 5vw, 56px) clamp(36px, 6vw, 70px);
+  padding: clamp(54px, 7vw, 88px) clamp(20px, 5vw, 10px) clamp(36px, 6vw, 70px);
 }
 
 .customer-value-container {
-  max-width: 1220px;
+  max-width: 1450px;
   margin: 0 auto;
 }
 
 .customer-value-heading {
-  display: grid;
-  grid-template-columns: minmax(60px, 1fr) auto minmax(60px, 1fr);
+  display: flex;
   align-items: center;
-  gap: clamp(16px, 2.5vw, 40px);
-  margin-bottom: clamp(36px, 5vw, 58px);
+  justify-content: center;
+  gap: 60px; /* المسافة بين النقطة والنص */
+  width: 100%;
+  margin: 40px 0;
 }
 
 .customer-value-line {
-  position: relative;
-  display: block;
+  flex: 1;
   height: 1px;
-  background: #2f4a2f;
+  background-color: #22381c; /* لون الخط */
+  position: relative;
+  max-width: 500px; /* تحكم بطول الخط الإجمالي من هنا */
 }
 
-.customer-value-line:first-child .customer-value-line-dot {
-  right: -1px;
-}
-
-.customer-value-line:last-child .customer-value-line-dot {
-  left: -1px;
-}
-
+/* تنسيق النقطة */
 .customer-value-line-dot {
   position: absolute;
-  top: 50%;
-  width: 4px;
-  height: 4px;
+  width: 8px;
+  height: 8px;
+  background-color: #22381c; /* لون النقطة */
   border-radius: 50%;
-  background: #2f4a2f;
+  top: 50%;
   transform: translateY(-50%);
 }
 
+/* وضع النقطة في نهاية الخط الأيسر (بجانب النص) */
+.line-left .customer-value-line-dot {
+  right: 0;
+}
+
+/* وضع النقطة في بداية الخط الأيمن (بجانب النص) */
+.line-right .customer-value-line-dot {
+  left: 0;
+}
+
 .customer-value-title {
+  font-size: 48px !important;
+  color: #fec858;
+  white-space: nowrap;
   margin: 0;
-  text-align: center;
-  color: #f2bc4b;
-  font-size: clamp(27px, 3.4vw, 47px);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
 .customer-value-grid {
   list-style: none;
-  margin: 0;
+  margin: 0; /* موسطة الحاوية نفسها */
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: clamp(28px, 5vw, 70px);
-  row-gap: clamp(34px, 5vw, 62px);
+  grid-template-columns: repeat(3, 1fr); /* 3 أعمدة كما في الصورة */
+  column-gap: clamp(20px, 4vw, 60px);
+  row-gap: 60px;
+  margin-top: 60px;
+  /* justify-content: center; توسيط الأعمدة داخل الـ container */
 }
-
 .customer-value-item {
   min-width: 0;
+  
 }
 
 .customer-value-item-head {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
-  margin-bottom: 10px;
+  align-items: center; /* جعل العنوان في منتصف ارتفاع الرقم */
+  gap: 15px;
+  margin-bottom: 8px;
 }
 
 .customer-value-number {
   flex-shrink: 0;
-  color: #cac7c2;
-  font-size: clamp(34px, 4.5vw, 54px);
-  font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  color: #d5d3cf; /* لون رمادي فاتح جداً كما في الصورة */
+  font-size: clamp(40px, 5vw, 48px); /* تكبير الرقم قليلاً */
+  font-weight: 400 !important;
+  line-height: 1;
+  font-family: Alexandria, sans-serif;
 }
 
 .customer-value-item-title {
   margin: 0;
-  color: #264024;
-  font-size: clamp(18px, 1.8vw, 27px);
-  font-weight: 800;
-  line-height: 1.05;
-  letter-spacing: 0.02em;
+  color: #22381c; /* لون أخضر داكن جداً */
+  font-size: clamp(16px, 1.6vw, 25px);
+  font-weight: 700 !important;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .customer-value-item-description {
   margin: 0;
-  padding-left: clamp(48px, 6vw, 74px);
-  max-width: 320px;
-  color: #757575;
-  font-size: clamp(16px, 1.5vw, 24px);
+  /* المسافة البادئة هنا تجعل النص يبدأ تحت العنوان وليس تحت الرقم */
+  padding-left: clamp(55px, 6.5vw, 85px);
+  color: #838486;
+  font-size: clamp(14px, 1.3vw, 18px);
+  line-height: 1.4;
   font-weight: 500;
-  line-height: 1.58;
-  letter-spacing: 0.005em;
 }
 
 @media (max-width: 991px) {
   .customer-value-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .customer-value-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -506,13 +533,13 @@
 .waste-reduction-media {
   position: relative;
   width: 100%;
-  height: clamp(390px, 48vw, 906px);
+  height: clamp(390px, 48vw, 650px);
   overflow: hidden;
 }
 
 .waste-reduction-image {
   width: 100%;
-  height: 100%;
+  height: 650px;
   object-fit: cover;
   object-position: center center;
   display: block;
