@@ -9,6 +9,9 @@ import iconSustainable from "../../assets/Sustainable.png";
 import iconReduced from "../../assets/Reduced.png";
 import watermarkImg from "../../assets/watermark.png";
 import wasteReductionImage from "../../assets/waste-reduction-source.png";
+import valueImgCost from "../../assets/value-cost-efficient.png";
+import valueImgSustainable from "../../assets/value-sustainable.png";
+import valueImgCarbonFree from "../../assets/value-carbon-free.png";
 
 const { Title, Paragraph } = Typography;
 
@@ -126,6 +129,69 @@ const customerValueItems = [
     id: "06",
     title: "CLEAN",
     description: "Low Ash Content, Free From Contaminants, Safer Combustion",
+  },
+];
+
+const valueImpactCards = [
+  {
+    id: "01",
+    title: "Cost Efficient",
+    image: valueImgCost,
+    imageAlt: "Biomass handling and value recovery",
+    description: (
+      <>
+        By Transforming Readily Available Agricultural Residues Into
+        High-Quality Biomass Fuel, RENEW Offers A{" "}
+        <strong>A Cost-Effective Energy Solution.</strong> This Approach
+        Minimizes Waste Disposal Costs For Farmers While Reducing Fuel Expenses
+        For Industries—Creating Shared Economic Value Across The Supply Chain.
+      </>
+    ),
+    bullets: [
+      "Lower Waste Handling And Dumping Costs",
+      "Competitive Pricing Versus Fossil Fuels",
+      "Maximized Return On Underutilized Organic Resources",
+    ],
+  },
+  {
+    id: "02",
+    title: "Sustainable",
+    image: valueImgSustainable,
+    imageAlt: "Loader moving sustainable biomass material",
+    description: (
+      <>
+        RENEW’s Model Promotes <strong>Closed-Loop Sustainability.</strong> We
+        Intercept Tree Trimmings And Agricultural By-Products Before They Become
+        Pollutants, Converting Them Into Clean Energy That Fuels Industrial
+        Production—All Without Harming Ecosystems.
+      </>
+    ),
+    bullets: [
+      "Supports Circular Economy Principles",
+      "Diverts Agricultural Waste From Open Burning",
+      "Encourages Responsible Resource Management",
+    ],
+  },
+  {
+    id: "03",
+    title: "Carbon-Free",
+    image: valueImgCarbonFree,
+    imageAlt: "CO2 reduction and carbon neutral impact",
+    description: (
+      <>
+        Unlike Fossil Fuels, Our Biomass Is Part Of The{" "}
+        <strong>Natural Carbon Cycle.</strong> Making It Virtually Carbon
+        Neutral. Every Ton Of Biomass Used In Place Of Coal Or Diesel
+        Contributes To A Measurable Reduction In Greenhouse Gas Emissions—Making
+        It A Smart Choice For Climate-Conscious Industries.
+      </>
+    ),
+    bullets: [
+      "Helps Clients Meet Co2 Reduction And Carbon Credits Targets",
+      "Contributes To ESG And Green Reporting Compliance",
+      "Reduces Air Pollution And Environmental Impact",
+      "Co2 Reduction And Carbon Credits Targets",
+    ],
   },
 ];
 
@@ -278,6 +344,55 @@ const Solutions = () => {
               Supply Chain, We Empower Organizations To Reduce Waste Generation,
               Optimize Operations, And Move Closer To A Zero-Waste Future.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="value-impact-section"
+        aria-labelledby="value-impact-heading"
+      >
+        <div className="value-impact-container">
+          <h2 className="sr-only" id="value-impact-heading">
+            Value Impact
+          </h2>
+
+          <div className="value-impact-list">
+            {valueImpactCards.map(
+              ({ id, title, image, imageAlt, description, bullets }, index) => (
+                <article
+                  key={id}
+                  className={`value-impact-row ${
+                    index % 2 !== 0 ? "value-impact-row--reverse" : ""
+                  }`}
+                >
+                  <div className="value-impact-copy">
+                    <p className="value-impact-description">{description}</p>
+
+                    <ul className="value-impact-bullets">
+                      {bullets.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="value-impact-visual">
+                    <div className="value-impact-badge">
+                      <span className="value-impact-badge-number">{id}</span>
+                      <span className="value-impact-badge-title">{title}</span>
+                    </div>
+
+                    <div className="value-impact-image-card">
+                      <img
+                        src={image}
+                        alt={imageAlt}
+                        className="value-impact-image"
+                      />
+                    </div>
+                  </div>
+                </article>
+              ),
+            )}
           </div>
         </div>
       </section>
