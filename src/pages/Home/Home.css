@@ -249,106 +249,91 @@
 .home-hero {
   width: 100%;
   position: relative;
-  /* أهم تعديل: استخدام نفس النسبة التقريبية للصورة الأصلية 16:9 لضمان عدم القص */
-  aspect-ratio: 16 / 9;
+  height: clamp(320px, 60vw, 830px);
   background-size: cover;
-  background-position: top; /* لتثبيت أسفل الجرافة */
-  /* background-repeat: no-repeat; */
+  background-position: center top; /* لتثبيت أسفل الجرافة */
+  background-repeat: no-repeat;
   font-family: "Alexandria", sans-serif;
-  /* overflow: hidden; */
-  height: 1020px;
+
+  display: flex;
+  align-items: flex-end; /* لتموضع المحتوى في الأسفل */
+  justify-content: center;
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 1;
 }
 
 .home-hero-content {
   position: absolute;
-  /* وضع النص في الثلث السفلي */
-  bottom: 12%;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: clamp(40px, 8%, 100px); /* مسافة مرنة من الأسفل */
   width: 90%;
   max-width: 1100px;
   z-index: 2;
   text-align: center;
-
-  /* display: flex; */
-  /* align-items: flex-end; */
-  /* padding: 0 0 80px 90px; */
 }
 
-.home-hero-title {
+.home-hero-title,
+.home-hero-subtitle {
   color: #fff !important;
-  font-size: clamp(42px, 6vw, 70px) !important;
+  font-size: clamp(32px, 5.5vw, 70px) !important;
   margin: 0 !important;
   font-weight: 700 !important;
   line-height: 1.1 !important;
+  letter-spacing: -0.02em;
 }
 
 .home-hero-subtitle {
-  color: #fff !important;
-  font-size: clamp(42px, 6vw, 70px) !important;
-  margin: 8px 0 0 !important;
-  font-weight: 700 !important;
-  line-height: 1.1 !important;
+  margin-top: 8px !important;
 }
 
 .home-hero-description {
   color: #fff !important;
-  font-size: clamp(18px, 2vw, 24px) !important;
+  font-size: clamp(16px, 1.8vw, 24px) !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
   max-width: 850px;
-  margin: 28px auto 0 !important;
+  margin: clamp(15px, 3vw, 28px) auto 0 !important;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .home-hero {
-    aspect-ratio: 16 / 10; /* جعل الصورة أطول قليلاً */
-    height: auto;
-  }
-  .home-hero-content {
-    bottom: 15%;
-  }
-  .home-hero-title,
-  .home-hero-subtitle {
-    font-size: 50px !important;
-  }
-  .home-hero-description {
-    font-size: 20px !important;
-    max-width: 750px;
-    margin-top: 20px !important;
+    height: 700px; /* ارتفاع مناسب للتابلت */
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .home-hero {
-    /* تغيير النسبة في الموبايل لتناسب الشاشات الطولية */
-    aspect-ratio: auto;
-    min-height: 60vh;
-    padding: 100px 20px; /* تباعد للسماح للناف بار بالظهور */
-    display: flex;
-    align-items: flex-end; /* وضع النص في الأسفل */
-    justify-content: center;
+    height: 100vh; /* في الموبايل غالباً يفضل تكون ملىء الشاشة أو قريبة منها */
+    max-height: 650px;
   }
-  .home-hero::before {
-    background: rgba(0, 0, 0, 0.5); /* تعتيم أكثر للموبايل */
-  }
+
   .home-hero-content {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    transform: none;
-    width: 100%;
-    margin-top: 50px;
+    width: 95%;
+    bottom: 15%; /* رفع النص قليلاً في الموبايل */
   }
+
+  .home-hero-description {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-hero {
+    height: 320px;
+  }
+
   .home-hero-title,
   .home-hero-subtitle {
-    font-size: 36px !important;
-  }
-  .home-hero-description {
-    font-size: 16px !important;
-    max-width: 100%;
-    margin-top: 15px !important;
-    text-transform: lowercase; /* لإعادة التنسيق المطلوب في الأصل */
+    font-size: 28px !important; /* حجم مناسب جداً للموبايل الصغير */
   }
 }
 
