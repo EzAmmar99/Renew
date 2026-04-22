@@ -1,0 +1,148 @@
+.contact-page {
+  width: 100%;
+  background: #ffffff;
+}
+
+/* ===== Hero ===== */
+
+.contact-hero-section {
+  width: 100%;
+}
+
+.contact-hero-media {
+  position: relative;
+  width: 100%;
+  min-height: clamp(420px, 81vw, 832px);
+  overflow: hidden;
+  background: #0d1526;
+}
+
+.contact-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.64) 0%,
+      rgba(0, 0, 0, 0.38) 34%,
+      rgba(0, 0, 0, 0.14) 68%,
+      rgba(0, 0, 0, 0.08) 100%
+    ),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.22) 100%);
+}
+
+.contact-hero-content {
+  position: absolute;
+  left: clamp(22px, 4vw, 42px);
+  bottom: clamp(24px, 4.5vw, 44px);
+  z-index: 2;
+  max-width: 540px;
+}
+
+.contact-hero-title {
+  margin: 0 0 10px;
+  color: #f0bc4b;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.contact-hero-text {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(18px, 2.2vw, 31px);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+/* ===== Tablet ===== */
+
+@media (max-width: 991px) {
+  .contact-hero-media {
+    min-height: 560px;
+  }
+
+  .contact-hero-content {
+    max-width: 460px;
+  }
+
+  .contact-hero-title {
+    font-size: clamp(26px, 4.8vw, 40px);
+  }
+
+  .contact-hero-text {
+    font-size: clamp(18px, 3vw, 28px);
+  }
+}
+
+/* ===== Mobile ===== */
+
+@media (max-width: 767px) {
+  .contact-hero-media {
+    min-height: 420px;
+  }
+
+  .contact-hero-image {
+    object-position: center;
+  }
+
+  .contact-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.78) 0%,
+        rgba(0, 0, 0, 0.48) 38%,
+        rgba(0, 0, 0, 0.18) 100%
+      ),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.24) 100%);
+  }
+
+  .contact-hero-content {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    max-width: 320px;
+  }
+
+  .contact-hero-title {
+    margin-bottom: 8px;
+    font-size: clamp(22px, 7vw, 34px);
+  }
+
+  .contact-hero-text {
+    font-size: clamp(14px, 4.4vw, 22px);
+    line-height: 1.4;
+  }
+}
+
+/* ===== Small Mobile ===== */
+
+@media (max-width: 480px) {
+  .contact-hero-media {
+    min-height: 360px;
+  }
+
+  .contact-hero-content {
+    max-width: 280px;
+  }
+
+  .contact-hero-title {
+    font-size: 20px;
+  }
+
+  .contact-hero-text {
+    font-size: 13px;
+  }
+}

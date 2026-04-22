@@ -8,7 +8,9 @@ import img6 from "../../assets/Products-6.png";
 import featureImg1 from "../../assets/feature-1.png";
 import featureImg2 from "../../assets/feature-2.png";
 import featureImg3 from "../../assets/feature-3.png";
+import featureImg4 from "../../assets/feature-4.png";
 import featureImg5 from "../../assets/feature-5.png";
+import featureImg6 from "../../assets/feature-6.png";
 
 import {
   SettingOutlined,
@@ -98,7 +100,7 @@ export const pageData = {
       id: "04",
       title: "End-To-End Operational Support",
       description: "From Sourcing To Logistics—Handled In-House.",
-      image: featureImg3,
+      image: featureImg4,
       bgColor: "#4f8f3d",
       icon: <SettingOutlined style={{ fontSize: "28px", color: "#4f8f3d" }} />,
       isReversed: false,
@@ -116,7 +118,7 @@ export const pageData = {
       id: "06",
       title: "Sustainability At The Core",
       description: "Turning Waste Into Energy, Reducing CO₂ Emissions.",
-      image: featureImg3,
+      image: featureImg6,
       bgColor: "#4f8f3d",
       icon: <ShakeOutlined style={{ fontSize: "28px", color: "#4f8f3d" }} />,
       isReversed: false,

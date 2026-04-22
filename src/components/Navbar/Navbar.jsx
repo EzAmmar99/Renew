@@ -11,8 +11,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
 
-
-  console.log('location.pathname :>> ', location.pathname);
+  console.log("location.pathname :>> ", location.pathname);
 
   return (
     <>
@@ -49,7 +48,9 @@ const Navbar = () => {
           </Link>
         </nav>
 
-        <Button className="contact-btn">CONTACT US</Button>
+        <Button className="contact-btn">
+          <Link to="/contact-us">CONTACT US</Link>
+        </Button>
 
         <button
           className="mobile-menu-btn"
