@@ -161,7 +161,7 @@
 .biomass-apart-inner {
   position: relative;
   z-index: 1;
-  max-width: 1350px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 
@@ -179,8 +179,6 @@
   flex: 1;
   display: flex;
   align-items: center;
-  max-width: 350px; /* تحكم بطول الخط من هنا */
-  min-width: 30px;
 }
 
 .biomass-line {
@@ -235,12 +233,15 @@
 }
 
 .biomass-apart-grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(22px, 3.5vw, 45px);
+  grid-template-columns: repeat(2, 1fr);
+
+  max-width: 1350px; /* هذا الرقم يتحكم في مدى قرب البطاقات من بعضها */
+  margin: 0 auto; /* لتوسيط البطاقات في منتصف الشاشة */
+
+  list-style: none;
+  gap: clamp(22px, 3.5vw, 40px);
+  width: 100%;
 }
 
 @media (min-width: 768px) {
@@ -251,21 +252,27 @@
 
 .biomass-apart-card {
   position: relative;
-  min-height: clamp(200px, 20vw, 270px);
+  min-height: clamp(200px, 20vw, 320px);
   z-index: 1;
   background: rgba(160, 186, 61, 0.5); /* شفافية بنسبة 70% */
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
   padding: clamp(25px, 4vw, 45px) clamp(20px, 3vw, 35px);
   box-shadow: 0 8px 28px rgba(26, 51, 26, 0.07);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* التوسيط العامودي */
+  align-items: center; /* التوسيط الأفقي */
   text-align: center;
+
+  max-width: 590px;
+  margin: 0 auto; /* عشان تضل البطاقة بالمنتصف بعد تصغير عرضها */
 }
 
 @media (max-width: 767px) {
   .biomass-apart-card {
-    /* تحديد ارتفاع أصغر للموبايل */
     min-height: 180px;
-    /* تقليل المسافات الداخلية لتقليل الطول البصري */
     padding: 35px 20px 25px 20px;
     margin: 0 7px;
   }
@@ -340,7 +347,7 @@
   margin: 0 0 clamp(12px, 2vw, 18px);
   padding-top: 4px;
   /* padding-inline: clamp(36px, 8vw, 56px) clamp(12px, 3vw, 20px); */
-  font-size: clamp(13px, 1.65vw, 20px);
+  font-size: clamp(13px, 1.65vw, 24px);
   font-weight: 780 !important;
   text-transform: uppercase;
   color: #22381c;
@@ -351,9 +358,10 @@
   position: relative;
   z-index: 1;
   margin: 0;
-  font-size: clamp(13px, 1.35vw, 15px);
+  font-size: clamp(13px, 1.35vw, 19px);
   line-height: 1.65;
   color: #666666;
+  /* max-width: 90%; */
 }
 
 .biomass-apart-card-body strong {
@@ -385,7 +393,7 @@
 }
 
 .customer-value-container {
-  max-width: 1450px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 

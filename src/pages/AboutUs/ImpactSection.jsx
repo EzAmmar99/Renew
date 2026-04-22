@@ -59,7 +59,7 @@ const ImpactSection = () => {
 
   const renderCards = (data) => (
     <Row
-      gutter={[24, 32]}
+      gutter={[4, 32]}
       justify="center"
       style={{ display: "flex", flexWrap: "wrap" }}
     >
@@ -78,13 +78,10 @@ const ImpactSection = () => {
           <Card
             hoverable
             style={{
-              width: "100%", // نغير العرض ليكون مرناً
-
-              maxWidth: "1400px", // يضمن عدم تمدد الصف بشكل مبالغ فيه في الشاشات العريضة
+              maxWidth: "500px", // ونضع العرض الأصلي كحد أقصى
               margin: "0 auto", // يضمن توسيط الصف بالكامل
 
-              //   maxWidth: "470px", // ونضع العرض الأصلي كحد أقصى
-              minHeight: "451px", // نغير height إلى minHeight
+              minHeight: "420px", // نغير height إلى minHeight
               height: "auto", // نسمح للارتفاع بالتمدد التلقائي
 
               opacity: 1,

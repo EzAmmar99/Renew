@@ -17,7 +17,7 @@ const HomeSolutionsSection = () => {
           Waste
         </Paragraph>
 
-        <Row gutter={[24, 32]} className="home-solutions-row" justify="center">
+        <Row gutter={[48, 48]} className="home-solutions-row" justify="center">
           {pageData.solutions.map((sol) => (
             <Col xs={24} sm={12} md={8} key={sol.id}>
               <SolutionCard title={sol.title} image={sol.image} />

@@ -9,11 +9,12 @@
 /* الحاوية الرئيسية للعنوان والخطوط */
 .leadership-header-row {
   display: flex;
+  max-width: 1800px;
   align-items: center;
   justify-content: center;
   gap: 100px; /* المسافة بين النص وبداية الخط */
   width: 100%;
-  margin: 40px 0;
+  margin: 40px auto;
 }
 
 /* حاوية الخطوط الجانبية */

@@ -1,5 +1,6 @@
 import { Typography } from "antd";
 import "./AboutUs.css";
+import { motion } from "framer-motion";
 
 import aboutImage from "../../assets/about-us-hero.png";
 import missionImage from "../../assets/mission-image.png";
@@ -32,6 +33,34 @@ import LeadershipSection from "./LeadershipSection";
 
 const { Title, Paragraph } = Typography;
 
+const values = [
+  {
+    id: 1,
+    title: "Sustainability",
+    icon: sustainabilityIcon,
+    text: "we believe in the power of renewable resources to build a greener tomorrow. every solution we offer is rooted in environmental responsibility.",
+  },
+  {
+    id: 2,
+    title: "Reliability",
+    icon: reliabilityIcon,
+    text: "we are committed to consistent performance and uninterrupted supply, ensuring our partners can rely on us every step of the way.",
+  },
+  {
+    id: 3,
+    title: "Innovation",
+    icon: innovationIcon,
+    text: "we continuously seek smarter ways to convert waste into energy, optimizing both technical and commercial efficiency.",
+  },
+  {
+    id: 4,
+    title: "Integrity",
+    icon: integrityIcon,
+    text: "we operate with transparency and accountability, putting long-term impact over short-term gain.",
+  },
+];
+
+const duplicatedValues = [...values, ...values, ...values];
 const AboutSection = () => {
   return (
     <div className="about-us-container">
@@ -178,80 +207,37 @@ const AboutSection = () => {
       </section>
 
       <section className="values-slider-section">
-        <div className="values-slider">
-          <div className="value-slide">
-            <div className="value-card">
-              <div className="value-card-header-center">
-                <img
-                  src={sustainabilityIcon}
-                  alt="icon"
-                  className="value-icon-header"
-                />
-                <h3 className="value-title">Sustainability</h3>
+        <div className="slider-wrapper">
+          <motion.div
+            className="values-slider"
+            animate={{
+              x: ["0%", "-33.33%"], // يتحرك بمقدار نصف طول الحاوية (لأننا ضاعفنا العناصر)
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 20, // سرعة الحركة (كلما زاد الرقم كان أبطأ وأهدأ)
+                ease: "linear",
+              },
+            }}
+          >
+            {duplicatedValues.map((item, index) => (
+              <div className="value-slide" key={index}>
+                <div className="value-card">
+                  <div className="value-card-header-center">
+                    <img
+                      src={item.icon}
+                      alt={item.title}
+                      className="value-icon-header"
+                    />
+                    <h3 className="value-title">{item.title}</h3>
+                  </div>
+                  <p className="value-text">{item.text}</p>
+                </div>
               </div>
-
-              <p className="value-text">
-                we believe in the power of renewable resources to build a
-                greener tomorrow. every solution we offer is rooted in
-                environmental responsibility.
-              </p>
-            </div>{" "}
-          </div>
-
-          <div className="value-slide">
-            <div className="value-card">
-              <div className="value-card-header-center">
-                <img
-                  src={reliabilityIcon}
-                  alt="Reliability Icon"
-                  className="value-icon-header"
-                />
-                <h3 className="value-title">Reliability</h3>
-              </div>
-
-              <p className="value-text">
-                we are committed to consistent performance and uninterrupted
-                supply, ensuring our partners can rely on us every step of the
-                way.
-              </p>
-            </div>
-          </div>
-
-          <div className="value-slide">
-            <div className="value-card">
-              <div className="value-card-header-center">
-                <img
-                  src={innovationIcon}
-                  alt="Innovation Icon"
-                  className="value-icon-header"
-                />
-                <h3 className="value-title">Innovation</h3>
-              </div>
-
-              <p className="value-text">
-                we operate with transparency and accountability, putting
-                long-term impact over short-term gain.
-              </p>
-            </div>
-          </div>
-
-          <div className="value-slide">
-            <div className="value-card">
-              <div className="value-card-header-center">
-                <img
-                  src={integrityIcon}
-                  alt="Integrity Icon"
-                  className="value-icon-header"
-                />
-                <h3 className="value-title">Integrity</h3>
-              </div>
-
-              <p className="value-text">
-                we operate with transparency and accountability, putting
-                long-term impact over short-term gain.{" "}
-              </p>
-            </div>
-          </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
@@ -300,41 +286,39 @@ const AboutSection = () => {
         </div>
         <div className="core-focus-grid">
           <div className="focus-card">
-            <div className="focus-card-header">
-              <img
-                src={fuelProductionIcon}
-                alt="Sustainable Fuel Production"
-                className="focus-card-icon"
-              />
+            <img
+              src={fuelProductionIcon}
+              alt="Continuous Supply"
+              className="focus-card-icon"
+            />
+            <div className="focus-card-content">
               <h4 className="focus-card-title">Sustainable Fuel Production:</h4>
+              <p className="focus-card-text">
+                We convert locally sourced agricultural waste into processed
+                biomass, offering a renewable energy solution that meets the
+                demanding needs of high fuel-consuming sectors such as cement,
+                manufacturing, and heavy industry.
+              </p>
             </div>
-
-            <p className="focus-card-text">
-              We convert locally sourced agricultural waste into processed
-              biomass, offering a renewable energy solution that meets the
-              demanding needs of high fuel-consuming sectors such as cement,
-              manufacturing, and heavy industry.
-            </p>
           </div>
 
           <div className="focus-card">
-            <div className="focus-card-header">
-              <img
-                src={performanceIcon}
-                alt="Superior Performance"
-                className="focus-card-icon"
-              />
+            <img
+              src={performanceIcon}
+              alt="Continuous Supply"
+              className="focus-card-icon"
+            />
+            <div className="focus-card-content">
               <h4 className="focus-card-title">Superior Performance:</h4>
+              <p className="focus-card-text">
+                RENEW’s biomass is known for its high heat value and low ash
+                content, delivering optimal performance while reducing
+                environmental impact.
+              </p>
             </div>
-
-            <p className="focus-card-text">
-              RENEW’s biomass is known for its high heat value and low ash
-              content, delivering optimal performance while reducing
-              environmental impact.
-            </p>
           </div>
 
-          <div className="focus-card">
+          {/* <div className="focus-card">
             <div className="focus-card-header">
               <img
                 src={supplyIcon}
@@ -349,6 +333,22 @@ const AboutSection = () => {
               year-round delivery, so our partners never have to compromise on
               energy availability.
             </p>
+          </div> */}
+
+          <div className="focus-card">
+            <img
+              src={supplyIcon}
+              alt="Continuous Supply"
+              className="focus-card-icon"
+            />
+            <div className="focus-card-content">
+              <h4 className="focus-card-title">Continuous Supply:</h4>
+              <p className="focus-card-text">
+                Through a diversified supply network, we ensure reliable,
+                year-round delivery, so our partners never have to compromise on
+                energy availability.
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@
    ============================================================================= */
 
 .renew-footer {
-  --footer-bg: #f9f9f4;
+  /* --footer-bg: #f9f9f4; */
   --footer-green: #4a8340;
   --footer-white: #ffffff;
   --footer-inline: clamp(20px, 4vw, 56px);
