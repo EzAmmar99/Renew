@@ -13,7 +13,7 @@
 .projects-implementation-media {
   position: relative;
   width: 100%;
-  height: clamp(320px, 46vw, 830px);
+  height: clamp(320px, 46vw, 93vh);
   overflow: hidden;
 }
 
@@ -56,7 +56,7 @@
 /* العنوان */
 .projects-implementation-title {
   margin: 0 0 12px;
-  color: #f2bc4b;
+  color: #fec858;
   font-size: clamp(28px, 3.6vw, 48px);
   font-weight: 700;
   line-height: 1.05;
@@ -69,7 +69,7 @@
   color: #ffffff;
   font-size: clamp(20px, 2.8vw, 35px);
   font-weight: 700;
-  line-height: 1.18;
+  line-height: 1.5;
   letter-spacing: -0.02em;
 }
 
@@ -134,28 +134,30 @@
 }
 
 .projects-success-container {
-  max-width: 1280px;
+  max-width: 1320px;
   margin: 0 auto;
 }
 
 .projects-success-title {
   font-size: clamp(26px, 3vw, 40px);
-  font-weight: 800;
-  color: #2f4a2f;
-  margin-bottom: 16px;
+  font-weight: 700;
+  color: #22381c;
+  margin-bottom: 4%;
 }
 
 .projects-success-text {
-  font-size: clamp(14px, 1.4vw, 18px);
-  color: #7a7a7a;
-  line-height: 1.8;
+  font-size: clamp(14px, 1.4vw, 25px);
+  color: #838486;
+  line-height: 1.5;
+  text-transform: capitalize;
+  font-weight: 400;
 }
 
 /* ===== Partnerships ===== */
 
 .projects-partnership-section {
   background: #f3f3f1;
-  padding: 30px 20px clamp(50px, 6vw, 90px);
+  padding: 35px 20px clamp(50px, 6vw, 90px);
   text-align: center;
 }
 
@@ -165,12 +167,12 @@
 }
 .projects-partnership-section {
   background: #f3f3f1;
-  padding: 34px 32px 52px;
+  padding: 34px 25px 52px;
   text-align: center;
 }
 
 .projects-partnership-container {
-  max-width: 1180px;
+  /* max-width: 1180px; */
   margin: 0 auto;
 }
 
@@ -185,7 +187,7 @@
 
 .projects-partnership-heading h2 {
   margin: 0;
-  font-size: clamp(28px, 3vw, 36px);
+  font-size: clamp(28px, 3vw, 24px);
   line-height: 1.08;
   letter-spacing: -0.02em;
   color: #274126;

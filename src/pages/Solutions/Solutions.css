@@ -7,7 +7,7 @@
 .solutions-image-wrapper {
   position: relative;
   width: 100%;
-  height: clamp(320px, 46vw, 830px);
+  height: clamp(320px, 46vw, 93vh) !important;
   overflow: hidden;
 }
 

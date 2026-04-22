@@ -10,7 +10,7 @@ const HomeStatsSection = () => {
     <div
       className="home-stats-section"
       style={{
-        backgroundImage: `linear-gradient(rgba(45, 74, 34, 0.9), rgba(45, 74, 34, 0.9)), url(${editsImg})`,
+        backgroundImage: `linear-gradient(rgba(45, 74, 34, 0.8), rgba(45, 74, 34, 0.8)), url(${editsImg})`,
       }}
     >
       <div className="home-stats-header">
