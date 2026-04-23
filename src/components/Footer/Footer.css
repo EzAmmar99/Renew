@@ -1,320 +1,205 @@
-/* =============================================================================
-   Footer composition (desktop-first, matches reference structure):
-   (1) Sky — cream, tall, holds eco illustration above the curve
-   (2) Wave shell — SVG only; wide/tall band so curve reads as organic mass
-   (3) Surface — solid green; primary row + ground; no full-bleed SVG over content
-   Layering: sky bg → wave paint → art (z2) overlaps wave seam → surface content
-   ============================================================================= */
+* {
+  box-sizing: border-box;
+}
 
 .renew-footer {
-  /* --footer-bg: #f9f9f4; */
-  --footer-green: #4a8340;
-  --footer-white: #ffffff;
-  --footer-inline: clamp(20px, 4vw, 56px);
+  --green: #4a8340;
+  --white: #ffffff;
+
+  /* Break out of parent constraints to be full viewport width */
+  width: 100vw;
+  max-width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-  background: var(--footer-bg);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  /* Seamless blend from white page background to light green near the wave */
+  background: linear-gradient(180deg, #ffffff 0%, rgba(160, 186, 61, 0.27) 100%);
+  font-family: system-ui, -apple-system, sans-serif;
+  overflow: hidden;
 }
 
-/* --- (1) Upper light section --- */
-.renew-footer__sky {
+.renew-footer__top {
   position: relative;
-  z-index: 0;
-  flex: 0 0 auto;
-  /* Slightly tighter sky so art + curve read as one band */
-  min-height: clamp(150px, 18vh, 220px);
-  background: var(--footer-bg);
+  width: 100%;
+  height: clamp(150px, 18vw, 220px);
+  z-index: 1;
 }
 
-/* Anchored to wave: overlap increased so baseline of art sits just above green seam */
 .renew-footer__art {
   position: absolute;
   left: 44%;
   bottom: clamp(-150px, -34vw, -8px);
-  /* Whole motif nudged left so turbine reads slightly left of center */
+  margin-bottom: 20px;
   transform: translate(calc(-50% - clamp(14px, 2.2vw, 36px)), 0);
   z-index: 2;
   width: min(94vw, clamp(360px, 52vw, 680px));
   max-height: min(40vw, 220px);
   pointer-events: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.renew-footer__art img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: inherit;
   object-fit: contain;
   object-position: center bottom;
 }
 
-/* --- (2) Curved green “shoulder” (tall strip = reads as big curve, not a line) --- */
-.renew-footer__wave-shell {
-  position: relative;
-  z-index: 1;
-  flex: 0 0 auto;
+.renew-footer__wave {
   width: 100%;
-  height: clamp(88px, 11vw, 150px);
+  height: clamp(80px, 12vw, 150px);
+  color: var(--green);
+  z-index: 2;
   margin-top: -1px;
-  line-height: 0;
 }
 
-.renew-footer__wave-svg {
-  display: block;
+.renew-footer__wave svg {
   width: 100%;
   height: 100%;
+  display: block;
 }
 
-.renew-footer__wave-fill {
-  fill: var(--footer-green);
-}
-
-/* --- (3) Main green body --- */
-.renew-footer__surface {
-  position: relative;
-  z-index: 0;
-  flex: 1 1 auto;
-  background: var(--footer-green);
+.renew-footer__content {
+  background-color: var(--green);
+  width: 100%;
+  z-index: 3;
   margin-top: -1px;
-}
-
-.renew-footer__surface-inner {
-  /* max-width: 1440px; */
-  margin: 0 auto;
-  min-height: clamp(200px, 24vw, 300px);
-  /* Less top air: primary row sits higher, tighter to curve while staying readable */
-  padding: clamp(20px, 3vw, 44px) var(--footer-inline) clamp(12px, 1.5vw, 20px);
+  /* Remove subpixel rendering gap */
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  align-items: center;
+  /* Center the inner container */
+  flex-grow: 1;
+  /* Stretch to fill any remaining space in the footer container */
 }
 
-/*
-  Row 1: logo (left) | Follow US + icons (right, stacked)
-  Row 2: full-width nav menu directly under the row above (reference layout)
-*/
-.renew-footer__primary {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: clamp(10px, 1.4vw, 20px);
+.renew-footer__main {
   width: 100%;
-  padding-bottom: 0;
-}
-
-.renew-footer__primary-top {
+  /* Removed max-width to allow elements to reach the edges as requested */
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: flex-end;
   justify-content: space-between;
-  gap: clamp(12px, 2vw, 32px);
-  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: clamp(40px, 6vw, 60px) 5%;
+  /* Increased vertical padding to make the green section naturally taller */
+  gap: 30px;
 }
 
 .renew-footer__logo {
-  flex: 0 1 auto;
-  align-self: flex-end;
-  width: clamp(210px, 17.5vw, 286px);
-  min-width: 0;
-  padding-top: 0;
-  transform: translateY(clamp(-2px, -0.3vw, -6px));
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  justify-content: flex-start;
+  /* Ensure logo aligns strictly to the left edge */
 }
 
 .renew-footer__logo img {
-  display: block;
-  width: 100%;
-  height: auto;
+  width: clamp(180px, 18vw, 280px);
   filter: brightness(0) invert(1);
 }
 
 .renew-footer__nav {
-  width: 100%;
   display: flex;
-  justify-content: right;
-  align-self: stretch;
-  padding-inline: clamp(4px, 1vw, 12px);
-  padding-top: 0;
-  min-width: 0;
-}
-
-.renew-footer__menu {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
   justify-content: center;
-  gap: clamp(12px, 1.6vw, 28px);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
+  flex-wrap: wrap;
+  gap: clamp(15px, 2.5vw, 35px);
+  flex: 2;
 }
 
-.renew-footer__menu li a {
-  color: var(--footer-white);
+.renew-footer__nav a {
+  color: var(--white);
   text-decoration: none;
-  white-space: nowrap;
-  font-size: clamp(15px, 1.12vw, 17px);
   font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: 0.025em;
+  font-size: clamp(14px, 1.2vw, 18px);
+  white-space: nowrap;
 }
 
-/* Right: vertical stack — Follow US, then icons only (nav is below in DOM) */
 .renew-footer__social {
-  flex: 0 0 auto;
-  margin-left: auto;
-  align-self: flex-end;
-  width: max-content;
-  max-width: min(100%, 320px);
-  padding-bottom: 0;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  /* Ensure social links align strictly to the right edge */
+  min-width: 200px;
 }
 
-.renew-footer__social-inner {
+.renew-footer__social-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: clamp(5px, 0.65vw, 9px);
+  align-items: flex-start;
+  gap: 15px;
 }
 
 .renew-footer__social h3 {
   margin: 0;
-  width: 100%;
-  text-align: center;
-  color: var(--footer-white);
-  font-size: clamp(15px, 1.14vw, 18px);
+  color: var(--white);
+  font-size: clamp(16px, 1.3vw, 20px);
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: 0.04em;
 }
 
 .renew-footer__social-icons {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(9px, 1.1vw, 14px);
+  gap: clamp(12px, 1.5vw, 20px);
 }
 
 .renew-footer__social-icons a {
-  display: inline-flex;
+  color: var(--white);
+  font-size: clamp(18px, 1.5vw, 24px);
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.48em;
-  height: 1.48em;
-  color: var(--footer-white);
   text-decoration: none;
-  font-size: clamp(17px, 1.38vw, 21px);
-  line-height: 1;
 }
 
-/* --- (5) Copyright + leaf band at bottom of green --- */
-.renew-footer__ground {
-  margin-top: auto;
+.renew-footer__bottom {
+  width: 100%;
+  background-color: var(--green);
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding-top: clamp(8px, 1.2vw, 18px);
+  justify-content: center;
 }
 
-.renew-footer__copyright {
-  margin: 0 0 clamp(6px, 0.9vw, 12px);
-  padding-left: clamp(2px, 0.35vw, 8px);
-  padding-bottom: clamp(2px, 0.35vw, 6px);
-  color: rgba(255, 255, 255, 0.92);
-  font-size: clamp(11px, 0.82vw, 13px);
-  font-weight: 400;
-  line-height: 1.4;
-  letter-spacing: 0.04em;
+.renew-footer__bottom-inner {
+  width: 100%;
+  padding: 25px 5%;
+  /* Align perfectly with the logo's padding */
 }
 
-.renew-footer__leaf-strip {
-  --footer-leaf-strip: none;
-  width: 100%;
-  height: clamp(26px, 3.4vw, 38px);
+.renew-footer__bottom p {
   margin: 0;
-  background-image: var(--footer-leaf-strip);
-  background-repeat: repeat-x;
-  background-size: auto 96%;
-  background-position: center bottom;
-  /* opacity: 0.5; */
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(12px, 1vw, 14px);
+}
+
+.renew-footer__leaves {
+  width: 100%;
+  height: clamp(30px, 4vw, 50px);
+  background-color: var(--green);
+  display: flex;
+  overflow: hidden;
+}
+
+.renew-footer__leaf-img {
+  height: 100%;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  margin-left: clamp(-25px, -2.5vw, -30px); /* Negative margin to create the overlap */
   pointer-events: none;
 }
 
-/* ---------- Tablet ---------- */
-@media (max-width: 1100px) {
-  .renew-footer__sky {
-    min-height: clamp(140px, 17vh, 200px);
-  }
+.renew-footer__leaf-img:first-child {
+  margin-left: 0;
+}
 
+/* Responsive adjustments */
+@media (max-width: 1100px) {
   .renew-footer__art {
     width: min(92vw, clamp(320px, 54vw, 600px));
     max-height: min(38vw, 208px);
     bottom: clamp(-80px, -8.5vw, -48px);
     transform: translate(calc(-50% - clamp(10px, 1.8vw, 28px)), 0);
   }
-
-  .renew-footer__wave-shell {
-    height: clamp(76px, 9.5vw, 132px);
-  }
-
-  .renew-footer__surface-inner {
-    min-height: clamp(188px, 26vw, 280px);
-    padding-top: clamp(18px, 3.2vw, 44px);
-  }
-
-  .renew-footer__primary-top {
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(10px, 1.6vw, 28px);
-    row-gap: clamp(12px, 2vw, 20px);
-  }
-
-  .renew-footer__logo {
-    align-self: center;
-  }
-
-  .renew-footer__social {
-    margin-left: 0;
-    align-self: center;
-  }
-
-  .renew-footer__nav {
-    justify-content: center;
-  }
-
-  .renew-footer__menu {
-    gap: clamp(12px, 1.7vw, 28px);
-    row-gap: clamp(10px, 1.4vw, 16px);
-    justify-content: center;
-  }
-
-  .renew-footer__menu li {
-    min-width: 0;
-  }
 }
 
-/* ---------- Mobile stack ---------- */
 @media (max-width: 900px) {
-  .renew-footer {
-    --footer-inline: clamp(14px, 4.2vw, 28px);
-  }
-
-  .renew-footer__sky {
-    min-height: clamp(108px, 15vh, 168px);
-  }
-
   .renew-footer__art {
     left: 50%;
     width: min(92vw, clamp(260px, 74vw, 480px));
@@ -323,177 +208,42 @@
     transform: translateX(-50%);
   }
 
-  .renew-footer__wave-shell {
-    height: clamp(56px, 9vw, 96px);
-  }
-
-  .renew-footer__surface-inner {
-    min-height: 0;
-    padding-top: clamp(12px, 3.2vw, 28px);
-    padding-left: max(var(--footer-inline), env(safe-area-inset-left, 0px));
-    padding-right: max(var(--footer-inline), env(safe-area-inset-right, 0px));
-    padding-bottom: max(
-      clamp(8px, 1.1vw, 14px),
-      env(safe-area-inset-bottom, 0px)
-    );
-  }
-
-  .renew-footer__primary {
-    gap: clamp(8px, 2.2vw, 16px);
-  }
-
-  .renew-footer__primary-top {
+  .renew-footer__main {
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: clamp(8px, 2.2vw, 14px);
-  }
-
-  .renew-footer__logo {
-    width: min(100%, clamp(180px, 50vw, 248px));
-    margin-inline: auto;
-    transform: none;
-  }
-
-  .renew-footer__social {
-    margin-left: 0;
-    align-self: center;
-    max-width: min(100%, 360px);
-    width: 100%;
+    text-align: center;
   }
 
   .renew-footer__nav {
-    padding-top: 0;
-    padding-inline: 0;
+    order: 2;
+  }
+
+  .renew-footer__social {
     justify-content: center;
+    order: 3;
+    margin-top: 20px;
   }
 
-  .renew-footer__menu {
-    justify-content: center;
-    column-gap: clamp(8px, 2.2vw, 14px);
-    row-gap: clamp(6px, 1.6vw, 10px);
-  }
-
-  .renew-footer__menu li a {
-    white-space: normal;
-    text-align: center;
-    display: inline-block;
-    max-width: 100%;
-  }
-
-  .renew-footer__social-inner {
+  .renew-footer__social-container {
     align-items: center;
-    width: 100%;
-    gap: clamp(4px, 0.9vw, 7px);
   }
 
-  .renew-footer__social h3 {
-    line-height: 1.05;
-  }
-
-  .renew-footer__social-icons {
+  .renew-footer__logo {
+    order: 1;
+    margin-bottom: 20px;
     justify-content: center;
-    flex-wrap: wrap;
-    row-gap: 6px;
-    column-gap: clamp(7px, 2vw, 12px);
-    max-width: 100%;
-  }
-
-  .renew-footer__ground {
-    padding-top: clamp(4px, 1vw, 12px);
-  }
-
-  .renew-footer__copyright {
-    text-align: center;
-    padding-left: 0;
-    margin-bottom: clamp(4px, 0.7vw, 8px);
-    padding-bottom: clamp(2px, 0.4vw, 5px);
-    padding-inline: max(0px, env(safe-area-inset-left, 0px))
-      max(0px, env(safe-area-inset-right, 0px));
-  }
-
-  .renew-footer__leaf-strip {
-    opacity: 0.48;
-    background-size: auto min(96%, 36px);
   }
 }
 
 @media (max-width: 600px) {
-  .renew-footer__sky {
-    min-height: clamp(100px, 18vh, 152px);
-  }
-
   .renew-footer__art {
     width: min(88vw, 380px);
     max-height: min(34vw, 148px);
     bottom: clamp(-44px, -12vw, 6px);
   }
 
-  .renew-footer__wave-shell {
-    height: clamp(52px, 10vw, 84px);
-  }
-
-  .renew-footer__surface-inner {
-    padding-top: clamp(10px, 3.8vw, 26px);
-  }
-
-  .renew-footer__primary {
-    gap: clamp(6px, 1.8vw, 12px);
-  }
-
-  .renew-footer__primary-top {
-    gap: clamp(6px, 1.8vw, 11px);
-  }
-
-  .renew-footer__menu {
+  .renew-footer__nav {
     flex-direction: column;
     align-items: center;
-    row-gap: clamp(4px, 1.4vw, 8px);
-  }
-
-  .renew-footer__menu li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .renew-footer__menu li a {
-    white-space: normal;
-    width: 100%;
-  }
-
-  .renew-footer__social-icons a {
-    font-size: clamp(16px, 4.2vw, 20px);
-  }
-
-  .renew-footer__ground {
-    padding-top: clamp(2px, 0.8vw, 8px);
-  }
-
-  .renew-footer__copyright {
-    margin-bottom: clamp(2px, 0.5vw, 6px);
-  }
-
-  .renew-footer__leaf-strip {
-    height: clamp(20px, 7vw, 30px);
-  }
-}
-
-/* Very narrow phones: keep tap targets without horizontal scroll */
-@media (max-width: 380px) {
-  .renew-footer {
-    --footer-inline: clamp(12px, 3.5vw, 18px);
-  }
-
-  .renew-footer__surface-inner {
-    padding-top: clamp(8px, 3.2vw, 20px);
-  }
-
-  .renew-footer__social-icons {
-    column-gap: clamp(5px, 1.5vw, 9px);
-    row-gap: 4px;
-  }
-
-  .renew-footer__logo {
-    width: min(100%, 200px);
+    gap: 15px;
   }
 }
