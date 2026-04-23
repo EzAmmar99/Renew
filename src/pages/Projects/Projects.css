@@ -128,51 +128,48 @@
 /* ===== Successful Implementations ===== */
 
 .projects-success-section {
-  background: #f3f3f1;
   padding: clamp(40px, 6vw, 80px) 20px 20px;
   text-align: center;
 }
 
 .projects-success-container {
-  max-width: 1320px;
+  max-width: 1420px;
   margin: 0 auto;
 }
 
 .projects-success-title {
-  font-size: clamp(26px, 3vw, 40px);
-  font-weight: 700;
+  font-size: clamp(26px, 3vw, 35px) !important;
+  font-weight: 700 !important;
+  margin-bottom: 3%;
   color: #22381c;
-  margin-bottom: 4%;
 }
 
 .projects-success-text {
-  font-size: clamp(14px, 1.4vw, 25px);
-  color: #838486;
-  line-height: 1.5;
+  font-size: clamp(18px, 2.2vw, 22px) !important;
+  line-height: 1.6;
+  color: #838486; /* رمادي */
   text-transform: capitalize;
-  font-weight: 400;
+  opacity: 0.9;
+  margin: 0 auto;
 }
 
 /* ===== Partnerships ===== */
 
 .projects-partnership-section {
-  background: #f3f3f1;
   padding: 35px 20px clamp(50px, 6vw, 90px);
   text-align: center;
 }
 
 .projects-partnership-container {
-  max-width: 1400px;
+  max-width: 1420px;
   margin: 0 auto;
 }
 .projects-partnership-section {
-  background: #f3f3f1;
   padding: 34px 25px 52px;
   text-align: center;
 }
 
 .projects-partnership-container {
-  /* max-width: 1180px; */
   margin: 0 auto;
 }
 
@@ -187,38 +184,41 @@
 
 .projects-partnership-heading h2 {
   margin: 0;
-  font-size: clamp(28px, 3vw, 24px);
+  font-size: clamp(28px, 3vw, 35px);
   line-height: 1.08;
   letter-spacing: -0.02em;
   color: #274126;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .projects-line {
-  position: relative;
-  display: block;
+  flex: 1;
   height: 1px;
-  background: #e3b24a;
+  background-color: #fec858;
+  position: relative;
+  max-width: 500px; /* يمكنك تعديل الطول الأقصى من هنا */
+  min-width: 20px;
 }
 
-.projects-line--left::after,
-.projects-line--right::before {
-  content: "";
+/* تنسيق النقطة المشترك */
+.projects-line-dot {
   position: absolute;
-  top: 50%;
-  width: 4px;
-  height: 4px;
+  width: 8px;
+  height: 8px;
+  background-color: #fec858;
   border-radius: 50%;
-  background: #e3b24a;
+  top: 50%;
   transform: translateY(-50%);
 }
 
-.projects-line--left::after {
-  right: -2px;
+/* النقطة للخط الأيسر (تكون في اليمين - بجانب النص) */
+.projects-line--left .projects-line-dot {
+  right: 0;
 }
 
-.projects-line--right::before {
-  left: -2px;
+/* النقطة للخط الأيمن (تكون في اليسار - بجانب النص) */
+.projects-line--right .projects-line-dot {
+  left: 0;
 }
 
 /* paragraph */
@@ -245,7 +245,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 18px;
+  gap: 25px;
   text-align: left;
   width: fit-content;
 }
@@ -268,8 +268,8 @@
 
 /* icon circle */
 .projects-icon {
-  width: 74px;
-  height: 74px;
+  width: 90px !important;
+  height: 90px;
   min-width: 74px;
   border-radius: 50%;
   background: #dfe8d8;
@@ -296,12 +296,15 @@
 
 /* footer */
 .projects-partnership-footer {
-  /* max-width: 760px; */
+  max-width: 1000px;
+  padding: 25px 0;
   margin: 0 auto;
   color: #8a8a8a;
-  font-size: clamp(16px, 1.45vw, 18px);
-  font-weight: 500;
-  line-height: 1.42;
+  font-size: clamp(16px, 1.45vw, 20px);
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 0.9;
+  text-transform: capitalize;
 }
 
 /* ===== Responsive ===== */
@@ -415,34 +418,32 @@
 
 .projects-results-section {
   width: 100%;
-  padding: clamp(40px, 5vw, 64px) clamp(20px, 4vw, 48px) clamp(54px, 6vw, 78px);
+  padding: clamp(40px, 5vw, 64px) clamp(20px, 4vw, 28px) clamp(54px, 6vw, 85px);
   background: linear-gradient(
     180deg,
-    #eef3e3 0%,
-    #f2f4ec 18%,
-    #f4f4f2 52%,
-    #f3f3f1 100%
+    rgba(160, 186, 61, 0.3312) 0%,
+    rgba(255, 255, 255, 0.2592) 45.03%
   );
 }
 
 .projects-results-title {
   margin: 0;
   text-align: center;
-  color: #264024;
-  font-size: clamp(34px, 3vw, 60px);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  color: #22381c;
+  font-size: clamp(34px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 .projects-results-subtitle {
-  margin: clamp(18px, 2vw, 28px) auto 0;
-  max-width: 1200px;
+  margin: clamp(18px, 2vw, 45px) auto 0;
+  /* max-width: 1200px; */
   text-align: center;
-  color: #7f8080;
-  font-size: clamp(16px, 1.35vw, 26px);
-  font-weight: 500;
-  line-height: 1.45;
+  color: #838486;
+  font-size: clamp(16px, 1.35vw, 24px);
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 0.9;
 }
 
 .projects-results-diagram {
@@ -468,16 +469,18 @@
 
 .projects-results-bottom-row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 350px));
+  grid-template-columns: repeat(2, minmax(280px, 450px));
   justify-content: center;
   gap: clamp(22px, 3vw, 34px);
-  margin: clamp(34px, 4vw, 54px) auto 0;
+  margin: clamp(34px, 4vw, 34px) auto 0;
 }
 
 /* ---------- CARDS ---------- */
 
 .projects-result-card {
-  min-height: 190px;
+  min-height: 230px;
+  width: 100%;
+  max-width: 390px;
   border-radius: 20px;
   padding: 26px 22px 22px;
   display: flex;
@@ -490,23 +493,24 @@
 
 .projects-result-card--white {
   background: #f8f8f8;
-  border: 1.5px solid #d5d7d2;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+  border-left: 4px solid #a0ba3d;
+  box-shadow: 0px 1px 2px 0px #00000080;
 }
 
 .projects-result-card--main {
-  background: #4f8d3c;
+  background: #4b823c;
+  box-shadow: 0px 1px 2px 0px #0000000d;
   color: #fff;
 }
 
 .projects-result-card--beige {
-  background: #e9dfcd;
-  border: 1px solid #e3c991;
+  background: #fec85826;
+  border: 1px solid #fec85880;
 }
 
 .projects-result-card--soft-green {
-  background: #d7dfd5;
-  border: 1px solid #b8c8b5;
+  background: #4b823c26;
+  border: 1px solid #4b823c80;
 }
 
 .projects-result-icon {
@@ -579,39 +583,43 @@
   position: absolute;
   right: -2px;
   top: 50%;
-  width: 18px;
-  height: 18px;
-  border-top: 4px solid #4f8d3c;
-  border-right: 4px solid #4f8d3c;
+  width: 14px;
+  height: 14px;
+  border-top: 6px solid #4f8d3c;
+  border-right: 6px solid #4f8d3c;
   transform: translateY(-50%) rotate(45deg);
+  border-radius: 2px; /* لجعل زاوية السهم ناعمة */
 }
 
 .projects-results-down-arrows {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 54px;
-  width: fit-content;
+  display: flex;
+  justify-content: space-between; /* دفع الأسهم للأطراف */
+
+  width: 100%;
+  max-width: 400px; /* تحكم بفتحة الأسهم من هنا لتناسب منتصف البطاقات السفلية */
   margin: 14px auto 0;
+  padding: 0 40px; /* إزاحة اختيارية للداخل إذا كانت الأسهم خارجة عن النص */
 }
 
 .projects-result-arrow--vertical {
-  width: 4px;
+  width: 6px;
   height: 46px;
   background: #4f8d3c;
   border-radius: 999px;
-  margin: 0 auto;
+  position: relative;
 }
 
 .projects-result-arrow--vertical::after {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -1px;
-  width: 18px;
-  height: 18px;
-  border-right: 4px solid #4f8d3c;
-  border-bottom: 4px solid #4f8d3c;
+  bottom: -2px;
+  width: 14px;
+  height: 14px;
+  border-right: 6px solid #4f8d3c;
+  border-bottom: 6px solid #4f8d3c;
   transform: translateX(-50%) rotate(45deg);
+  border-radius: 2px; /* لجعل زاوية السهم ناعمة */
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -654,7 +662,7 @@
 
 @media (max-width: 767px) {
   .projects-results-section {
-    padding: 28px 14px 40px;
+    padding: 28px 14px 30px;
   }
 
   .projects-results-title {
@@ -694,30 +702,27 @@
 .projects-impact-section {
   width: 100%;
   background: #2f6d2f;
+  position: relative;
+  min-height: 700px; /* أفضل من aspect-ratio في حالة المحتوى المتغير */
+  overflow: hidden;
+  font-family: "Alexandria", sans-serif;
 }
 
 .projects-impact-media {
-  position: relative;
   width: 100%;
-  min-height: clamp(640px, 78vw, 900px);
-  overflow: hidden;
+  height: 100%;
+  position: relative;
 }
 
 .projects-impact-image {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
+  height: 1000px;
+  position: absolute;
+
+  top: 0;
+  left: 0;
   object-fit: cover;
-
-  /* 👇 أهم تعديل */
-  object-position: center;
-
-  /* 👇 لا تكبر الصورة */
-  transform: scale(1);
-
-  /* 👇 تحسين وضوح */
-  filter: brightness(0.9) contrast(1.05);
+  filter: brightness(0.7) contrast(1.1); /* تغميق الصورة شوية عشان الكلام ينور */
 }
 
 .projects-impact-overlay {
@@ -743,7 +748,7 @@
   z-index: 2;
   max-width: 1180px;
   margin: 0 auto;
-  padding: clamp(56px, 6vw, 74px) 24px clamp(60px, 7vw, 84px);
+  padding: clamp(56px, 6vw, 100px) 24px clamp(60px, 7vw, 24px);
   text-align: center;
   color: #fff;
 }
@@ -751,194 +756,120 @@
 .projects-impact-title {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(24px, 2.2vw, 36px);
+  font-size: clamp(24px, 2.2vw, 35px);
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
 }
 
 .projects-impact-line {
-  width: clamp(127px, 21vw, 305px);
+  width: clamp(127px, 21vw, 280px);
   height: 3px;
-  margin: 14px auto 28px;
+  margin: 20px auto;
   background: rgba(255, 255, 255, 0.92);
-  border-radius: 999px;
+  border-radius: 2px;
 }
 
 .projects-impact-sub {
-  margin: 0 auto;
+  /* margin: 0 auto;
   max-width: 720px;
   color: rgba(255, 255, 255, 0.95);
-  font-size: clamp(13px, 1.1vw, 16px);
-  font-weight: 500;
-  line-height: 1.65;
+  font-size: clamp(13px, 1.1vw, 20px);
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 45px 0 15px 0; */
+
+  margin-bottom: 50px;
+  font-size: clamp(16px, 1.2vw, 22px);
+  line-height: 1.8;
 }
 
 .projects-impact-sub span {
-  color: #f0bd4a;
-  font-weight: 700;
+  color: #f0bd4a; /* اللون الأصفر الذهبي */
+  font-weight: 600;
 }
 
 .projects-impact-grid {
-  margin-top: clamp(44px, 5vw, 60px);
+  /* margin-top: clamp(44px, 5vw, 60px);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   column-gap: clamp(28px, 4vw, 70px);
   row-gap: clamp(42px, 5vw, 64px);
-  align-items: start;
+  align-items: start; */
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px 40px;
+  margin-top: 40px;
 }
 
 .projects-impact-item {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .projects-impact-icon {
-  width: 52px;
-  height: 52px;
-  margin: 0 auto 16px;
-  border: 1.6px solid rgba(255, 255, 255, 0.9);
+  width: 65px;
+  height: 65px;
+  margin-bottom: 20px;
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
 }
 
 .projects-impact-icon svg {
-  width: 25px;
-  height: 25px;
+  width: 32px;
+  height: 32px;
   display: block;
 }
 
 .projects-impact-value {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   color: #f0bd4a;
-  font-size: clamp(24px, 1.8vw, 34px);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: clamp(24px, 1.8vw, 38px);
+  font-weight: 700;
 }
 
 .projects-impact-text {
-  margin: 0 auto;
-  max-width: 240px;
-  color: #ffffff;
-  font-size: clamp(14px, 1.02vw, 17px);
-  font-weight: 700;
-  line-height: 1.35;
-  letter-spacing: -0.01em;
+  margin: 0;
+  font-size: clamp(14px, 1.02vw, 24px);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  text-transform: capitalize;
 }
 
 /* ===== Tablet ===== */
 
 @media (max-width: 991px) {
-  .projects-impact-media {
-    min-height: 880px;
-  }
-
-  .projects-impact-container {
-    padding: 54px 20px 64px;
-  }
-
   .projects-impact-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 28px;
-    row-gap: 40px;
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 42px;
-  }
-
-  .projects-impact-text {
-    max-width: 260px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 30px;
   }
 }
 
 /* ===== Mobile ===== */
 
-@media (max-width: 767px) {
-  .projects-impact-media {
-    min-height: auto;
-  }
-
-  .projects-impact-image {
-    transform: scale(1.12);
-  }
-
+@media (max-width: 600px) {
   .projects-impact-container {
-    padding: 44px 16px 52px;
-  }
-
-  .projects-impact-title {
-    font-size: clamp(22px, 6vw, 28px);
-  }
-
-  .projects-impact-line {
-    width: 110px;
-    margin: 12px auto 22px;
-  }
-
-  .projects-impact-sub {
-    font-size: 14px;
-    line-height: 1.6;
-    max-width: 100%;
+    padding: 60px 20px;
   }
 
   .projects-impact-grid {
-    grid-template-columns: 1fr;
-    row-gap: 30px;
-    margin-top: 34px;
-    max-width: 360px;
-  }
-
-  .projects-impact-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 14px;
-  }
-
-  .projects-impact-icon svg {
-    width: 23px;
-    height: 23px;
-  }
-
-  .projects-impact-value {
-    font-size: 28px;
-  }
-
-  .projects-impact-text {
-    max-width: 280px;
-    font-size: 15px;
-    line-height: 1.4;
-  }
-}
-
-/* ===== Small Mobile ===== */
-
-@media (max-width: 480px) {
-  .projects-impact-container {
-    padding: 40px 14px 46px;
+    grid-template-columns: 1fr; /* عنصر واحد في الموبايل عشان الراحة البصرية */
+    gap: 40px;
   }
 
   .projects-impact-title {
-    font-size: 21px;
-  }
-
-  .projects-impact-line {
-    width: 96px;
+    font-size: 24px;
   }
 
   .projects-impact-sub {
-    font-size: 13px;
-  }
-
-  .projects-impact-value {
-    font-size: 26px;
-  }
-
-  .projects-impact-text {
-    font-size: 14px;
+    font-size: 15px;
+    padding: 20px 0;
   }
 }
 
@@ -947,334 +878,160 @@
 .projects-cement-section {
   position: relative;
   overflow: hidden;
-  background: #eebf57;
-  padding: clamp(48px, 6vw, 72px) 0 clamp(56px, 7vw, 84px);
+  background-color: #f4bf4b; /* اللون الأصفر اللي بالصورة */
+  padding: 80px 0;
+  font-family: "Inter", sans-serif; /* أو الخط المستخدم عندك */
+}
+
+/* ضبط الووتر مارك في الخلفية */
+.cement-bg-watermark {
+  position: absolute;
+  opacity: 0.5; /* شفافية خفيفة جداً كما في الصورة */
+  pointer-events: none;
+  z-index: 1;
+  filter: brightness(0);
+}
+
+.bg-top-left {
+  top: 10px;
+  left: 30px;
+  width: 350px;
+}
+
+.bg-mid-right {
+  top: 35%;
+  right: -20px;
+  width: 350px;
+  transform: rotate(-15deg);
 }
 
 .projects-cement-container {
   position: relative;
-  z-index: 2;
-  max-width: 1440px;
+  z-index: 5;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(18px, 3vw, 36px);
+  padding: 0 20px;
 }
 
-/* background decorative marks */
-
-.projects-cement-bg {
-  position: absolute;
-  pointer-events: none;
-  user-select: none;
-  opacity: 0.12;
-}
-
-.projects-cement-bg--left {
-  top: 0;
-  left: 0;
-  width: clamp(84px, 10vw, 150px);
-  transform: translate(-18%, -8%);
-}
-
-.projects-cement-bg--right {
-  right: 0;
-  top: 150px;
-  width: clamp(140px, 14vw, 220px);
-  transform: translate(16%, 0) rotate(-2deg);
-}
-
-/* top intro box */
-
+/* الصندوق العلوي - زوايا محددة */
 .projects-cement-intro {
-  position: relative;
-  max-width: 92%;
-  margin: 0 auto;
-  padding: clamp(34px, 4vw, 44px) clamp(18px, 4vw, 36px);
+  background: rgba(255, 255, 255, 0.15); /* شفافية خفيفة */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 40px 40px 40px 40px; /* ضبط الزوايا */
+  padding: 40px 57px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 0 48px 0 48px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  margin-bottom: 50px;
 }
 
 .projects-cement-title {
-  margin: 0 0 14px;
-  color: #173a26;
-  font-size: clamp(28px, 3vw, 40px);
-  font-weight: 800;
-  line-height: 1.12;
-  letter-spacing: -0.02em;
+  color: #22381c; /* الأخضر الغامق */
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .projects-cement-description {
-  margin: 0;
-  color: #7b7f8f;
-  font-size: clamp(18px, 2vw, 26px);
-  font-weight: 500;
-  line-height: 1.45;
-}
-/* cards */
-
-.projects-cement-slider {
-  position: relative;
-  margin-top: clamp(34px, 4vw, 52px);
-  padding: 0 56px;
+  color: #838486; /* لون نص باهت قليلاً */
+  font-size: 29px;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
+.projects-cement-description span {
+  display: block;
+  margin-top: 15px;
+  font-size: 29px;
+}
+
+/* الكروت */
 .projects-cement-cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.projects-cement-cards::-webkit-scrollbar {
-  display: none;
 }
 
 .projects-cement-card {
   position: relative;
-  flex: 0 0 calc((100% - 60px) / 4);
-  min-width: calc((100% - 60px) / 4);
-  min-height: 230px;
-  padding: 24px 18px 22px;
-  background: #4f8f3e;
-  border-radius: 16px;
-  box-shadow: 0 14px 24px rgba(116, 83, 19, 0.18);
+  background-color: #4a8d46; /* اللون الأخضر للكروت */
+  padding: 30px 20px;
+  border-radius: 20px;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   overflow: hidden;
-  scroll-snap-align: start;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* أيقونة الكرت البيضاء */
 .projects-cement-card-icon {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 18px;
+  background: white;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
-  background: #f3f3f1;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 25px;
+  padding: 12px;
+  box-sizing: border-box; /* عشان يحسب الـ padding من ضمن الـ 65px */
 }
 
 .projects-cement-card-icon img {
-  width: 34px;
-  height: 34px;
+  /* هاد السطر بيخلي الصورة تصغر وتكبر حسب حجم الدائرة والـ padding */
+  width: 100%;
+  height: 100%;
+  /* يحافظ على أبعاد الصورة بدون مط (stretch) */
   object-fit: contain;
-  display: block;
 }
 
 .projects-cement-card-text {
-  position: relative;
-  z-index: 2;
-  margin: 0;
-  color: #f4bf4b;
-  font-size: clamp(16px, 1.2vw, 18px);
+  color: #f4bf4b; /* نص الكرت باللون الأصفر */
+  font-size: 17px;
   font-weight: 700;
-  line-height: 1.7;
+  line-height: 1.5;
+  z-index: 2;
 }
 
-.projects-cement-card-mark {
+/* الووتر مارك داخل الكرت */
+.card-watermark {
   position: absolute;
-  right: 18px;
-  bottom: 12px;
-  width: 74px;
-  opacity: 0.08;
-  pointer-events: none;
-}
-
-.projects-cement-card-mark img {
-  width: 100%;
-  display: block;
-}
-
-.projects-cement-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 3;
-  width: 40px;
-  height: 40px;
-  border: 0;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #4f8f3e;
-  font-size: 28px;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-}
-
-.projects-cement-arrow--prev {
-  left: 0;
-}
-
-.projects-cement-arrow--next {
+  bottom: 0;
   right: 0;
+  width: 100px;
+  opacity: 0.8;
+  z-index: 1;
+  transform: translate(-10%, -35%);
+  pointer-events: none; /* عشان ما تعيق الضغط على الكرت */
 }
 
-/* ===== Tablet ===== */
-
-@media (max-width: 1199px) {
+/* التوافق مع الشاشات */
+@media (max-width: 1024px) {
   .projects-cement-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
+@media (max-width: 600px) {
+  .projects-cement-cards {
+    grid-template-columns: 1fr;
+  }
   .projects-cement-intro {
-    max-width: 100%;
+    padding: 30px 20px;
   }
 }
-
-/* ===== Mobile slider ===== */
-
-@media (max-width: 767px) {
-  .projects-cement-section {
-    padding: 34px 0 42px;
-  }
-
-  .projects-cement-container {
-    padding: 0 14px;
-  }
-
-  .projects-cement-bg--left {
-    width: 86px;
-    transform: translate(-28%, -10%);
-  }
-
-  .projects-cement-bg--right {
-    width: 128px;
-    top: 210px;
-    transform: translate(20%, 0);
-  }
-
-  .projects-cement-intro {
-    padding: 24px 16px 26px;
-    border-radius: 0 30px 0 30px;
-  }
-
-  .projects-cement-title {
-    font-size: clamp(24px, 7vw, 32px);
-    margin-bottom: 10px;
-  }
-
-  .projects-cement-description {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
-  .projects-cement-slider {
-    position: relative;
-    margin-top: 24px;
-    padding: 0 34px;
-  }
-
-  .projects-cement-cards {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-
-    /* اخفاء السكرول */
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .projects-cement-cards::-webkit-scrollbar {
-    display: none;
-  }
-
-  .projects-cement-card {
-    flex: 0 0 300px; /* عرض ثابت قريب من شكل الديسكتوب */
-    width: 300px;
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 210px;
-    scroll-snap-align: start;
-    padding: 22px 16px 20px;
-    border-radius: 16px;
-  }
-
-  .projects-cement-card-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 14px;
-  }
-
-  .projects-cement-card-icon img {
-    width: 28px;
-    height: 28px;
-  }
-
-  .projects-cement-card-text {
-    font-size: 15px;
-    line-height: 1.65;
-  }
-
-  .projects-cement-card-mark {
-    width: 62px;
-    right: 14px;
-    bottom: 10px;
-  }
-}
-
-/* ===== Small Mobile ===== */
-
-@media (max-width: 480px) {
-  .projects-cement-slider {
-    padding: 0 14px;
-  }
-
-  .projects-cement-cards {
-    gap: 14px;
-  }
-
-  .projects-cement-card {
-    flex: 0 0 260px; /* أصغر شوي للشاشات الصغيرة جداً */
-    width: 260px;
-    min-width: 260px;
-    max-width: 260px;
-    min-height: 198px;
-    padding: 20px 14px 18px;
-  }
-
-  .projects-cement-card-icon {
-    width: 46px;
-    height: 46px;
-    margin-bottom: 12px;
-  }
-
-  .projects-cement-card-icon img {
-    width: 24px;
-    height: 24px;
-  }
-
-  .projects-cement-card-text {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .projects-cement-card-mark {
-    width: 56px;
-  }
-}
-
 /* ===== Trusted By Leading Cement Producers ===== */
 
 .projects-trusted-section {
   width: 100%;
-  background: #f3f3f1;
-  border-top: 4px solid #d9c452;
-  padding: clamp(44px, 6vw, 74px) 20px clamp(42px, 5vw, 58px);
+  /* background: #f3f3f1; */
+  /* border-top: 4px solid #d9c452; */
+  padding: clamp(44px, 6vw, 100px) 20px clamp(42px, 5vw, 100px);
+  background: linear-gradient(
+    180deg,
+    rgba(160, 186, 61, 0.3312) 0%,
+    rgba(255, 255, 255, 0.2592) 45.03%
+  );
 }
 
 .projects-trusted-container {
@@ -1283,13 +1040,12 @@
 }
 
 .projects-trusted-title {
-  margin: 0;
+  margin: 0 0 80px 0;
   text-align: center;
   color: #1f3d21;
-  font-size: clamp(28px, 2.8vw, 44px);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: clamp(28px, 2.8vw, 40px);
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 .projects-trusted-logos {
@@ -1372,7 +1128,14 @@
 
 .projects-looking-section {
   width: 100%;
-  background: #f3f3f1;
+  /* background: #f3f3f1; */
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background: linear-gradient(
+    180deg,
+    rgba(153, 153, 153, 0) 0%,
+    rgba(255, 255, 255, 0.99) 84.13%
+  );
+  border: 1px solid #ffffff61;
 }
 
 .projects-looking-media {
@@ -1380,26 +1143,27 @@
   width: 100%;
   min-height: clamp(620px, 78vw, 980px);
   overflow: hidden;
+  line-height: 0;
 }
 
 .projects-looking-image {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   object-position: center center;
   display: block;
 }
 
 /* طبقة بيضاء خفيفة على كامل الصورة */
-.projects-looking-media::after {
+/* .projects-looking-media::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0.16);
   pointer-events: none;
-}
+} */
 
 /* التدرج الأبيض القوي من الأسفل */
 .projects-looking-bottom-fade {
@@ -1408,12 +1172,11 @@
   right: 0;
   bottom: 0;
   height: 40%;
+  box-shadow: 0px 4px 4px 0px #00000040;
   background: linear-gradient(
     180deg,
-    rgba(243, 243, 241, 0) 0%,
-    rgba(243, 243, 241, 0.3) 32%,
-    rgba(243, 243, 241, 0.72) 68%,
-    #f3f3f1 100%
+    rgba(153, 153, 153, 0) 0%,
+    rgba(255, 255, 255, 0.99) 84.13%
   );
   z-index: 2;
   pointer-events: none;
@@ -1431,34 +1194,35 @@
 .projects-looking-card {
   max-width: 1180px;
   margin: 0 auto;
-  padding: clamp(34px, 4vw, 54px) clamp(22px, 5vw, 70px);
-  background: rgba(255, 255, 255, 0.78);
-  border-radius: 28px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+  border: 1px solid #ffffff61;
   text-align: center;
+  background: #ffffffc4;
+  backdrop-filter: blur(13.399999618530273px);
+  padding: clamp(34px, 4vw, 54px) clamp(22px, 5vw, 70px);
+
+  top: 5588px;
+  left: 128px;
+  opacity: 1;
+  border-width: 1px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .projects-looking-title {
   margin: 0 0 20px;
   color: #1f3d21;
-  font-size: clamp(34px, 4vw, 58px);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
+  font-size: clamp(34px, 4vw, 40px);
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 .projects-looking-text {
-  max-width: 980px;
+  max-width: 1150px;
   margin: 0 auto;
-  color: #4e8742;
-  font-size: clamp(22px, 2.3vw, 34px);
-  font-weight: 500;
-  line-height: 1.55;
-  letter-spacing: -0.01em;
+  color: #4b823c;
+  font-size: clamp(22px, 2.3vw, 29px);
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 /* ===== Large Tablet ===== */

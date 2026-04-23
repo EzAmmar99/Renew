@@ -74,11 +74,24 @@ const Projects = () => {
       <section className="projects-partnership-section">
         <div className="projects-partnership-container">
           <div className="projects-partnership-heading">
-            <span className="projects-line projects-line--left" />
-            <h2>Strategic Industrial Partnerships</h2>
-            <span className="projects-line projects-line--right" />
-          </div>
+            <span
+              className="projects-line projects-line--left"
+              aria-hidden="true"
+            >
+              <span className="projects-line-dot" />
+            </span>
 
+            <h2 className="projects-partnership-title">
+              Strategic Industrial Partnerships
+            </h2>
+
+            <span
+              className="projects-line projects-line--right"
+              aria-hidden="true"
+            >
+              <span className="projects-line-dot" />
+            </span>
+          </div>
           <p className="projects-partnership-text">
             Our Team Has Worked Hand-In-Hand With Top Cement Producers And Heavy
             Fuel Consumers Across Egypt To:
@@ -129,7 +142,6 @@ const Projects = () => {
       </section>
 
       <section className="projects-results-section">
-        {/* <div className="projects-results-panel"> */}
         <h2 className="projects-results-title">Key Results At A Glance</h2>
 
         <p className="projects-results-subtitle">
@@ -258,7 +270,7 @@ const Projects = () => {
                 </div>
                 <h3 className="projects-impact-value">~95,000</h3>
                 <p className="projects-impact-text">
-                  Passenger Cars
+                  <strong>Passenger Cars</strong>
                   <br />
                   Removed From Egyptian
                   <br />
@@ -479,128 +491,103 @@ const Projects = () => {
       </section>
 
       <section className="projects-cement-section">
+        {/* الووتر مارك الرئيسية في خلفية السكشن */}
         <img
           src={cementPattern}
           alt=""
           aria-hidden="true"
-          className="projects-cement-bg projects-cement-bg--left"
+          className="cement-bg-watermark bg-top-left"
         />
-
         <img
           src={cementPattern}
           alt=""
           aria-hidden="true"
-          className="projects-cement-bg projects-cement-bg--right"
+          className="cement-bg-watermark bg-mid-right"
         />
 
         <div className="projects-cement-container">
+          {/* الصندوق العلوي */}
           <div className="projects-cement-intro">
             <h2 className="projects-cement-title">
               Cement Sector Collaboration
             </h2>
-
             <p className="projects-cement-description">
               One Of Our Landmark Partnerships Involved A Multi-Year Supply
               Agreement With A Leading Cement Manufacturer In Egypt.
               <br />
-              The Integration Of RENEW Biomass:
+              <span>The Integration Of RENEW Biomass:</span>
             </p>
           </div>
 
-          <div className="projects-cement-slider">
-            {/* <button
-              className="projects-cement-arrow projects-cement-arrow--prev"
-              type="button"
-              aria-label="Previous slide"
-            >
-              ‹ 
-            </button> */}
-
+          <div className="projects-cement-cards-wrapper">
             <div className="projects-cement-cards">
+              {/* Card 1 */}
               <article className="projects-cement-card">
                 <div className="projects-cement-card-icon">
-                  <img src={iconCoalSubstitution} alt="" />
+                  <img src={iconCoalSubstitution} alt="Coal Substitution" />
                 </div>
-
                 <p className="projects-cement-card-text">
-                  Enabled Partial
-                  <br />
-                  Substitution Of Coal In
-                  <br />
-                  Kilns
+                  Enabled Partial Substitution Of Coal In Kilns
                 </p>
-
-                <span className="projects-cement-card-mark" aria-hidden="true">
-                  <img src={cementPattern} alt="" />
-                </span>
+                {/* الووتر مارك داخل الكارد */}
+                <img
+                  src={cementPattern}
+                  className="card-watermark"
+                  alt=""
+                  aria-hidden="true"
+                />
               </article>
 
+              {/* Card 2 */}
               <article className="projects-cement-card">
                 <div className="projects-cement-card-icon">
-                  <img src={iconCompliance} alt="" />
+                  <img src={iconCompliance} alt="Compliance" />
                 </div>
-
                 <p className="projects-cement-card-text">
-                  Improved Compliance
-                  <br />
-                  With Environmental
-                  <br />
-                  Regulations
+                  Improved Compliance With Environmental Regulations
                 </p>
-
-                <span className="projects-cement-card-mark" aria-hidden="true">
-                  <img src={cementPattern} alt="" />
-                </span>
+                <img
+                  src={cementPattern}
+                  className="card-watermark"
+                  alt=""
+                  aria-hidden="true"
+                />
               </article>
 
+              {/* Card 3 */}
               <article className="projects-cement-card">
                 <div className="projects-cement-card-icon">
-                  <img src={iconSupply} alt="" />
+                  <img src={iconSupply} alt="Supply" />
                 </div>
-
                 <p className="projects-cement-card-text">
-                  Provided Uninterrupted
-                  <br />
-                  Biomass Supply During
-                  <br />
-                  Fossil Fuel Shortages
+                  Provided Uninterrupted Biomass Supply During Fossil Fuel
+                  Shortages
                 </p>
-
-                <span className="projects-cement-card-mark" aria-hidden="true">
-                  <img src={cementPattern} alt="" />
-                </span>
+                <img
+                  src={cementPattern}
+                  className="card-watermark"
+                  alt=""
+                  aria-hidden="true"
+                />
               </article>
 
+              {/* Card 4 */}
               <article className="projects-cement-card">
                 <div className="projects-cement-card-icon">
-                  <img src={iconReporting} alt="" />
+                  <img src={iconReporting} alt="Reporting" />
                 </div>
-
                 <p className="projects-cement-card-text">
-                  Enhanced The Client’s
-                  <br />
-                  Sustainability Reporting
-                  <br />
-                  Metrics (CO₂ Reduction,
-                  <br />
-                  Fuel Diversity, ESG
-                  <br />
-                  Compliance)
+                  Enhanced The Client’s Sustainability Reporting Metrics (CO₂
+                  Reduction, Fuel Diversity, ESG Compliance)
                 </p>
-
-                <span className="projects-cement-card-mark" aria-hidden="true">
-                  <img src={cementPattern} alt="" />
-                </span>
+                <img
+                  src={cementPattern}
+                  className="card-watermark"
+                  alt=""
+                  aria-hidden="true"
+                />
               </article>
             </div>
-
-            {/* <button
-              className="projects-cement-arrow projects-cement-arrow--next"
-              type="button"
-              aria-label="Next slide"
-            >
-              ›
-            </button> */}
           </div>
         </div>
       </section>
