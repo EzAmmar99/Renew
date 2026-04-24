@@ -19,7 +19,7 @@
   flex-direction: column;
   /* Seamless blend from white page background to light green near the wave */
   background: linear-gradient(180deg, #ffffff 0%, rgba(160, 186, 61, 0.27) 100%);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: Alexandria, sans-serif;
   overflow: hidden;
 }
 
@@ -109,7 +109,7 @@
   color: var(--white);
   text-decoration: none;
   font-weight: 700;
-  font-size: clamp(14px, 1.2vw, 18px);
+  font-size: clamp(14px, 1.2vw, 20px);
   white-space: nowrap;
 }
 
@@ -181,7 +181,8 @@
   width: auto;
   flex-shrink: 0;
   object-fit: contain;
-  margin-left: clamp(-25px, -2.5vw, -30px); /* Negative margin to create the overlap */
+  margin-left: clamp(-25px, -2.5vw, -30px);
+  /* Negative margin to create the overlap */
   pointer-events: none;
 }
 

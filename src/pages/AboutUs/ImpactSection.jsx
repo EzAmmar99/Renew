@@ -13,22 +13,30 @@ const { Title, Paragraph, Text } = Typography;
 
 import "./ImpactSection.css";
 
+import impactIcon1 from "../../assets/impact-icon-1.png";
+import impactIcon2 from "../../assets/impact-icon-2.png";
+import impactIcon3 from "../../assets/impact-icon-3.png";
+import impactIcon4 from "../../assets/impact-icon-4.png";
+import impactIcon5 from "../../assets/impact-icon-5.png";
+import impactIcon6 from "../../assets/impact-icon-6.png";
+
+
 
 const ImpactSection = () => {
   const environmentalData = [
     {
       title: "Reducing Emissions",
-      icon: <CloudOutlined style={{ fontSize: "32px", color: "#3f6634" }} />,
+      icon: <img src={impactIcon1} alt="impact icon" />,
       desc: "By Replacing Fossil Fuels With Clean-Burning Biomass, We Help Cut Down Harmful Greenhouse Gas Emissions And Reduce The Environmental Footprint Of Heavy Industries.",
     },
     {
       title: "Combating The 'Black Cloud'",
-      icon: <GlobalOutlined style={{ fontSize: "32px", color: "#3f6634" }} />,
+      icon: <img src={impactIcon2} alt="impact icon" />,
       desc: "Agricultural Waste Is Often Burned Openly, Contributing To Egypt's Seasonal Air Pollution Crisis. RENEW Intercepts This Waste, Transforming It Into Clean Energy And Reducing Airborne Pollutants.",
     },
     {
       title: "Closing The Loop On Waste",
-      icon: <SyncOutlined style={{ fontSize: "32px", color: "#3f6634" }} />,
+      icon: <img src={impactIcon3} alt="impact icon" />,
       desc: "We Turn What Was Once A Disposal Challenge—Tree Trimmings And Agricultural Residue—Into A Valuable Resource, Promoting A Circular Economy Model Rooted In Sustainability.",
     },
   ];
@@ -36,23 +44,17 @@ const ImpactSection = () => {
   const industrialData = [
     {
       title: "Reliable Alternative Fuel",
-      icon: (
-        <SafetyCertificateOutlined
-          style={{ fontSize: "32px", color: "#3f6634" }}
-        />
-      ),
+      icon: <img src={impactIcon4} alt="impact icon" />,
       desc: "Our High-Quality Biomass Provides Consistent, High Heat Output With Low Ash Content, Making It A Reliable Substitute For Coal In Energy-Intensive Operations.",
     },
     {
       title: "Year-Round Supply Security",
-      icon: (
-        <ThunderboltOutlined style={{ fontSize: "32px", color: "#3f6634" }} />
-      ),
+      icon: <img src={impactIcon5} alt="impact icon" />,
       desc: "Through Our Extensive Network Of Suppliers And Streamlined Logistics, We Ensure Uninterrupted Fuel Delivery, Helping Clients Maintain Operational Continuity And Cost Efficiency.",
     },
     {
       title: "Energy Cost Optimization",
-      icon: <DollarOutlined style={{ fontSize: "32px", color: "#3f6634" }} />,
+      icon: <img src={impactIcon6} alt="impact icon" />,
       desc: "Clients Benefit From A Cost-Effective Energy Source That Aligns With Both Regulatory Standards And Environmental Goals.",
     },
   ];

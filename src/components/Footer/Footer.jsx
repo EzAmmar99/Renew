@@ -1,4 +1,5 @@
 import "./Footer.css";
+import { Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaInstagram,
@@ -11,7 +12,13 @@ import Logo from "../../assets/Logo.svg";
 import TopIllustration from "../../assets/footer-art.svg";
 import footerGroop from "../../assets/footer-groop.png";
 
-const menuItems = ["Home", "About US", "Solutions", "Projects", "Contact US"];
+const menuItems = [
+  { label: "Home", path: "/" },
+  { label: "About US", path: "/about-us" },
+  { label: "Solutions", path: "/solutions" },
+  { label: "Projects", path: "/projects" },
+  { label: "Contact US", path: "/contact-us" },
+];
 
 const socialLinks = [
   { icon: <BsTwitterX />, label: "X", href: "#" },
@@ -55,7 +62,9 @@ export default function Footer() {
 
           <nav className="renew-footer__nav">
             {menuItems.map((item, index) => (
-              <a key={index} href="#">{item}</a>
+              <Link key={index} to={item.path}>
+                {item.label}
+              </Link>
             ))}
           </nav>
 

@@ -208,20 +208,7 @@ const AboutSection = () => {
 
       <section className="values-slider-section">
         <div className="slider-wrapper">
-          <motion.div
-            className="values-slider"
-            animate={{
-              x: ["0%", "-33.33%"], // يتحرك بمقدار نصف طول الحاوية (لأننا ضاعفنا العناصر)
-            }}
-            transition={{
-              x: {
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 20, // سرعة الحركة (كلما زاد الرقم كان أبطأ وأهدأ)
-                ease: "linear",
-              },
-            }}
-          >
+          <div className="values-slider">
             {duplicatedValues.map((item, index) => (
               <div className="value-slide" key={index}>
                 <div className="value-card">
@@ -237,7 +224,7 @@ const AboutSection = () => {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 

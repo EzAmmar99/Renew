@@ -63,3 +63,13 @@
     max-width: 60px; /* تقصير الخطوط في الموبايل لفسح مجال للنص */
   }
 }
+
+.leadership-member-card {
+  transition: all 0.3s ease-in-out !important;
+  cursor: pointer;
+}
+
+.leadership-member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.3) !important;
+}

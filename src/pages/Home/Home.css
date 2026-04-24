@@ -8,7 +8,8 @@
   font-size: clamp(24px, 3vw, 42px) !important;
   margin: 0 !important;
   font-weight: 700 !important;
-  font-family: Alexandria, sans-serif !important;
+  font-family: Alexandria, sans-serif;
+
 }
 
 .stat-label {
@@ -17,23 +18,31 @@
   display: block;
   margin-top: 8px;
   font-weight: 500;
-  font-family: Alexandria, sans-serif !important;
+  font-family: Alexandria, sans-serif;
+
 }
 
 .solution-card {
   position: relative;
-  width: 100%; /* اجعل الكرت يأخذ عرض العمود بالكامل */
-  aspect-ratio: 450 / 520; /* يحافظ على نفس النسبة الأصلية لتصميمك */
-  max-width: 450px; /* لضمان عدم تضخم الكرت في الشاشات الكبيرة جداً */
-  margin: 0 auto; /* توسيط الكرت داخل الـ Col */
-  border-radius: 40px; /* زيادة الانحناء ليتطابق مع الصورة المرفقة */
+  width: 100%;
+  /* اجعل الكرت يأخذ عرض العمود بالكامل */
+  aspect-ratio: 450 / 520;
+  /* يحافظ على نفس النسبة الأصلية لتصميمك */
+  max-width: 450px;
+  /* لضمان عدم تضخم الكرت في الشاشات الكبيرة جداً */
+  margin: 0 auto;
+  /* توسيط الكرت داخل الـ Col */
+  border-radius: 40px;
+  /* زيادة الانحناء ليتطابق مع الصورة المرفقة */
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease; /* إضافة لمسة تفاعلية */
+  transition: transform 0.3s ease;
+  /* إضافة لمسة تفاعلية */
 }
 
 .solution-card:hover {
-  transform: translateY(-10px); /* حركة خفيفة عند تمرير الماوس */
+  transform: translateY(-10px);
+  /* حركة خفيفة عند تمرير الماوس */
 }
 
 .solution-card-image {
@@ -46,11 +55,9 @@
   position: absolute;
   inset: 0;
   /* تغيير التدرج ليكون التعتيم من الأعلى كما في التصميم لإبراز العنوان */
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0) 40%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0) 40%);
 }
 
 .solution-card-title {
@@ -62,7 +69,8 @@
   color: #fff !important;
   margin: 0 !important;
   font-weight: 700 !important;
-  font-size: clamp(16px, 2vw, 22px) !important; /* خط مرن */
+  font-size: clamp(16px, 2vw, 22px) !important;
+  /* خط مرن */
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
   z-index: 2;
 }
@@ -86,11 +94,14 @@
 
 .feature-text {
   position: relative;
-  z-index: 1; /* يضمن بقاء النص فوق الخلفية */
+  z-index: 1;
+  /* يضمن بقاء النص فوق الخلفية */
   height: 100%;
   display: flex;
-  align-items: center; /* توسيط عمودي */
-  justify-content: flex-start; /* توسيط أفقي */
+  align-items: center;
+  /* توسيط عمودي */
+  justify-content: flex-start;
+  /* توسيط أفقي */
   padding: 60px;
   overflow: hidden;
   color: white;
@@ -109,15 +120,18 @@
   background-position: center;
   background-size: contain;
   color: red;
-  opacity: 0.8; /* شفافية عالية جداً ليكون مجرد وترمارك */
-  z-index: -1; /* أهم خطوة: تجعل العلامة خلف النص */
+  opacity: 0.8;
+  /* شفافية عالية جداً ليكون مجرد وترمارك */
+  z-index: -1;
+  /* أهم خطوة: تجعل العلامة خلف النص */
   pointer-events: none;
 }
 
 .feature-text-inner {
   position: relative;
   z-index: 1;
-  text-align: left; /* أو حسب الرغبة، يفضل اليسار كما في الصور */
+  text-align: left;
+  /* أو حسب الرغبة، يفضل اليسار كما في الصور */
   width: 100%;
 }
 
@@ -129,12 +143,14 @@
 }
 
 .feature-id {
-  font-family: "Alexandria", sans-serif;
+  font-family: Alexandria, sans-serif;
   font-size: 80px !important;
-  font-weight: 200; /* خفيف جداً ليظهر بشكل Outline */
+  font-weight: 200;
+  /* خفيف جداً ليظهر بشكل Outline */
   line-height: 1;
   opacity: 0.7;
-  -webkit-text-stroke: 1px white; /* إذا كنت تريده مفرغاً كما في الصورة */
+  -webkit-text-stroke: 1px white;
+  /* إذا كنت تريده مفرغاً كما في الصورة */
   color: transparent;
 }
 
@@ -160,17 +176,19 @@
   font-size: 32px !important;
   font-weight: 700 !important;
   margin-bottom: 15px !important;
-  font-family: Alexandria, sans-serif !important;
+  font-family: Alexandria, sans-serif;
+
 }
 
 .feature-description {
   color: white !important;
-  font-family: "Alexandria", sans-serif !important;
-  font-size: 20px !important;
+  font-family: Alexandria, sans-serif;
+ font-size: 20px !important;
   font-weight: 400 !important;
   line-height: 1.5 !important;
   opacity: 0.9;
-  max-width: 400px; /* للتحكم في عرض الأسطر كما فعلنا سابقاً */
+  max-width: 400px;
+  /* للتحكم في عرض الأسطر كما فعلنا سابقاً */
 }
 
 .feature-image-wrapper {
@@ -190,6 +208,7 @@
 @media (max-width: 768px) {
   .feature-row {
     /* تحويل الصف إلى عمود في الشاشات الصغيرة */
+    display: flex !important;
     flex-direction: column !important;
   }
 
@@ -202,12 +221,14 @@
   }
 
   .feature-text {
-    padding: 40px 20px; /* تقليل الحشو في الموبايل */
+    padding: 40px 20px;
+    /* تقليل الحشو في الموبايل */
     justify-content: center;
   }
 
   .feature-text-inner {
-    text-align: center; /* اختيارياً: توسيط النص للموبايل */
+    text-align: center;
+    /* اختيارياً: توسيط النص للموبايل */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -218,23 +239,23 @@
   }
 
   .feature-description {
-    max-width: 100%; /* السماح للنص بأخذ العرض الكامل */
+    max-width: 100%;
+    /* السماح للنص بأخذ العرض الكامل */
   }
 
   .feature-image-wrapper {
-    height: 300px; /* طول أصغر للصورة في الموبايل */
+    height: 300px;
+    /* طول أصغر للصورة في الموبايل */
   }
 
-  /* لضمان أن الصورة تظهر دائماً فوق أو تحت النص بترتيب منطقي */
-  /* إذا كنت تريد الصورة دائماً فوق النص في الموبايل: */
-  .feature-row {
-    display: flex;
-    flex-direction: column-reverse !important;
+  .feature-image-col {
+    order: -1 !important;
+    /* Always show image first */
   }
 
-  /* إذا كان isReversed يعكس الترتيب، هذا الكود يضمن التناسق */
-  .ant-row {
-    display: flex !important;
+  .feature-text-col {
+    order: 1 !important;
+    /* Always show text second */
   }
 }
 
@@ -243,6 +264,7 @@
   .feature-col {
     height: 450px;
   }
+
   .feature-image-wrapper {
     height: 100%;
   }
@@ -253,12 +275,14 @@
   position: relative;
   height: clamp(320px, 60vw, 93vh);
   background-size: cover;
-  background-position: center top; /* لتثبيت أسفل الجرافة */
+  background-position: center top;
+  /* لتثبيت أسفل الجرافة */
   background-repeat: no-repeat;
-  font-family: "Alexandria", sans-serif;
+  font-family: Alexandria, sans-serif;
 
-  display: flex;
-  align-items: flex-end; /* لتموضع المحتوى في الأسفل */
+    display: flex;
+  align-items: flex-end;
+  /* لتموضع المحتوى في الأسفل */
   justify-content: center;
 }
 
@@ -266,17 +290,16 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.1) 0%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.4) 100%);
   z-index: 1;
 }
 
 .home-hero-content {
   position: absolute;
-  bottom: clamp(40px, 8%, 100px); /* مسافة مرنة من الأسفل */
+  bottom: clamp(40px, 8%, 100px);
+  /* مسافة مرنة من الأسفل */
   width: 90%;
   max-width: 1100px;
   z-index: 2;
@@ -285,9 +308,9 @@
 
 .home-hero-title,
 .home-hero-subtitle {
-  font-family: Alexandria, sans-serif !important;
+  font-family: Alexandria, sans-serif;
 
-  color: #fff !important;
+    color: #fff !important;
   font-size: clamp(32px, 5.5vw, 70px) !important;
   margin: 0 !important;
   font-weight: 700 !important;
@@ -306,24 +329,28 @@
   line-height: 1.5 !important;
   max-width: 850px;
   margin: clamp(15px, 3vw, 28px) auto 0 !important;
-  font-family: Alexandria, sans-serif !important;
+  font-family: Alexandria, sans-serif;
+
 }
 
 @media (max-width: 991px) {
   .home-hero {
-    height: 700px; /* ارتفاع مناسب للتابلت */
+    height: 700px;
+    /* ارتفاع مناسب للتابلت */
   }
 }
 
 @media (max-width: 767px) {
   .home-hero {
-    height: 100vh; /* في الموبايل غالباً يفضل تكون ملىء الشاشة أو قريبة منها */
+    height: 100vh;
+    /* في الموبايل غالباً يفضل تكون ملىء الشاشة أو قريبة منها */
     max-height: 650px;
   }
 
   .home-hero-content {
     width: 95%;
-    bottom: 15%; /* رفع النص قليلاً في الموبايل */
+    bottom: 15%;
+    /* رفع النص قليلاً في الموبايل */
   }
 
   .home-hero-description {
@@ -333,12 +360,13 @@
 
 @media (max-width: 480px) {
   .home-hero {
-    height: 320px;
+    height: 550px;
   }
 
   .home-hero-title,
   .home-hero-subtitle {
-    font-size: 28px !important; /* حجم مناسب جداً للموبايل الصغير */
+    font-size: 28px !important;
+    /* حجم مناسب جداً للموبايل الصغير */
   }
 }
 
@@ -363,7 +391,8 @@
   font-size: 40px !important;
   margin-bottom: 5px !important;
   font-weight: 600 !important;
-  font-family: Alexandria, sans-serif !important;
+  font-family: Alexandria, sans-serif;
+
 }
 
 .home-stats-line {
@@ -388,7 +417,8 @@
 
 @media (max-width: 480px) {
   .home-stats-line {
-    max-width: 150px; /* تقصير الخط في الشاشات الصغيرة جداً */
+    max-width: 150px;
+    /* تقصير الخط في الشاشات الصغيرة جداً */
   }
 }
 
@@ -403,7 +433,8 @@
   font-weight: 600 !important;
   font-size: clamp(28px, 5vw, 40px) !important;
   margin-bottom: 20px !important;
-  font-family: Alexandria, sans-serif !important;
+  font-family: Alexandria, sans-serif;
+
 }
 
 .home-solutions-description {
@@ -415,7 +446,8 @@
   /* max-width: 800px; */
   margin-left: auto !important;
   margin-right: auto !important;
-  font-family: Alexandria, sans-serif !important;
+  font-family: Alexandria, sans-serif;
+
 }
 
 .home-solutions-row {
@@ -427,6 +459,7 @@
   .home-solutions-section {
     padding: 60px 20px;
   }
+
   .home-solutions-description {
     margin-bottom: 40px !important;
   }
@@ -482,7 +515,8 @@
   color: #243d1f !important;
   font-size: clamp(28px, 3vw, 40px) !important;
   font-weight: 600 !important;
-  font-family: "Alexandria", sans-serif !important;
+  font-family: Alexandria, sans-serif;
+
 }
 
 .home-why-description {
@@ -493,7 +527,8 @@
   line-height: 1.6 !important;
   font-weight: 500 !important;
   opacity: 0.8;
-  font-family: "Alexandria", sans-serif !important;
+  font-family: Alexandria, sans-serif;
+
 }
 
 .home-features-section {
@@ -520,7 +555,8 @@
   font-size: 40px !important;
   font-weight: 600;
   margin-bottom: 4% !important;
-  font-family: Alexandria, sans-serif !important;
+  font-family: Alexandria, sans-serif;
+
 }
 
 .home-contact-description {
@@ -532,7 +568,8 @@
   line-height: 1.6 !important;
   opacity: 0.8;
   margin-bottom: 4% !important;
-  font-family: Alexandria, sans-serif !important;
+  font-family: Alexandria, sans-serif;
+
 }
 
 .home-contact-text {
@@ -542,9 +579,9 @@
   max-width: 500px !important;
   font-size: 34px !important;
   font-weight: 500 !important;
-  font-family: Alexandria, sans-serif !important;
+  font-family: Alexandria, sans-serif;
 
-  /* margin: 0 auto !important; */
+    /* margin: 0 auto !important; */
 }
 
 .home-contact-button {
@@ -556,7 +593,8 @@
   font-weight: 700 !important;
   border-radius: 10px !important;
   font-size: 35px !important;
-  font-family: Alexandria, sans-serif !important;
+  font-family: Alexandria, sans-serif;
+
 }
 
 .home-contact-image-wrapper {
@@ -587,9 +625,11 @@
   .home-contact-title {
     font-size: 32px !important;
   }
+
   .home-contact-description {
     font-size: 20px !important;
   }
+
   .home-contact-text {
     font-size: 28px !important;
   }
@@ -597,7 +637,8 @@
 
 @media (max-width: 768px) {
   .home-contact-section {
-    padding: 60px 5% 40px; /* تقليل الحشو الجانبي */
+    padding: 60px 5% 40px;
+    /* تقليل الحشو الجانبي */
   }
 
   .home-contact-header {
@@ -616,15 +657,18 @@
 
   .home-contact-text {
     font-size: 22px !important;
-    text-align: center; /* توسيط النص في الموبايل */
+    text-align: center;
+    /* توسيط النص في الموبايل */
     max-width: 100% !important;
     margin-bottom: 30px !important;
   }
 
   .home-contact-button {
-    height: 60px !important; /* تصغير الزر قليلاً */
+    height: 60px !important;
+    /* تصغير الزر قليلاً */
     font-size: 24px !important;
-    width: 100%; /* الزر يأخذ العرض كامل في الموبايل لسهولة الضغط */
+    width: 100%;
+    /* الزر يأخذ العرض كامل في الموبايل لسهولة الضغط */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -632,7 +676,8 @@
 
   .home-contact-image-wrapper {
     margin-top: 40px;
-    padding: 10px; /* تقليل الحشو حول الصورة */
+    padding: 10px;
+    /* تقليل الحشو حول الصورة */
   }
 
   .home-contact-image-frame {

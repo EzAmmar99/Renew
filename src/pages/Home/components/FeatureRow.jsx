@@ -52,19 +52,19 @@ const FeatureRow = ({
     <Row gutter={0} wrap={false} align="stretch" className="feature-row">
       {isReversed ? (
         <>
-          <Col flex="1 1 50%" className="feature-col">
+          <Col flex="1 1 50%" className="feature-col feature-image-col">
             {ImageContent}
           </Col>
-          <Col flex="1 1 50%" className="feature-col">
+          <Col flex="1 1 50%" className="feature-col feature-text-col">
             {TextContent}
           </Col>
         </>
       ) : (
         <>
-          <Col flex="1 1 50%" className="feature-col">
+          <Col flex="1 1 50%" className="feature-col feature-text-col">
             {TextContent}
           </Col>
-          <Col flex="1 1 50%" className="feature-col">
+          <Col flex="1 1 50%" className="feature-col feature-image-col">
             {ImageContent}
           </Col>
         </>

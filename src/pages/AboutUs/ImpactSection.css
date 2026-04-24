@@ -48,9 +48,9 @@
 /* للموبايل: تقليل المسافات وحجم الخط */
 @media (max-width: 768px) {
   .impact-header-row {
-    gap: 15px;
+    gap: 0;
   }
   .impact-line-container {
-    max-width: 50px; /* خطوط أقصر في الموبايل */
+    display: none; /* إخفاء الخطوط والنقاط في الموبايل */
   }
 }

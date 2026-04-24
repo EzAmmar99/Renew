@@ -66,28 +66,34 @@ const Navbar = () => {
           <Link
             to="/"
             className={`mobile-nav-link ${location.pathname === "/" ? "active" : ""}`}
+            onClick={() => setMenuOpen(false)}
           >
             Home
           </Link>
           <Link
             to="/about-us"
             className={`mobile-nav-link ${location.pathname === "/about-us" ? "active" : ""}`}
+            onClick={() => setMenuOpen(false)}
           >
             About US
           </Link>
           <Link
             to="/solutions"
             className={`mobile-nav-link ${location.pathname === "/solutions" ? "active" : ""}`}
+            onClick={() => setMenuOpen(false)}
           >
             Solutions
           </Link>
           <Link
             to="/projects"
             className={`mobile-nav-link ${location.pathname === "/projects" ? "active" : ""}`}
+            onClick={() => setMenuOpen(false)}
           >
             Projects
           </Link>
-          <Button className="mobile-contact-btn">CONTACT US</Button>
+          <Button className="mobile-contact-btn" onClick={() => setMenuOpen(false)}>
+            <Link to="/contact-us">CONTACT US</Link>
+          </Button>
         </div>
       )}
     </>

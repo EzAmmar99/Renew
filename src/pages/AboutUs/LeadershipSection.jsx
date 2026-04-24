@@ -1,5 +1,4 @@
 import "./LeadershipSection.css";
-import { motion } from "framer-motion";
 import { Typography, Avatar, Divider, Row, Col } from "antd";
 import MemberCard from "./MemberCard";
 
@@ -99,41 +98,29 @@ const LeadershipSection = () => {
 
       <div
         style={{
-          margin: "0px",
+          paddingTop: "50px",
+          paddingBottom: "50px",
           backgroundColor: "#fff",
           width: "100%",
-          //   overflow: "hidden", // لمنع السكرول الخارجي للصفحة
-          height: "800px",
+          height: "auto",
         }}
       >
         <div
           className="team-slider-wrapper"
           style={{
             width: "100%",
-            overflow: "hidden", // ضروري لإخفاء الكروت الزائدة
-            padding: "150px 0",
+            overflow: "hidden",
+            padding: "100px 0",
             background: "#fff",
           }}
         >
-          <motion.div
+          <div
+            className="moving-container"
             style={{
               display: "flex",
               gap: "40px",
-              width: "max-content", // يخلي الحاوية بعرض الكروت كلها جنب بعض
+              width: "max-content",
             }}
-            animate={{
-              x: [0, -2650], // التغيير هنا حسب عرض الكروت الإجمالي
-            }}
-            transition={{
-              x: {
-                repeat: Infinity, // حركة لانهائية
-                repeatType: "loop",
-                duration: 30, // سرعة الحركة (كل ما زاد الرقم صار أبطأ وأهدى)
-                ease: "linear", // حركة ثابتة السرعة بدون تقطيع
-              },
-            }}
-            // حركة حلوة: لما يحط الماوس يوقف السلايدر عشان يقرأ
-            whileHover={{ animationPlayState: "paused" }}
           >
             {doubledData.map((member, index) => (
               <div
@@ -141,27 +128,27 @@ const LeadershipSection = () => {
                 style={{
                   flexShrink: 0,
                   width: "490px",
-                  height: "100%", // عشان نضمن توحيد الطول اللي عملناه
                 }}
               >
                 <MemberCard member={member} />
               </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* CSS السحري لضمان التوقف */}
           <style>{`
-      .team-slider-wrapper:hover .moving-container {
-        animation-play-state: paused !important;
-        /* في Framer Motion الأفضل نستخدم الـ CSS لإجبار المحرك على الوقوف */
-        -webkit-animation-play-state: paused !important;
-      }
-      
-      /* إذا Framer Motion لسه عم يتحرك، هاد الكود بيعمل Override */
-      .moving-container {
-         will-change: transform;
-      }
-    `}</style>
+            @keyframes slide {
+              from { transform: translateX(0); }
+              to { transform: translateX(-2450px); }
+            }
+            .moving-container {
+              animation: slide 40s linear infinite;
+              will-change: transform;
+            }
+            .moving-container:has(> div:hover) {
+              animation-play-state: paused !important;
+            }
+          `}</style>
         </div>
       </div>
     </>

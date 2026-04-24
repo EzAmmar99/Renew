@@ -7,13 +7,15 @@ const MemberCard = ({ member }) => {
   return (
     <div
       style={{
-        paddingTop: "120px", // مساحة تسمح للصورة بالبروز للأعلى
+        paddingTop: "120px",
+        paddingBottom: "50px", // مساحة تسمح للظل بالظهور كاملاً في الأسفل
         width: "100%",
         maxWidth: "496px",
         margin: "0 auto",
       }}
     >
       <Card
+        className="leadership-member-card"
         bordered={false}
         style={{
           background: "#ffffff",

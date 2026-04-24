@@ -6,11 +6,13 @@ import AboutUs from "./pages/AboutUs/AboutUs";
 import Projects from "./pages/Projects/Projects";
 import Solutions from "./pages/Solutions/Solutions";
 import Home from "./pages/Home/Home";
+import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />

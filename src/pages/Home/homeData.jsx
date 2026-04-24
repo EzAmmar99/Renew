@@ -12,11 +12,13 @@ import featureImg4 from "../../assets/feature-4.png";
 import featureImg5 from "../../assets/feature-5.png";
 import featureImg6 from "../../assets/feature-6.png";
 
-import {
-  SettingOutlined,
-  BulbOutlined,
-  ShakeOutlined,
-} from "@ant-design/icons";
+
+import featureIcon1 from "../../assets/feature-icon-1.png";
+import featureIcon2 from "../../assets/feature-icon-2.png";
+import featureIcon3 from "../../assets/feature-icon-3.png";
+import featureIcon4 from "../../assets/feature-icon-4.png";
+import featureIcon5 from "../../assets/feature-icon-5.png";
+import featureIcon6 from "../../assets/feature-icon-6.png";
 
 export const pageData = {
   hero: {
@@ -75,7 +77,7 @@ export const pageData = {
         "Backed By 20+ Years In Alternative Fuel And 35+ Years In Cement Industry.",
       image: featureImg1,
       bgColor: "#a8c63f",
-      icon: <SettingOutlined style={{ fontSize: "30px", color: "#91b53a" }} />,
+      icon: <img src={featureIcon1} alt="feature icon" />,
       isReversed: true,
     },
     {
@@ -84,7 +86,7 @@ export const pageData = {
       description: "High Heat Value, Low Ash—Ideal For Industrial Use.",
       image: featureImg2,
       bgColor: "#4f8f3d",
-      icon: <BulbOutlined style={{ fontSize: "30px", color: "#4f8f3d" }} />,
+      icon: <img src={featureIcon2} alt="feature icon" />,
       isReversed: false,
     },
     {
@@ -93,7 +95,7 @@ export const pageData = {
       description: "Consistent Delivery Through A Diversified Network.",
       image: featureImg3,
       bgColor: "#a8c63f",
-      icon: <ShakeOutlined style={{ fontSize: "30px", color: "#91b53a" }} />,
+      icon: <img src={featureIcon3} alt="feature icon" />,
       isReversed: true,
     },
     {
@@ -102,7 +104,7 @@ export const pageData = {
       description: "From Sourcing To Logistics—Handled In-House.",
       image: featureImg4,
       bgColor: "#4f8f3d",
-      icon: <SettingOutlined style={{ fontSize: "28px", color: "#4f8f3d" }} />,
+      icon: <img src={featureIcon4} alt="feature icon" />,
       isReversed: false,
     },
     {
@@ -111,7 +113,7 @@ export const pageData = {
       description: "Flexible Contracts Tailored To Your Fuel Needs.",
       image: featureImg5,
       bgColor: "#a8c63f",
-      icon: <BulbOutlined style={{ fontSize: "28px", color: "#7ea03a" }} />,
+      icon: <img src={featureIcon5} alt="feature icon" />,
       isReversed: true,
     },
     {
@@ -120,7 +122,7 @@ export const pageData = {
       description: "Turning Waste Into Energy, Reducing CO₂ Emissions.",
       image: featureImg6,
       bgColor: "#4f8f3d",
-      icon: <ShakeOutlined style={{ fontSize: "28px", color: "#4f8f3d" }} />,
+      icon: <img src={featureIcon6} alt="feature icon" />,
       isReversed: false,
     },
   ],
