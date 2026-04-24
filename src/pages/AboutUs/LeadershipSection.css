@@ -60,7 +60,10 @@
     gap: 15px;
   }
   .leadership-line-container {
-    max-width: 60px; /* تقصير الخطوط في الموبايل لفسح مجال للنص */
+    display: none; /* إخفاء الخطوط والنقاط في الموبايل */
+  }
+  .leadership-line::after {
+    display: none;
   }
 }
 
@@ -72,4 +75,23 @@
 .leadership-member-card:hover {
   transform: translateY(-10px);
   box-shadow: 0px 15px 40px 0px rgba(0, 0, 0, 0.3) !important;
+}
+
+.leadership-title {
+  font-size: 40px !important;
+}
+
+.leadership-description {
+  font-size: 24px !important;
+}
+
+@media (max-width: 768px) {
+  .leadership-title {
+    font-size: 30px !important;
+    white-space: normal !important;
+  }
+
+  .leadership-description {
+    font-size: 15px !important;
+  }
 }

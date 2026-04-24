@@ -109,10 +109,10 @@ const ImpactSection = () => {
 
             {/* التايتل (Title) */}
             <Title
+              className="impact-card-title"
               style={{
                 fontFamily: "'Alexandria', sans-serif",
                 fontWeight: 700,
-                fontSize: "24px",
                 lineHeight: "150%",
                 letterSpacing: "0%",
                 textTransform: "capitalize",
@@ -126,10 +126,10 @@ const ImpactSection = () => {
 
             {/* الوصف (Description) */}
             <Paragraph
+              className="impact-card-desc"
               style={{
                 fontFamily: "'Alexandria', sans-serif",
                 fontWeight: 300,
-                fontSize: "20px",
                 lineHeight: "150%",
                 letterSpacing: "0%",
                 textTransform: "capitalize",
@@ -162,11 +162,11 @@ const ImpactSection = () => {
 
         <Title
           level={2}
+          className="impact-main-title"
           style={{
             margin: 0,
             color: "#22381C",
             fontWeight: 700,
-            fontSize: "40px",
             fontFamily: "'Alexandria', sans-serif",
             whiteSpace: "nowrap",
           }}
@@ -180,10 +180,10 @@ const ImpactSection = () => {
       </div>
 
       <Paragraph
+        className="impact-main-description"
         style={{
           maxWidth: "1000px",
           margin: "20px auto 50px",
-          fontSize: "24px",
           color: "#737373",
           fontWeight: 400,
           lineHeight: "1.5",
@@ -195,10 +195,10 @@ const ImpactSection = () => {
 
       {/* Environmental Section */}
       <Title
+        className="impact-benefits-title"
         style={{
           color: "#FEC858",
           marginBottom: "30px",
-          fontSize: "25px",
           fontWeight: 700,
         }}
       >
@@ -208,11 +208,11 @@ const ImpactSection = () => {
 
       {/* Industrial Section */}
       <Title
+        className="impact-benefits-title"
         style={{
           color: "#FEC858",
           marginTop: "60px",
           marginBottom: "30px",
-          fontSize: "25px",
           fontWeight: 700,
         }}
       >

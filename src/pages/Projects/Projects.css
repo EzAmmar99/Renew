@@ -1029,6 +1029,15 @@
   .projects-cement-intro {
     padding: 30px 20px;
   }
+
+  .projects-cement-title {
+    font-size: 30px !important;
+  }
+
+  .projects-cement-description,
+  .projects-cement-description span {
+    font-size: 15px !important;
+  }
 }
 
 /* ===== Trusted By Leading Cement Producers ===== */
@@ -1044,7 +1053,7 @@
 }
 
 .projects-trusted-container {
-  max-width: 1700px;
+  max-width: 1900px;
   margin: 0 auto;
 }
 
@@ -1057,13 +1066,35 @@
   line-height: 1.5;
 }
 
-.projects-trusted-logos {
-  margin-top: clamp(34px, 4vw, 52px);
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  align-items: center;
-  gap: clamp(18px, 2vw, 28px);
+.projects-trusted-slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: clamp(24px, 4vw, 52px);
+  margin-bottom: clamp(34px, 4vw, 25px);
 }
+
+.projects-trusted-logos-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: clamp(50px, 8vw, 120px);
+  padding-right: clamp(50px, 8vw, 120px); /* This ensures the gap at the loop point is identical to others */
+  animation: partners-slide 30s linear infinite;
+}
+
+@keyframes partners-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* .projects-trusted-logos-track:hover {
+  animation-play-state: paused;
+} */
 
 .projects-trusted-logo-item {
   display: flex;
@@ -1081,12 +1112,17 @@
   display: block;
 }
 
+.white-bg-logo img {
+  background-color: white !important;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 /* ===== Large Tablet ===== */
 
 @media (max-width: 1199px) {
-  .projects-trusted-logos {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    row-gap: 26px;
+  .projects-trusted-slider-wrapper {
+    margin-top: 30px;
   }
 }
 
@@ -1101,10 +1137,8 @@
     font-size: clamp(24px, 6vw, 32px);
   }
 
-  .projects-trusted-logos {
+  .projects-trusted-slider-wrapper {
     margin-top: 28px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px 18px;
   }
 
   .projects-trusted-logo-item {
@@ -1123,9 +1157,8 @@
     padding: 30px 14px 34px;
   }
 
-  .projects-trusted-logos {
-    grid-template-columns: 1fr;
-    gap: 18px;
+  .projects-trusted-slider-wrapper {
+    margin-top: 20px;
   }
 
   .projects-trusted-logo-item img {

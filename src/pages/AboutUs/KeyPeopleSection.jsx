@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography } from "antd";
+import "./KeyPeopleSection.css";
 
 const { Title, Paragraph } = Typography;
 
@@ -16,10 +17,10 @@ const KeyPeopleSection = () => {
     >
       {/* العنوان الرئيسي - Key People & Partners */}
       <Title
+        className="key-people-title"
         style={{
           fontFamily: "'Alexandria', sans-serif",
           fontWeight: 700,
-          fontSize: "40px",
           lineHeight: "150%",
           letterSpacing: "0%",
           textAlign: "center",
@@ -33,10 +34,10 @@ const KeyPeopleSection = () => {
 
       {/* الوصف - Description */}
       <Paragraph
+        className="key-people-description"
         style={{
           fontFamily: "'Alexandria', sans-serif",
           fontWeight: 400,
-          fontSize: "24px",
           lineHeight: "150%",
           letterSpacing: "0%",
           textAlign: "center",

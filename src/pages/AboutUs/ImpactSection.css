@@ -45,6 +45,27 @@
   left: 0;
 }
 
+/* Add classes for responsive font sizes */
+.impact-main-title {
+  font-size: 40px !important;
+}
+
+.impact-main-description {
+  font-size: 24px !important;
+}
+
+.impact-benefits-title {
+  font-size: 25px !important;
+}
+
+.impact-card-title {
+  font-size: 24px !important;
+}
+
+.impact-card-desc {
+  font-size: 20px !important;
+}
+
 /* للموبايل: تقليل المسافات وحجم الخط */
 @media (max-width: 768px) {
   .impact-header-row {
@@ -52,5 +73,27 @@
   }
   .impact-line-container {
     display: none; /* إخفاء الخطوط والنقاط في الموبايل */
+  }
+
+  .impact-main-title {
+    font-size: 30px !important;
+    white-space: normal !important;
+  }
+
+  .impact-main-description {
+    font-size: 15px !important;
+    margin: 15px auto 30px !important;
+  }
+
+  .impact-benefits-title {
+    font-size: 22px !important;
+  }
+
+  .impact-card-title {
+    font-size: 19px !important;
+  }
+
+  .impact-card-desc {
+    font-size: 14px !important;
   }
 }

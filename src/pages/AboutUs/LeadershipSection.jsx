@@ -62,12 +62,12 @@ const LeadershipSection = () => {
 
           <Title
             level={2}
+            className="leadership-title"
             style={{
               fontFamily: "'Alexandria', sans-serif",
               margin: 0,
               color: "#FEC858", // حافظنا على اللون الأصفر حسب طلبك
               fontWeight: 700,
-              fontSize: "40px",
               lineHeight: "150%",
               whiteSpace: "nowrap",
             }}
@@ -80,10 +80,10 @@ const LeadershipSection = () => {
           </div>
         </div>
         <Paragraph
+          className="leadership-description"
           style={{
             fontFamily: "'Alexandria', sans-serif",
             fontWeight: 500,
-            fontSize: "24px",
             lineHeight: "150%",
             textTransform: "capitalize",
             color: "#666",

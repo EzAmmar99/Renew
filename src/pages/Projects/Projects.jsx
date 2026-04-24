@@ -24,6 +24,17 @@ import logoMisr from "../../assets/logo-misr-cement-group.png";
 import logoElsewedy from "../../assets/logo-sewedy-cement.png";
 import lookingAheadBg from "../../assets/looking-ahead-bg.png";
 
+const partnerLogos = [
+  { src: logoCemex, alt: "CEMEX" },
+  { src: logoArabianCement, alt: "Arabian Cement" },
+  { src: logoTitan, alt: "Titan Cement Egypt" },
+  { src: logoLafarge, alt: "Lafarge" },
+  { src: logoMisr, alt: "Misr Cement Group" },
+  { src: logoElsewedy, alt: "El Sewedy Cement" },
+];
+
+const doubledLogos = [...partnerLogos, ...partnerLogos];
+
 const Projects = () => {
   return (
     <div className="projects-container">
@@ -573,29 +584,13 @@ const Projects = () => {
             Trusted By Leading Cement Producers
           </h2>
 
-          <div className="projects-trusted-logos">
-            <div className="projects-trusted-logo-item">
-              <img src={logoCemex} alt="CEMEX" />
-            </div>
-
-            <div className="projects-trusted-logo-item">
-              <img src={logoArabianCement} alt="Arabian Cement" />
-            </div>
-
-            <div className="projects-trusted-logo-item">
-              <img src={logoTitan} alt="Titan Cement Egypt" />
-            </div>
-
-            <div className="projects-trusted-logo-item">
-              <img src={logoLafarge} alt="Lafarge" />
-            </div>
-
-            <div className="projects-trusted-logo-item">
-              <img src={logoMisr} alt="Misr Cement Group" />
-            </div>
-
-            <div className="projects-trusted-logo-item">
-              <img src={logoElsewedy} alt="El Sewedy Cement" />
+          <div className="projects-trusted-slider-wrapper">
+            <div className="projects-trusted-logos-track">
+              {doubledLogos.map((logo, index) => (
+                <div key={index} className="projects-trusted-logo-item">
+                  <img src={logo.src} alt={logo.alt} />
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { Layout, Button } from "antd";
-import { MoreOutlined } from "@ant-design/icons";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
@@ -57,7 +57,7 @@ const Navbar = () => {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Open menu"
         >
-          <MoreOutlined />
+          {menuOpen ? <CloseOutlined /> : <MenuOutlined />}
         </button>
       </Header>
 
