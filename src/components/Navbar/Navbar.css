@@ -54,7 +54,7 @@
   font-family: Alexandria, sans-serif;
   font-size: 20px;
   font-weight: 600;
-  line-height: 1;
+  white-space: nowrap;
   transition: 0.2s ease;
 }
 
@@ -149,6 +149,27 @@
 
 .ant-layout-header.custom-navbar {
   line-height: normal;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .navbar-links {
+    gap: 30px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+  }
+
+  .contact-btn {
+    font-size: 18px;
+    height: 42px;
+    padding: 0 15px;
+  }
+
+  .custom-navbar {
+    padding: 0 25px;
+  }
 }
 
 /* Responsive */

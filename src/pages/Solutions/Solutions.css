@@ -196,17 +196,7 @@
   position: relative;
 }
 
-.biomass-apart-section::before {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  top: -120px;
-  left: -90px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 198, 63, 0.18), transparent 72%);
-  pointer-events: none;
-}
+
 
 .biomass-apart-section-watermark {
   position: absolute;
@@ -1129,6 +1119,7 @@
     opacity: 0;
     transform: translateY(22px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1136,6 +1127,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .solutions-reveal,
   .solutions-content,
   .biomass-apart-card,
