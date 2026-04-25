@@ -1,6 +1,6 @@
 import { Typography } from "antd";
 import "./AboutUs.css";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 import aboutImage from "../../assets/about-us-hero.png";
 import missionImage from "../../assets/mission-image.png";
@@ -62,9 +62,35 @@ const values = [
 
 const duplicatedValues = [...values, ...values, ...values];
 const AboutSection = () => {
+  useEffect(() => {
+    const revealElements = document.querySelectorAll(".about-reveal");
+
+    if (!revealElements.length) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, intersectionObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          intersectionObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.16, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="about-us-container">
-      <section className="about-hero-section">
+      <section className="about-hero-section about-reveal is-visible about-reveal-zoom">
         <img src={aboutImage} alt="About Us" className="about-hero-image" />
 
         <div className="about-hero-overlay">
@@ -82,8 +108,8 @@ const AboutSection = () => {
         </div>
       </section>
 
-      <section className="who-we-are-section">
-        <div className="who-we-are-container">
+      <section className="who-we-are-section about-reveal about-reveal-up">
+        <div className="who-we-are-container about-reveal about-reveal-zoom">
           <Title level={2} className="who-we-are-title">
             Who We Are
           </Title>
@@ -98,9 +124,9 @@ const AboutSection = () => {
         </div>
       </section>
 
-      <section className="mission-vision-section">
+      <section className="mission-vision-section about-reveal about-reveal-up">
         <div className="mission-vision-grid">
-          <div className="mission-card">
+          <div className="mission-card about-reveal about-reveal-left">
             <img
               src={missionShape}
               alt=""
@@ -134,7 +160,7 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <div className="mission-image-block">
+          <div className="mission-image-block about-reveal about-reveal-zoom">
             <img
               src={missionImage}
               alt="Mission"
@@ -142,7 +168,7 @@ const AboutSection = () => {
             />
           </div>
 
-          <div className="vision-image-block">
+          <div className="vision-image-block about-reveal about-reveal-zoom">
             <img
               src={visionImage}
               alt="Vision"
@@ -150,7 +176,7 @@ const AboutSection = () => {
             />
           </div>
 
-          <div className="vision-card">
+          <div className="vision-card about-reveal about-reveal-right">
             <img
               src={visionShape}
               alt=""
@@ -183,7 +209,7 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="core-values-banner">
+        <div className="core-values-banner about-reveal about-reveal-zoom">
           <img
             src={coreValuesImage}
             alt="Core Values"
@@ -206,7 +232,7 @@ const AboutSection = () => {
         </div>
       </section>
 
-      <section className="values-slider-section">
+      <section className="values-slider-section about-reveal about-reveal-up">
         <div className="slider-wrapper">
           <div className="values-slider">
             {duplicatedValues.map((item, index) => (
@@ -228,10 +254,10 @@ const AboutSection = () => {
         </div>
       </section>
 
-      <section className="what-we-do-section">
+      <section className="what-we-do-section about-reveal about-reveal-up">
         <div className="what-we-do-container">
           <div className="what-we-do-top">
-            <div className="what-we-do-image-wrap">
+            <div className="what-we-do-image-wrap about-reveal about-reveal-left">
               <img
                 src={whatWeDoImage}
                 alt="Biomass production"
@@ -239,7 +265,7 @@ const AboutSection = () => {
               />
             </div>
 
-            <div className="what-we-do-content">
+            <div className="what-we-do-content about-reveal about-reveal-right">
               <Title level={2} className="what-we-do-title">
                 What We Do
               </Title>
@@ -255,7 +281,7 @@ const AboutSection = () => {
         </div>
       </section>
 
-      <div className="core-focus-block">
+      <div className="core-focus-block about-reveal about-reveal-up">
         <Title level={2} className="core-focus-title">
           Our Core Focus:
         </Title>
@@ -272,7 +298,10 @@ const AboutSection = () => {
           </div>
         </div>
         <div className="core-focus-grid">
-          <div className="focus-card">
+          <div
+            className="focus-card about-reveal about-reveal-up"
+            style={{ "--about-stagger": 0 }}
+          >
             <img
               src={fuelProductionIcon}
               alt="Continuous Supply"
@@ -289,7 +318,10 @@ const AboutSection = () => {
             </div>
           </div>
 
-          <div className="focus-card">
+          <div
+            className="focus-card about-reveal about-reveal-up"
+            style={{ "--about-stagger": 1 }}
+          >
             <img
               src={performanceIcon}
               alt="Continuous Supply"
@@ -322,7 +354,10 @@ const AboutSection = () => {
             </p>
           </div> */}
 
-          <div className="focus-card">
+          <div
+            className="focus-card about-reveal about-reveal-up"
+            style={{ "--about-stagger": 2 }}
+          >
             <img
               src={supplyIcon}
               alt="Continuous Supply"
@@ -340,13 +375,16 @@ const AboutSection = () => {
         </div>
       </div>
 
-      <div className="why-biomass-block">
+      <div className="why-biomass-block about-reveal about-reveal-zoom">
         <Title level={2} className="why-biomass-title">
           Why Biomass?
         </Title>
 
         <div className="why-biomass-icons">
-          <div className="why-biomass-icon-circle green">
+          <div
+            className="why-biomass-icon-circle green about-reveal about-reveal-up"
+            style={{ "--about-stagger": 0 }}
+          >
             <img
               src={cleanEnergyIcon}
               alt="Clean energy"
@@ -354,7 +392,10 @@ const AboutSection = () => {
             />
           </div>
 
-          <div className="why-biomass-icon-circle gold">
+          <div
+            className="why-biomass-icon-circle gold about-reveal about-reveal-up"
+            style={{ "--about-stagger": 1 }}
+          >
             <img
               src={wasteReductionIcon}
               alt="Waste reduction"
@@ -362,7 +403,10 @@ const AboutSection = () => {
             />
           </div>
 
-          <div className="why-biomass-icon-circle green">
+          <div
+            className="why-biomass-icon-circle green about-reveal about-reveal-up"
+            style={{ "--about-stagger": 2 }}
+          >
             <img
               src={environmentIcon}
               alt="Environmental benefits"
@@ -379,7 +423,7 @@ const AboutSection = () => {
         </Paragraph>
       </div>
 
-      <section className="commitment-section">
+      <section className="commitment-section about-reveal about-reveal-up">
         <div className="commitment-container">
           <Title level={2} className="commitment-title">
             Our Commitment:
@@ -393,15 +437,15 @@ const AboutSection = () => {
         </div>
       </section>
 
-      <section className="impact-section">
+      <section className="impact-section about-reveal about-reveal-up">
         <ImpactSection />
       </section>
 
-      <section className="key-people-section">
+      <section className="key-people-section about-reveal about-reveal-up">
         <KeyPeopleSection />
       </section>
 
-      <section>
+      <section className="about-reveal about-reveal-up">
         <LeadershipSection />
       </section>
     </div>

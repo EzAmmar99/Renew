@@ -2,8 +2,11 @@ import { Col, Typography } from "antd";
 
 const { Title } = Typography;
 
-const SolutionCard = ({ title, image }) => (
-  <div className="solution-card">
+const SolutionCard = ({ title, image, index = 0 }) => (
+  <div
+    className="solution-card reveal-on-scroll reveal-zoom"
+    style={{ "--stagger-index": index }}
+  >
     <img src={image} alt={title} className="solution-card-image" />
     <div className="solution-card-overlay" />
     <Title level={4} className="solution-card-title">

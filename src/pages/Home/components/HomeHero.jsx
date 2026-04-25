@@ -8,7 +8,7 @@ const { Title, Paragraph } = Typography;
 const HomeHero = () => {
   return (
     <div
-      className="home-hero"
+      className="home-hero reveal-on-scroll is-visible"
       style={{
         backgroundImage: `url(${heroImg})`,
       }}

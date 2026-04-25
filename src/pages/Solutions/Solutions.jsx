@@ -1,4 +1,5 @@
 import { Typography } from "antd";
+import { useEffect } from "react";
 import "./Solutions.css";
 import heroImage from "../../assets/Hero-Solutions.png";
 import iconFlame from "../../assets/IconFlame.png";
@@ -196,9 +197,35 @@ const valueImpactCards = [
 ];
 
 const Solutions = () => {
+  useEffect(() => {
+    const revealElements = document.querySelectorAll(".solutions-reveal");
+
+    if (!revealElements.length) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, intersectionObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          intersectionObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    revealElements.forEach((element) => observer.observe(element));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="solutions-container">
-      <section className="solutions-section">
+      <section className="solutions-section solutions-reveal is-visible solutions-reveal-zoom">
         <div className="solutions-image-wrapper">
           <img
             src={heroImage}
@@ -218,11 +245,13 @@ const Solutions = () => {
         </div>
       </section>
 
-      <section className="biomass-section">
+      <section className="biomass-section solutions-reveal solutions-reveal-up">
         <div className="biomass-container">
-          <h2 className="biomass-title">Our Biomass Products</h2>
+          <h2 className="biomass-title solutions-reveal solutions-reveal-left">
+            Our Biomass Products
+          </h2>
 
-          <p className="biomass-text">
+          <p className="biomass-text solutions-reveal solutions-reveal-right">
             At RENEW, we supply high-performance{" "}
             <span className="highlight">Processed Biomass Fuel</span>, derived
             from clean agricultural waste—primarily tree trimmings. Designed for
@@ -233,7 +262,7 @@ const Solutions = () => {
       </section>
 
       <section
-        className="biomass-apart-section"
+        className="biomass-apart-section solutions-reveal solutions-reveal-up"
         aria-labelledby="biomass-apart-heading"
       >
         <div className="biomass-apart-section-watermark" aria-hidden>
@@ -259,8 +288,12 @@ const Solutions = () => {
             </div>
           </div>
           <ul className="biomass-apart-grid">
-            {biomassApartCards.map(({ id, title, iconSrc, iconAlt, body }) => (
-              <li key={id} className="biomass-apart-card">
+            {biomassApartCards.map(({ id, title, iconSrc, iconAlt, body }, index) => (
+              <li
+                key={id}
+                className="biomass-apart-card solutions-reveal solutions-reveal-zoom"
+                style={{ "--solutions-stagger": index }}
+              >
                 <div className="biomass-apart-card-watermark" aria-hidden>
                   <img
                     src={watermarkImg}
@@ -286,7 +319,7 @@ const Solutions = () => {
       </section>
 
       <section
-        className="customer-value-section"
+        className="customer-value-section solutions-reveal solutions-reveal-up"
         aria-labelledby="customer-value-heading"
       >
         <div className="customer-value-container">
@@ -304,8 +337,12 @@ const Solutions = () => {
             </span>
           </div>
           <ul className="customer-value-grid">
-            {customerValueItems.map(({ id, title, description }) => (
-              <li key={id} className="customer-value-item">
+            {customerValueItems.map(({ id, title, description }, index) => (
+              <li
+                key={id}
+                className="customer-value-item solutions-reveal solutions-reveal-up"
+                style={{ "--solutions-stagger": index }}
+              >
                 <div className="customer-value-item-head">
                   <span className="customer-value-number">{id}</span>
                   <h3 className="customer-value-item-title">{title}</h3>
@@ -319,7 +356,7 @@ const Solutions = () => {
       </section>
 
       <section
-        className="waste-reduction-section"
+        className="waste-reduction-section solutions-reveal solutions-reveal-zoom"
         aria-labelledby="waste-reduction-heading"
       >
         <div className="waste-reduction-media">
@@ -349,7 +386,7 @@ const Solutions = () => {
       </section>
 
       <section
-        className="value-impact-section"
+        className="value-impact-section solutions-reveal solutions-reveal-up"
         aria-labelledby="value-impact-heading"
       >
         <div className="value-impact-container">
@@ -362,9 +399,10 @@ const Solutions = () => {
               ({ id, title, image, imageAlt, description, bullets }, index) => (
                 <article
                   key={id}
-                  className={`value-impact-row ${
+                  className={`value-impact-row solutions-reveal ${
                     index % 2 !== 0 ? "value-impact-row--reverse" : ""
-                  }`}
+                  } ${index % 2 !== 0 ? "solutions-reveal-right" : "solutions-reveal-left"}`}
+                  style={{ "--solutions-stagger": index }}
                 >
                   <div className="value-impact-copy">
                     <p className="value-impact-description">{description}</p>

@@ -18,6 +18,37 @@ body,
   background: #ffffff;
 }
 
+.about-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 760ms ease,
+    transform 760ms ease;
+  transition-delay: calc(var(--about-stagger, 0) * 90ms);
+  will-change: opacity, transform;
+}
+
+.about-reveal-left {
+  transform: translateX(-34px);
+}
+
+.about-reveal-right {
+  transform: translateX(34px);
+}
+
+.about-reveal-up {
+  transform: translateY(28px);
+}
+
+.about-reveal-zoom {
+  transform: scale(0.95) translateY(12px);
+}
+
+.about-reveal.is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
 /* =========================
    Hero Section
 ========================= */
@@ -27,6 +58,21 @@ body,
   height: clamp(320px, 46vw, 93vh);
   /* min-height: 600px; */
   overflow: hidden;
+  isolation: isolate;
+}
+
+.about-hero-section::after {
+  content: "";
+  position: absolute;
+  width: min(68vw, 840px);
+  height: min(68vw, 840px);
+  right: -18%;
+  bottom: -62%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(254, 200, 88, 0.22), transparent 72%);
+  filter: blur(4px);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .about-hero-image {
@@ -53,6 +99,9 @@ body,
 .about-hero-content {
   max-width: min(720px, calc(100% - 32px));
   text-align: left;
+  position: relative;
+  z-index: 2;
+  animation: aboutHeroRise 900ms ease-out both;
 }
 
 .about-hero-title {
@@ -285,6 +334,17 @@ body,
   position: relative;
 }
 
+.mission-card,
+.vision-card {
+  transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+.mission-card:hover,
+.vision-card:hover {
+  filter: brightness(1.04);
+  transform: translateY(-4px);
+}
+
 .vision-shape {
   position: absolute;
   inset: 0;
@@ -373,6 +433,11 @@ body,
   align-items: center;
   justify-content: center;
   padding: 20px;
+  transition: background 0.35s ease;
+}
+
+.core-values-banner:hover .core-values-overlay {
+  background: rgba(31, 115, 39, 0.5);
 }
 
 .core-values-content {
@@ -692,12 +757,13 @@ body,
   align-items: center;
 
   backdrop-filter: blur(10px);
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
 }
 
 .value-card:hover {
-  transform: scale(1.02);
+  transform: translateY(-8px) scale(1.02);
   background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 14px 28px rgba(63, 83, 28, 0.24);
 }
 
 .value-card-header-center {
@@ -808,6 +874,12 @@ body,
   top: 3344px;
   opacity: 1;
   border-radius: 40px;
+  transition: transform 0.8s ease, filter 0.5s ease;
+}
+
+.what-we-do-image-wrap:hover .what-we-do-image {
+  transform: scale(1.05);
+  filter: saturate(1.04);
 }
 
 .what-we-do-content {
@@ -939,6 +1011,11 @@ body,
   /* مسافة كافية بين الأيقونة والنص */
   flex: 1 1 300px;
   max-width: 440px;
+  transition: transform 0.35s ease;
+}
+
+.focus-card:hover {
+  transform: translateY(-6px);
 }
 
 .focus-card-content {
@@ -957,6 +1034,11 @@ body,
   object-fit: contain;
   margin-top: 5px;
   /* موازنة بسيطة لتكون مع أول سطر */
+  transition: transform 0.35s ease;
+}
+
+.focus-card:hover .focus-card-icon {
+  transform: rotate(-8deg) scale(1.1);
 }
 
 .focus-card-title {
@@ -1015,6 +1097,12 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.why-biomass-icon-circle:hover {
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 10px 20px rgba(35, 56, 28, 0.24);
 }
 
 .why-biomass-icon-circle.green {
@@ -1053,6 +1141,48 @@ body,
   justify-content: center;
   align-items: center;
   /* padding: 56px 24px 58px; */
+  position: relative;
+  overflow: hidden;
+}
+
+.commitment-section::before {
+  content: "";
+  position: absolute;
+  left: -120px;
+  top: -120px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(239, 182, 64, 0.24), transparent 72%);
+  pointer-events: none;
+}
+
+@keyframes aboutHeroRise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-reveal,
+  .about-hero-content,
+  .mission-card,
+  .vision-card,
+  .value-card,
+  .what-we-do-image,
+  .focus-card,
+  .focus-card-icon,
+  .why-biomass-icon-circle {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
 }
 
 .commitment-container {

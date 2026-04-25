@@ -6,8 +6,8 @@ const { Title, Paragraph } = Typography;
 
 const HomeContactSection = () => {
   return (
-    <div className="home-contact-section">
-      <div className="home-contact-header">
+    <div className="home-contact-section reveal-on-scroll reveal-up">
+      <div className="home-contact-header reveal-on-scroll reveal-zoom">
         <Title level={2} className="home-contact-title">
           Ready To Power Your Industry With Clean Energy?
         </Title>
@@ -19,7 +19,12 @@ const HomeContactSection = () => {
       </div>
 
       <Row gutter={[60, 40]} align="middle">
-        <Col xs={24} md={11}>
+        <Col
+          xs={24}
+          md={11}
+          className="reveal-on-scroll reveal-left"
+          style={{ "--stagger-index": 0 }}
+        >
           <Title level={3} className="home-contact-text">
             Our Team Is Ready To Answer Your Questions And Explore How We Can
             Support Your Energy Needs.
@@ -34,7 +39,12 @@ const HomeContactSection = () => {
           </Button>
         </Col>
 
-        <Col xs={24} md={13}>
+        <Col
+          xs={24}
+          md={13}
+          className="reveal-on-scroll reveal-right"
+          style={{ "--stagger-index": 1 }}
+        >
           <div className="home-contact-image-wrapper">
             <div className="home-contact-image-frame" />
             <img

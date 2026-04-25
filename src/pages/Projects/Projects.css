@@ -1370,3 +1370,153 @@
     font-size: 15px;
   }
 }
+
+/* ===== Projects Motion + Polish ===== */
+.projects-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 760ms ease,
+    transform 760ms ease;
+  transition-delay: calc(var(--projects-stagger, 0) * 80ms);
+  will-change: opacity, transform;
+}
+
+.projects-reveal-left {
+  transform: translateX(-32px);
+}
+
+.projects-reveal-right {
+  transform: translateX(32px);
+}
+
+.projects-reveal-up {
+  transform: translateY(26px);
+}
+
+.projects-reveal-zoom {
+  transform: scale(0.95) translateY(14px);
+}
+
+.projects-reveal.is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+.projects-implementation-media,
+.projects-impact-media {
+  isolation: isolate;
+}
+
+.projects-implementation-media::after {
+  content: "";
+  position: absolute;
+  width: min(66vw, 820px);
+  height: min(66vw, 820px);
+  right: -18%;
+  bottom: -62%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(254, 200, 88, 0.2), transparent 72%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.projects-implementation-content {
+  animation: projectsHeroRise 900ms ease-out both;
+}
+
+.projects-partnership-item,
+.projects-result-card,
+.projects-impact-item,
+.projects-cement-card,
+.projects-looking-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+}
+
+.projects-partnership-item:hover,
+.projects-result-card:hover,
+.projects-impact-item:hover,
+.projects-cement-card:hover {
+  transform: translateY(-6px);
+}
+
+.projects-icon,
+.projects-result-icon,
+.projects-impact-icon,
+.projects-cement-card-icon {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.projects-partnership-item:hover .projects-icon,
+.projects-result-card:hover .projects-result-icon,
+.projects-impact-item:hover .projects-impact-icon,
+.projects-cement-card:hover .projects-cement-card-icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.projects-result-card:hover {
+  box-shadow: 0 18px 36px rgba(25, 42, 20, 0.16);
+}
+
+.projects-impact-item {
+  padding: 12px;
+  border-radius: 16px;
+}
+
+.projects-impact-item:hover {
+  box-shadow: 0 14px 26px rgba(15, 44, 16, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.projects-cement-card:hover {
+  box-shadow: 0 16px 34px rgba(34, 56, 28, 0.24);
+}
+
+.projects-trusted-logos-track:has(> .projects-trusted-logo-item:hover) {
+  animation-play-state: paused;
+}
+
+.projects-trusted-logo-item img {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.projects-trusted-logo-item:hover img {
+  transform: scale(1.06);
+  filter: saturate(1.08);
+}
+
+.projects-looking-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 34px rgba(19, 33, 15, 0.18);
+}
+
+@keyframes projectsHeroRise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-reveal,
+  .projects-implementation-content,
+  .projects-partnership-item,
+  .projects-result-card,
+  .projects-impact-item,
+  .projects-cement-card,
+  .projects-looking-card,
+  .projects-icon,
+  .projects-result-icon,
+  .projects-impact-icon,
+  .projects-cement-card-icon,
+  .projects-trusted-logo-item img {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

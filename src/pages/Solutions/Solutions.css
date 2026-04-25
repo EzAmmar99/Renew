@@ -4,11 +4,56 @@
   /* overflow: hidden; */
 }
 
+.solutions-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 720ms ease,
+    transform 720ms ease;
+  transition-delay: calc(var(--solutions-stagger, 0) * 80ms);
+  will-change: opacity, transform;
+}
+
+.solutions-reveal-left {
+  transform: translateX(-34px);
+}
+
+.solutions-reveal-right {
+  transform: translateX(34px);
+}
+
+.solutions-reveal-up {
+  transform: translateY(26px);
+}
+
+.solutions-reveal-zoom {
+  transform: scale(0.95) translateY(14px);
+}
+
+.solutions-reveal.is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
 .solutions-image-wrapper {
   position: relative;
   width: 100%;
   height: clamp(320px, 46vw, 93vh) !important;
   overflow: hidden;
+  isolation: isolate;
+}
+
+.solutions-image-wrapper::after {
+  content: "";
+  position: absolute;
+  width: min(70vw, 860px);
+  height: min(70vw, 860px);
+  right: -18%;
+  bottom: -62%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(254, 200, 88, 0.2), transparent 72%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .solutions-image {
@@ -35,6 +80,7 @@
   bottom: clamp(20px, 5vw, 64px);
   z-index: 2;
   max-width: min(720px, calc(100% - 32px));
+  animation: solutionsHeroRise 900ms ease-out both;
 }
 
 .solutions-title {
@@ -147,6 +193,19 @@
   overflow: hidden;
   background: #ffffff;
   padding: clamp(10px, 7vw, 8px) clamp(16px, 4vw, 4px);
+  position: relative;
+}
+
+.biomass-apart-section::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  top: -120px;
+  left: -90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168, 198, 63, 0.18), transparent 72%);
+  pointer-events: none;
 }
 
 .biomass-apart-section-watermark {
@@ -286,6 +345,13 @@
   max-width: 590px;
   margin: 0 auto;
   /* عشان تضل البطاقة بالمنتصف بعد تصغير عرضها */
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+}
+
+.biomass-apart-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(26, 51, 26, 0.16);
+  filter: brightness(1.02);
 }
 
 @media (max-width: 767px) {
@@ -357,6 +423,11 @@
   justify-content: center;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   z-index: 2;
+  transition: transform 0.35s ease;
+}
+
+.biomass-apart-card:hover .biomass-apart-icon-badge {
+  transform: rotate(-10deg) scale(1.06);
 }
 
 .biomass-apart-icon-img {
@@ -491,6 +562,11 @@
 
 .customer-value-item {
   min-width: 0;
+  transition: transform 0.35s ease;
+}
+
+.customer-value-item:hover {
+  transform: translateY(-5px);
 }
 
 .customer-value-item-head {
@@ -610,6 +686,7 @@
   width: 100%;
   height: clamp(390px, 48vw, 650px);
   overflow: hidden;
+  isolation: isolate;
 }
 
 .waste-reduction-image {
@@ -618,6 +695,12 @@
   object-fit: cover;
   object-position: center center;
   display: block;
+  transition: transform 1s ease, filter 0.6s ease;
+}
+
+.waste-reduction-media:hover .waste-reduction-image {
+  transform: scale(1.06);
+  filter: saturate(1.05);
 }
 
 .waste-reduction-overlay {
@@ -736,6 +819,11 @@
   align-items: center;
   gap: 60px;
   /* المسافة الفاصلة بين جهة النص وجهة الصورة */
+  transition: transform 0.35s ease;
+}
+
+.value-impact-row:hover {
+  transform: translateY(-6px);
 }
 
 .value-impact-row--reverse {
@@ -879,6 +967,12 @@
   background: #d9d9d9;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   /* ظل أنعم */
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.value-impact-row:hover .value-impact-image-card {
+  transform: scale(1.02);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.2);
 }
 
 .value-impact-image {
@@ -1027,5 +1121,32 @@
   .customer-value-title,
   .waste-reduction-title {
     font-size: 28px !important;
+  }
+}
+
+@keyframes solutionsHeroRise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solutions-reveal,
+  .solutions-content,
+  .biomass-apart-card,
+  .biomass-apart-icon-badge,
+  .customer-value-item,
+  .waste-reduction-image,
+  .value-impact-row,
+  .value-impact-image-card {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }

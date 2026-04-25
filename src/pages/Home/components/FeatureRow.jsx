@@ -13,6 +13,7 @@ const FeatureRow = ({
   bgColor,
   contentWidth = 430,
   descWidth = 390,
+  index = 0,
 }) => {
   const TextContent = (
     <div className="feature-text" style={{ background: bgColor }}>
@@ -49,7 +50,15 @@ const FeatureRow = ({
   );
 
   return (
-    <Row gutter={0} wrap={false} align="stretch" className="feature-row">
+    <Row
+      gutter={0}
+      wrap={false}
+      align="stretch"
+      className={`feature-row reveal-on-scroll ${
+        isReversed ? "reveal-right" : "reveal-left"
+      }`}
+      style={{ "--stagger-index": index }}
+    >
       {isReversed ? (
         <>
           <Col flex="1 1 50%" className="feature-col feature-image-col">

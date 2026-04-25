@@ -4,8 +4,8 @@ const { Title, Paragraph } = Typography;
 
 const HomeWhySection = () => {
   return (
-    <div className="home-why-section">
-      <div className="home-why-header">
+    <div className="home-why-section reveal-on-scroll reveal-up">
+      <div className="home-why-header reveal-on-scroll reveal-zoom">
         <div className="home-why-title-row">
           <div className="home-why-line home-why-line-left">
             <span className="home-why-dot home-why-dot-right" />
