@@ -9,6 +9,7 @@ import Home from "./pages/Home/Home";
 import ScrollToTop from "./components/ScrollToTop";
 import "./App.css";
 
+// App component that sets up routing for the application using React Router.
 function App() {
   return (
     <BrowserRouter>
