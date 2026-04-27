@@ -28,7 +28,7 @@ export const pageData = {
       "discover how renew turns agricultural waste into biomass, sustainable materials, and renewable energy. join us in building a cleaner, greener future.",
   },
   stats: [
-    { id: 1, value: "Top 5 Or 6", label: "Cement Factories" },
+    { id: 1, value: "Top 5", label: "Cement Factories" },
     { id: 2, value: "+200,000", label: "Tn Supplied" },
     {
       id: 3,
