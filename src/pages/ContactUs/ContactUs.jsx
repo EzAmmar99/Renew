@@ -25,7 +25,7 @@ const ContactUs = () => {
           intersectionObserver.unobserve(entry.target);
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
     );
 
     revealElements.forEach((element) => observer.observe(element));
@@ -70,7 +70,6 @@ const ContactUs = () => {
           className="cement-bg-watermark bg-bottom-left"
         />
 
-
         <div className="contact-message-container contact-reveal contact-reveal-up">
           <div className="contact-message-header">
             <h2 className="contact-message-title">Send Us A Message</h2>
@@ -81,7 +80,11 @@ const ContactUs = () => {
 
           <form className="contact-message-form">
             <div className="form-row">
-              <input type="text" placeholder="Full Name" className="form-input" />
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="form-input"
+              />
               <input
                 type="email"
                 placeholder="Email Address"
@@ -103,7 +106,11 @@ const ContactUs = () => {
             </div>
 
             <div className="form-full">
-              <input type="text" placeholder="Locations" className="form-input" />
+              <input
+                type="text"
+                placeholder="Locations"
+                className="form-input"
+              />
             </div>
 
             <div className="form-full">
@@ -142,10 +149,9 @@ const ContactUs = () => {
       </section>
 
       <section className="contact-map-section">
-
         <div className="contact-map-container contact-reveal contact-reveal-up">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13190.234375!2d35.833333!3d34.433333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1521f15555555555%3A0x5555555555555555!2sTripoli%2C%20Lebanon!5e0!3m2!1sen!2seg!4v1714080000000!5m2!1sen!2seg"
+            src="https://www.google.com/maps?q=30.0293,31.2105&z=17&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -161,7 +167,11 @@ const ContactUs = () => {
           <div className="contact-details-row">
             <div className="contact-detail-item">
               <div className="detail-icon">
-                <img src={phoneIcon} alt="Phone" className="contact-info-icon" />
+                <img
+                  src={phoneIcon}
+                  alt="Phone"
+                  className="contact-info-icon"
+                />
               </div>
               <span className="detail-text">+02 33445566</span>
             </div>
@@ -175,7 +185,11 @@ const ContactUs = () => {
 
             <div className="contact-detail-item">
               <div className="detail-icon">
-                <img src={locationIcon} alt="Location" className="contact-info-icon" />
+                <img
+                  src={locationIcon}
+                  alt="Location"
+                  className="contact-info-icon"
+                />
               </div>
               <span className="detail-text">Egypt</span>
             </div>
@@ -186,8 +200,4 @@ const ContactUs = () => {
   );
 };
 
-
-
 export default ContactUs;
-
-
