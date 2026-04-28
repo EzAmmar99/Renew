@@ -524,7 +524,7 @@ const Projects = () => {
         </div>
       </section>
 
-      <section className="projects-looking-section projects-reveal projects-reveal-zoom">
+      <section className="projects-looking-section projects-reveal projects-reveal-zoom" style={{ marginBottom: "-10rem" }}>
         <div className="projects-looking-media">
           <img
             src={lookingAheadBg}

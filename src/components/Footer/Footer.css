@@ -17,17 +17,34 @@
 
   display: flex;
   flex-direction: column;
-  /* Seamless blend from white page background to light green near the wave */
-  background: linear-gradient(180deg, #ffffff 0%, rgba(160, 186, 61, 0.27) 100%);
+  background: transparent;
   font-family: Alexandria, sans-serif;
-  overflow: hidden;
+  /* overflow-x: hidden; */
 }
 
 .renew-footer__top {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: clamp(150px, 18vw, 220px);
   z-index: 1;
+  left: 35%;
+  top: -12rem;
+  width: 200px;
+  height: 200px;
+}
+
+@media (max-width: 992px) {
+  .renew-footer__top {
+    left: 28%;
+    top: -9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .renew-footer__top {
+    left: 28%;
+    top: -10rem;
+  }
 }
 
 .renew-footer__art {
@@ -50,12 +67,19 @@
   color: var(--green);
   z-index: 2;
   margin-top: -1px;
+  background: transparent;
 }
 
-.renew-footer__wave svg {
+.renew-footer__wave-svg {
   width: 100%;
   height: 100%;
   display: block;
+  background: transparent;
+  fill: none;
+}
+
+.renew-footer__wave-path {
+  fill: var(--green);
 }
 
 .renew-footer__content {

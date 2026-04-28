@@ -46,11 +46,12 @@ export default function Footer() {
 
       <div className="renew-footer__wave">
         <svg
+          className="renew-footer__wave-svg"
           viewBox="0 0 1440 260"
           preserveAspectRatio="none"
           focusable="false"
         >
-          <path fill="currentColor" d={FOOTER_WAVE_PATH} />
+          <path className="renew-footer__wave-path" d={FOOTER_WAVE_PATH} />
         </svg>
       </div>
 
