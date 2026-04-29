@@ -151,7 +151,7 @@ const ContactUs = () => {
       <section className="contact-map-section">
         <div className="contact-map-container contact-reveal contact-reveal-up">
           <iframe
-            src="https://www.google.com/maps?q=30.0293,31.2105&z=17&output=embed"
+            src="https://www.google.com/maps?q=29.95566338488772, 31.271127909482118&z=17&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
