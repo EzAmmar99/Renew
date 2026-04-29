@@ -40,9 +40,9 @@ const FOOTER_WAVE_PATH =
 export default function Footer() {
   return (
     <footer className="renew-footer">
-      <div className="renew-footer__top">
+      {/* <div className="renew-footer__top">
         <img src={TopIllustration} alt="Wind turbine illustration" className="renew-footer__art" />
-      </div>
+      </div> */}
 
       <div className="renew-footer__wave">
         <svg

@@ -1500,6 +1500,10 @@
   transform: translateY(-6px);
 }
 
+.projects-partnership-item--center:hover {
+  transform: translateY(86px);
+}
+
 .projects-icon,
 .projects-result-icon,
 .projects-impact-icon,

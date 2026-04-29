@@ -179,11 +179,8 @@
 
 @media (max-width: 480px) {
   .biomass-text {
-    /* السماح للنص بالانكماش أكثر مع الحفاظ على مقروئيته */
     line-height: 1.5;
-    text-align: justify;
-    /* اختياري: لجعل الحواف متساوية في الفقرات الطويلة */
-    text-align-last: center;
+    text-align: center;
   }
 }
 
