@@ -27,6 +27,7 @@ const HomeStatsSection = () => {
             value={stat.value}
             label={stat.label}
             index={index}
+            disableComma={stat.disableComma}
           />
         ))}
       </Row>
