@@ -26,8 +26,11 @@ export async function submitContactForm(fields) {
         company,
         locations,
         message,
-        _subject: "Renew website — Contact form",
+        // FormSubmit does not allow changing the "From" name (stays "FormSubmit").
+        // A clear subject makes messages easy to spot in the inbox.
+        _subject: `[Renew] ${fullName} — website contact`,
         _replyto: email,
+        _template: "table",
       }),
     });
   } catch {
