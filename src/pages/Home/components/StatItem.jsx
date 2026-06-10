@@ -27,9 +27,10 @@ const getCounterParts = (rawValue) => {
   };
 };
 
-const formatWithCommas = (numberValue) => numberValue.toLocaleString("en-US");
+const formatWithCommas = (numberValue, disableComma = false) =>
+  disableComma ? String(numberValue) : numberValue.toLocaleString("en-US");
 
-const StatItem = ({ value, label, index = 0 }) => {
+const StatItem = ({ value, label, index = 0, disableComma = false }) => {
   const statRef = useRef(null);
   const [displayValue, setDisplayValue] = useState(value);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -58,7 +59,7 @@ const StatItem = ({ value, label, index = 0 }) => {
 
         if (isMounted) {
           setDisplayValue(
-            `${counterParts.prefix}${formatWithCommas(currentValue)}${counterParts.suffix}`
+            `${counterParts.prefix}${formatWithCommas(currentValue, disableComma)}${counterParts.suffix}`
           );
         }
 

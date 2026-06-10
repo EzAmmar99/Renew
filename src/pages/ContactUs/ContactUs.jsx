@@ -173,7 +173,7 @@ const ContactUs = () => {
                   className="contact-info-icon"
                 />
               </div>
-              <span className="detail-text">+02 33445566</span>
+              <span className="detail-text">+01111154499</span>
             </div>
 
             <div className="contact-detail-item">

@@ -35,7 +35,7 @@ export const pageData = {
       value: "+ 240,000",
       label: "Tons Of CO₂ Equivalent Replaced",
     },
-    { id: 4, value: "2015", label: "Established" },
+    { id: 4, value: "2015", label: "Established", disableComma: true },
   ],
   solutions: [
     {
