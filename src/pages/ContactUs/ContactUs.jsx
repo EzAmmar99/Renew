@@ -1,12 +1,66 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./ContactUs.css";
 import contactHeroImg from "../../assets/contact-hero.png";
 import watermarkImg from "../../assets/yellow-watermark.png";
 import phoneIcon from "../../assets/phone.png";
 import mailIcon from "../../assets/mail.png";
 import locationIcon from "../../assets/location.png";
+import { submitContactForm } from "../../utils/contactFormSubmit";
 
 const ContactUs = () => {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [company, setCompany] = useState("");
+  const [locations, setLocations] = useState("");
+  const [message, setMessage] = useState("");
+  const [formStatus, setFormStatus] = useState("idle"); // idle | loading | success | error
+  const [formError, setFormError] = useState("");
+
+  const clearFormFeedback = () => {
+    if (formStatus === "success") setFormStatus("idle");
+    if (formStatus === "error") {
+      setFormStatus("idle");
+      setFormError("");
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormError("");
+
+    if (!fullName.trim() || !email.trim() || !message.trim()) {
+      setFormStatus("error");
+      setFormError("Please enter your name, email, and message.");
+      return;
+    }
+
+    setFormStatus("loading");
+
+    const result = await submitContactForm({
+      fullName: fullName.trim(),
+      email: email.trim(),
+      phone: phone.trim(),
+      company: company.trim(),
+      locations: locations.trim(),
+      message: message.trim(),
+    });
+
+    if (result.ok) {
+      setFormStatus("success");
+      setFullName("");
+      setEmail("");
+      setPhone("");
+      setCompany("");
+      setLocations("");
+      setMessage("");
+      return;
+    }
+
+    setFormStatus("error");
+    setFormError(result.message);
+  };
+
   useEffect(() => {
     const revealElements = document.querySelectorAll(".contact-reveal");
 
@@ -78,47 +132,111 @@ const ContactUs = () => {
             </p>
           </div>
 
-          <form className="contact-message-form">
+          <form className="contact-message-form" onSubmit={handleSubmit} noValidate>
             <div className="form-row">
               <input
                 type="text"
+                name="fullName"
+                autoComplete="name"
                 placeholder="Full Name"
                 className="form-input"
+                value={fullName}
+                onChange={(ev) => {
+                  clearFormFeedback();
+                  setFullName(ev.target.value);
+                }}
+                disabled={formStatus === "loading"}
               />
               <input
                 type="email"
+                name="email"
+                autoComplete="email"
                 placeholder="Email Address"
                 className="form-input"
+                value={email}
+                onChange={(ev) => {
+                  clearFormFeedback();
+                  setEmail(ev.target.value);
+                }}
+                disabled={formStatus === "loading"}
               />
             </div>
 
             <div className="form-row">
               <input
                 type="tel"
+                name="phone"
+                autoComplete="tel"
                 placeholder="Phone Number"
                 className="form-input"
+                value={phone}
+                onChange={(ev) => {
+                  clearFormFeedback();
+                  setPhone(ev.target.value);
+                }}
+                disabled={formStatus === "loading"}
               />
               <input
                 type="text"
+                name="company"
+                autoComplete="organization"
                 placeholder="Company Name"
                 className="form-input"
+                value={company}
+                onChange={(ev) => {
+                  clearFormFeedback();
+                  setCompany(ev.target.value);
+                }}
+                disabled={formStatus === "loading"}
               />
             </div>
 
             <div className="form-full">
               <input
                 type="text"
+                name="locations"
                 placeholder="Locations"
                 className="form-input"
+                value={locations}
+                onChange={(ev) => {
+                  clearFormFeedback();
+                  setLocations(ev.target.value);
+                }}
+                disabled={formStatus === "loading"}
               />
             </div>
 
             <div className="form-full">
-              <textarea placeholder="Message" className="form-textarea" />
+              <textarea
+                name="message"
+                placeholder="Message"
+                className="form-textarea"
+                value={message}
+                onChange={(ev) => {
+                  clearFormFeedback();
+                  setMessage(ev.target.value);
+                }}
+                disabled={formStatus === "loading"}
+              />
             </div>
 
+            {formStatus === "success" ? (
+              <p className="contact-form-status contact-form-status--success" role="status">
+                Your message was sent. We will get back to you soon.
+              </p>
+            ) : null}
+            {formStatus === "error" && formError ? (
+              <p className="contact-form-status contact-form-status--error" role="alert">
+                {formError}
+              </p>
+            ) : null}
+
             <div className="form-submit-container">
-              <button type="submit" className="form-submit-btn">
+              <button
+                type="submit"
+                className="form-submit-btn"
+                disabled={formStatus === "loading"}
+              >
                 <span>Send Message</span>
                 <div className="btn-icon">
                   <svg
