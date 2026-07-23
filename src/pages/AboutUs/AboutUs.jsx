@@ -2,31 +2,31 @@ import { Typography } from "antd";
 import "./AboutUs.css";
 import { useEffect } from "react";
 
-import aboutImage from "../../assets/about-us-hero.png";
-import missionImage from "../../assets/mission-image.png";
-import visionImage from "../../assets/vision-image.png";
-import coreValuesImage from "../../assets/core-values-image.png";
+import aboutImage from "../../assets/about-us-hero.webp";
+import missionImage from "../../assets/mission-image.webp";
+import visionImage from "../../assets/vision-image.webp";
+import coreValuesImage from "../../assets/core-values-image.webp";
 
-import missionIcon from "../../assets/mission-icon.png";
-import visionIcon from "../../assets/vision-icon.png";
-import coreValuesIcon from "../../assets/core-values-icon.png";
+import missionIcon from "../../assets/mission-icon.webp";
+import visionIcon from "../../assets/vision-icon.webp";
+import coreValuesIcon from "../../assets/core-values-icon.webp";
 
-import missionShape from "../../assets/shape.png";
-import visionShape from "../../assets/shape.png";
+import missionShape from "../../assets/shape.webp";
+import visionShape from "../../assets/shape.webp";
 
-import sustainabilityIcon from "../../assets/sustainability-icon.png";
-import reliabilityIcon from "../../assets/reliability-icon.png";
-import innovationIcon from "../../assets/innovation-icon.png";
-import integrityIcon from "../../assets/integrity-icon.png";
+import sustainabilityIcon from "../../assets/sustainability-icon.webp";
+import reliabilityIcon from "../../assets/reliability-icon.webp";
+import innovationIcon from "../../assets/innovation-icon.webp";
+import integrityIcon from "../../assets/integrity-icon.webp";
 
-import whatWeDoImage from "../../assets/what-we-do-image.png";
-import fuelProductionIcon from "../../assets/fuel-production-icon.png";
-import performanceIcon from "../../assets/performance-icon.png";
-import supplyIcon from "../../assets/supply-icon.png";
+import whatWeDoImage from "../../assets/what-we-do-image.webp";
+import fuelProductionIcon from "../../assets/fuel-production-icon.webp";
+import performanceIcon from "../../assets/performance-icon.webp";
+import supplyIcon from "../../assets/supply-icon.webp";
 
-import cleanEnergyIcon from "../../assets/clean-energy-icon.png";
-import wasteReductionIcon from "../../assets/waste-reduction-icon.png";
-import environmentIcon from "../../assets/environment-icon.png";
+import cleanEnergyIcon from "../../assets/clean-energy-icon.webp";
+import wasteReductionIcon from "../../assets/waste-reduction-icon.webp";
+import environmentIcon from "../../assets/environment-icon.webp";
 import ImpactSection from "./ImpactSection";
 import KeyPeopleSection from "./KeyPeopleSection";
 import LeadershipSection from "./LeadershipSection";

@@ -1,5 +1,6 @@
 import { Row, Col, Typography } from "antd";
 import React from "react";
+import LazyImage from "../../../components/LazyImage";
 
 const { Title, Paragraph } = Typography;
 
@@ -41,7 +42,7 @@ const FeatureRow = ({
 
   const ImageContent = (
     <div className="feature-image-wrapper">
-      <img
+      <LazyImage
         src={image}
         alt={typeof title === "string" ? title : "feature"}
         className="feature-image"

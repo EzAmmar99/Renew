@@ -1,18 +1,18 @@
 import { Typography } from "antd";
 import { useEffect } from "react";
 import "./Solutions.css";
-import heroImage from "../../assets/Hero-Solutions.png";
-import iconFlame from "../../assets/IconFlame.png";
-import iconCleanContaminant from "../../assets/Clean-Contaminant.png";
-import iconClean from "../../assets/Clean.png";
-import iconEconomical from "../../assets/Economical.png";
-import iconSustainable from "../../assets/Sustainable.png";
-import iconReduced from "../../assets/Reduced.png";
-import watermarkImg from "../../assets/watermark.png";
-import wasteReductionImage from "../../assets/waste-reduction-source.png";
-import valueImgCost from "../../assets/value-cost-efficient.png";
-import valueImgSustainable from "../../assets/value-sustainable.png";
-import valueImgCarbonFree from "../../assets/value-carbon-free.png";
+import heroImage from "../../assets/Hero-Solutions.webp";
+import iconFlame from "../../assets/IconFlame.webp";
+import iconCleanContaminant from "../../assets/Clean-Contaminant.webp";
+import iconClean from "../../assets/Clean.webp";
+import iconEconomical from "../../assets/Economical.webp";
+import iconSustainable from "../../assets/Sustainable.webp";
+import iconReduced from "../../assets/Reduced.webp";
+import watermarkImg from "../../assets/watermark.webp";
+import wasteReductionImage from "../../assets/waste-reduction-source.webp";
+import valueImgCost from "../../assets/value-cost-efficient.webp";
+import valueImgSustainable from "../../assets/value-sustainable.webp";
+import valueImgCarbonFree from "../../assets/value-carbon-free.webp";
 
 const { Title, Paragraph } = Typography;
 

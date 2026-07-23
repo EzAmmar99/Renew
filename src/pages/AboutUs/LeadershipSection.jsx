@@ -4,8 +4,8 @@ import MemberCard from "./MemberCard";
 
 const { Title, Paragraph, Text } = Typography;
 
-import FemaleMemberImage from "../../assets/female-member.png";
-import MaleMemberImage from "../../assets/male-member.png";
+import FemaleMemberImage from "../../assets/female-member.webp";
+import MaleMemberImage from "../../assets/male-member.webp";
 
 const LeadershipSection = () => {
   const teamData = [

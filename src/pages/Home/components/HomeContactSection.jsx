@@ -1,6 +1,7 @@
 import { Button, Typography, Row, Col } from "antd";
 import { SendOutlined } from "@ant-design/icons";
-import teamContactImg from "../../../assets/teamContact.png";
+import teamContactImg from "../../../assets/teamContact.webp";
+import LazyImage from "../../../components/LazyImage";
 
 const { Title, Paragraph } = Typography;
 
@@ -47,7 +48,7 @@ const HomeContactSection = () => {
         >
           <div className="home-contact-image-wrapper">
             <div className="home-contact-image-frame" />
-            <img
+            <LazyImage
               src={teamContactImg}
               alt="Team contact"
               className="home-contact-image"

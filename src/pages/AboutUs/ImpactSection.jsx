@@ -13,12 +13,12 @@ const { Title, Paragraph, Text } = Typography;
 
 import "./ImpactSection.css";
 
-import impactIcon1 from "../../assets/impact-icon-1.png";
-import impactIcon2 from "../../assets/impact-icon-2.png";
-import impactIcon3 from "../../assets/impact-icon-3.png";
-import impactIcon4 from "../../assets/impact-icon-4.png";
-import impactIcon5 from "../../assets/impact-icon-5.png";
-import impactIcon6 from "../../assets/impact-icon-6.png";
+import impactIcon1 from "../../assets/impact-icon-1.webp";
+import impactIcon2 from "../../assets/impact-icon-2.webp";
+import impactIcon3 from "../../assets/impact-icon-3.webp";
+import impactIcon4 from "../../assets/impact-icon-4.webp";
+import impactIcon5 from "../../assets/impact-icon-5.webp";
+import impactIcon6 from "../../assets/impact-icon-6.webp";
 
 
 

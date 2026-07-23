@@ -1,5 +1,6 @@
 import { Typography } from "antd";
-import heroImg from "../../../assets/hero-image.png";
+import heroImg from "../../../assets/hero-image.webp";
+import LazyBackground from "../../../components/LazyBackground";
 import { colors } from "../colors";
 import { pageData } from "../homeData";
 
@@ -7,11 +8,10 @@ const { Title, Paragraph } = Typography;
 
 const HomeHero = () => {
   return (
-    <div
+    <LazyBackground
+      src={heroImg}
+      priority
       className="home-hero reveal-on-scroll is-visible"
-      style={{
-        backgroundImage: `url(${heroImg})`,
-      }}
     >
       <div className="home-hero-content">
         <Title className="home-hero-title">
@@ -27,7 +27,7 @@ const HomeHero = () => {
           {pageData.hero.description}
         </Paragraph>
       </div>
-    </div>
+    </LazyBackground>
   );
 };
 

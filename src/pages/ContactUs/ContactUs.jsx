@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import "./ContactUs.css";
-import contactHeroImg from "../../assets/contact-hero.png";
-import watermarkImg from "../../assets/yellow-watermark.png";
-import phoneIcon from "../../assets/phone.png";
-import mailIcon from "../../assets/mail.png";
-import locationIcon from "../../assets/location.png";
+import contactHeroImg from "../../assets/contact-hero.webp";
+import watermarkImg from "../../assets/yellow-watermark.webp";
+import phoneIcon from "../../assets/phone.webp";
+import mailIcon from "../../assets/mail.webp";
+import locationIcon from "../../assets/location.webp";
+import LazyImage from "../../components/LazyImage";
 import { submitContactForm } from "../../utils/contactFormSubmit";
 
 const ContactUs = () => {
@@ -91,10 +92,11 @@ const ContactUs = () => {
     <main className="contact-page">
       <section className="contact-hero-section contact-reveal is-visible contact-reveal-zoom">
         <div className="contact-hero-media">
-          <img
+          <LazyImage
             src={contactHeroImg}
             alt="Business contact and communication"
             className="contact-hero-image"
+            priority
           />
 
           <div className="contact-hero-overlay" />
@@ -111,13 +113,13 @@ const ContactUs = () => {
       </section>
 
       <section className="contact-message-section">
-        <img
+        <LazyImage
           src={watermarkImg}
           alt=""
           aria-hidden="true"
           className="cement-bg-watermark bg-top-right"
         />
-        <img
+        <LazyImage
           src={watermarkImg}
           alt=""
           aria-hidden="true"

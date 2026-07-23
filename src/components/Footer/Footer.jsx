@@ -10,7 +10,8 @@ import { BsTwitterX } from "react-icons/bs";
 
 import Logo from "../../assets/Logo.svg";
 import TopIllustration from "../../assets/footer-art.svg";
-import footerGroop from "../../assets/footer-groop.png";
+import footerGroop from "../../assets/footer-groop.webp";
+import LazyImage from "../LazyImage";
 
 const menuItems = [
   { label: "Home", path: "/" },
@@ -92,11 +93,11 @@ export default function Footer() {
 
       <div className="renew-footer__leaves">
         {[...Array(30)].map((_, i) => (
-          <img 
-            key={i} 
-            src={footerGroop} 
-            alt="" 
-            className="renew-footer__leaf-img" 
+          <LazyImage
+            key={i}
+            src={footerGroop}
+            alt=""
+            className="renew-footer__leaf-img"
           />
         ))}
       </div>

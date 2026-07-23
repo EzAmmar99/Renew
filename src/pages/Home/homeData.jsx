@@ -1,24 +1,24 @@
-import img1 from "../../assets/Products-1.png";
-import img2 from "../../assets/Products-2.png";
-import img3 from "../../assets/Products-3.png";
-import img4 from "../../assets/Products-4.png";
-import img5 from "../../assets/Products-5.png";
-import img6 from "../../assets/Products-6.png";
+import img1 from "../../assets/Products-1.webp";
+import img2 from "../../assets/Products-2.webp";
+import img3 from "../../assets/Products-3.webp";
+import img4 from "../../assets/Products-4.webp";
+import img5 from "../../assets/Products-5.webp";
+import img6 from "../../assets/Products-6.webp";
 
-import featureImg1 from "../../assets/feature-1.png";
-import featureImg2 from "../../assets/feature-2.png";
-import featureImg3 from "../../assets/feature-3.png";
-import featureImg4 from "../../assets/feature-4.png";
-import featureImg5 from "../../assets/feature-5.png";
-import featureImg6 from "../../assets/feature-6.png";
+import featureImg1 from "../../assets/feature-1.webp";
+import featureImg2 from "../../assets/feature-2.webp";
+import featureImg3 from "../../assets/feature-3.webp";
+import featureImg4 from "../../assets/feature-4.webp";
+import featureImg5 from "../../assets/feature-5.webp";
+import featureImg6 from "../../assets/feature-6.webp";
 
 
-import featureIcon1 from "../../assets/feature-icon-1.png";
-import featureIcon2 from "../../assets/feature-icon-2.png";
-import featureIcon3 from "../../assets/feature-icon-3.png";
-import featureIcon4 from "../../assets/feature-icon-4.png";
-import featureIcon5 from "../../assets/feature-icon-5.png";
-import featureIcon6 from "../../assets/feature-icon-6.png";
+import featureIcon1 from "../../assets/feature-icon-1.webp";
+import featureIcon2 from "../../assets/feature-icon-2.webp";
+import featureIcon3 from "../../assets/feature-icon-3.webp";
+import featureIcon4 from "../../assets/feature-icon-4.webp";
+import featureIcon5 from "../../assets/feature-icon-5.webp";
+import featureIcon6 from "../../assets/feature-icon-6.webp";
 
 export const pageData = {
   hero: {

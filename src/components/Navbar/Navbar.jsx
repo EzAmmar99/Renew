@@ -2,7 +2,8 @@ import { Layout, Button } from "antd";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import "./Navbar.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.webp";
+import LazyImage from "../LazyImage";
 import { useLocation, Link } from "react-router-dom";
 
 const { Header } = Layout;
@@ -17,7 +18,7 @@ const Navbar = () => {
     <>
       <Header className="custom-navbar">
         <div className="navbar-logo">
-          <img src={logo} alt="RENEW Logo" className="logo-image" />
+          <LazyImage src={logo} alt="RENEW Logo" className="logo-image" priority />
         </div>
 
         <nav className="navbar-links">
