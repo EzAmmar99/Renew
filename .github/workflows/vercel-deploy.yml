@@ -3,8 +3,8 @@ name: Deploy to Vercel (Production)
 # Deploys with the Vercel owner's token, so commits from any author
 # are not blocked by the Hobby plan's collaboration limit.
 env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_ORG_ID: team_95zezyFaAGmd5ac21fYLpjvl
+  VERCEL_PROJECT_ID: prj_Z79Ox0rXZoG0M5regFFFSMQWY4GN
 
 on:
   push:
