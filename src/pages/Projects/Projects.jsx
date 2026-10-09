@@ -1,6 +1,7 @@
 import "./Projects.css";
 import { useEffect } from "react";
 
+
 import implementationImg from "../../assets/successful-implementation.webp";
 import iconSustainability from "../../assets/icon-sustainability.webp";
 import iconEfficiency from "../../assets/icon-efficiency.webp";
