@@ -107,6 +107,32 @@ const MemberCard = ({ member }) => {
         >
           {member?.desc}
         </Paragraph>
+
+        {member?.focus && (
+          <div
+            style={{
+              fontFamily: "'Alexandria', sans-serif",
+              fontSize: "16px",
+              fontWeight: 400,
+              color: "#434343",
+              lineHeight: "1.6",
+              marginTop: "8px",
+            }}
+          >
+            <div>{member.focusTitle}</div>
+            <ul
+              style={{
+                textAlign: "left",
+                margin: "4px 0 0",
+                paddingLeft: "20px",
+              }}
+            >
+              {member.focus.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </Card>
     </div>
   );

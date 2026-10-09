@@ -21,6 +21,17 @@ const LeadershipSection = () => {
       desc: "With 20+ years of experience in cement production and alternative fuels, Tamer leads RENEW’s technical and operational strategy. From quality control and equipment efficiency to logistics and yard management, he ensures operational excellence and continuous innovation.",
       img: MaleMemberImage,
     },
+    {
+      name: "Ahmed El-Sharnouby",
+      role: "Chief Commercial Officer (CCO)",
+      desc: "20 Years In Commercial And Financial Roles At BP, ALICO, And Ulterra, Where He Is Currently Regional Financial Controller.",
+      focusTitle: "Core Focus At RENEW:",
+      focus: [
+        "Commercial & Growth: Sales, Clients, And Profits.",
+        "Operations & Supply: Farm Contracts, Procurement, Logistics, And HR.",
+      ],
+      img: MaleMemberImage,
+    },
 
     {
       name: "Yasmeen ElBakry",
@@ -139,10 +150,10 @@ const LeadershipSection = () => {
           <style>{`
             @keyframes slide {
               from { transform: translateX(0); }
-              to { transform: translateX(-2450px); }
+              to { transform: translateX(-${teamData.length * 530}px); }
             }
             .moving-container {
-              animation: slide 40s linear infinite;
+              animation: slide ${teamData.length * 8}s linear infinite;
               will-change: transform;
             }
             .moving-container:has(> div:hover) {
